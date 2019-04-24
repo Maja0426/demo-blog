@@ -12,7 +12,7 @@ const app = express();
 
 const blogsRoutes = require('./routes/blog');
 const indexRoutes = require('./routes/index');
-const adminRoutes = require('./routes/admin');
+// const adminRoutes = require('./routes/admin');
 const User = require('./models/user');
 
 app.locals.moment = require('moment');
@@ -78,25 +78,7 @@ app.use(function (req, res, next) {
 // ROUTES CONFIG
 app.use('/', indexRoutes);
 app.use('/blogs', blogsRoutes);
-app.use('/admin', adminRoutes);
-
-app.get('/', (req, res) => {
-  res.redirect('/welcome');
-});
-
-
-// OTHERS PAGE - Footer's links, Comment policy, Help
-// app.get('/cookies', function (req, res) {
-//   res.render('others/cooky');
-// });
-
-// app.get('/gdpr', function (req, res) {
-//   res.render('others/gdpr');
-// });
-
-// app.get('/impressum', function (req, res) {
-//   res.render('others/impressum');
-// });
+// app.use('/admin', adminRoutes);
 
 
 // 404 ERROR PAGE

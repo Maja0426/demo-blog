@@ -1,4 +1,4 @@
-var Blog = require('../models/blog');
+var Blogs = require('../models/blog');
 
 var middlewareObj = {};
 
@@ -19,7 +19,7 @@ middlewareObj.checkAdmin = function (req, res, next) {
 }
 
 middlewareObj.checkAllBlogPosts = function (req, res, next) {
-  Blog.find({}, function (err, allBlog) {
+  Blogs.find({}, function (err, allBlog) {
     if (err || !allBlog) {
       req.flash('error', 'Nem találhatók cikkek!')
       res.redirect('/welcome')
