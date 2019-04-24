@@ -1,0 +1,52 @@
+<% include ../partials/header %>
+
+<div class="container-fluid text-center log-bg">
+  <div class="">
+    <form action="/blogs" method="POST" enctype="multipart/form-data">
+
+      <div class="form-group col-sm-6 mx-auto">
+        <input class="form-control" type="text" name="blogs[title]" placeholder="hirdetés címe, max. 70 karakter"
+          maxlength="170" required autofocus>
+      </div>
+
+      <div class="form-group col-sm-6 mx-auto">
+        <input class="form-control" type="text" name="blogs[subTitle]" placeholder="alcím"
+          maxlength="170" required autofocus>
+      </div>
+       
+
+      <div class="form-group">
+        <h6>Kategória:</h6>
+        <div class="form-group col-sm-6 mx-auto">
+          <select class="custom-select font-weight-bold" name="blogs[category]" required>
+            <option value="Vállalkozás">Vállalkozás</option>
+            <option value="Webfejlesztés">Webfejlesztés</option>
+            <option value="Gondolatébresztő">Gondolatébresztő</option>
+            <option value="Egyéb" selected>Egyéb</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-6 mx-auto">
+        <div class="custom-file">
+          <label for="image" class="custom-file-label text-left"><i class="fas fa-image"></i> Képfeltöltés</label>
+          <input type="file" class="custom-file-input" id="image"
+            value="https://res.cloudinary.com/maja0426/image/upload/v1550587836/Aprohirdetes/NoImageFound.png"
+            name="image" accept="image/*">
+        </div>
+      </div>
+
+      <div class="form-group col-sm-6 mx-auto">
+        <textarea id="summernote" rows="4" class="form-control" placeholder="blog"
+          name="blogs[description]" required></textarea>
+
+      </div>
+      <button class="btn btn-primary">Blog feltöltése</button>
+      <a class="btn btn-md btn-dark" href="/blogs">Vissza</a>
+    </form>
+  </div>
+
+</div>
+
+</body>
+</header>

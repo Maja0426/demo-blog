@@ -1,0 +1,53 @@
+<% include ./partials/header %>
+<link href="css/main.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+  <div class="container messages fixed-top">
+    <% if (error && error.length > 0) { %>
+    <div class="alert alert-dismissible alert-danger mt-3 text-center">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <h4 class="mb-0">
+        <%= error %>
+      </h4>
+    </div>
+    <% } %>
+    <% if (success && success.length > 0) { %>
+    <div class="alert alert-dismissible alert-success mt-3 text-center">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <h4 class="mb-0">
+        <%= success %>
+      </h4>
+    </div>
+    <% } %>
+  </div>
+  <div class="container-fluid log-bg">
+
+    <div class="wrapper">
+      <h1 class="display-3 mb-5 text-center">BGY ADMIN</h1>
+      <form action="/login" method="POST">
+
+        <div class="form-group">
+          <label for="username">Felhasználónév</label>
+          <input class="form-control" type="text" name="username" placeholder="felhasználónév" id="username" autofocus>
+        </div>
+
+        <div class="mb-5">
+          <div class="form-group">
+            <label for="pswd">Jelszó</label>
+            <input class="form-control" type="password" name="password" id="pswd" placeholder="jelszó">
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-xl btn-custom-light mr-3 mb-3">Bejelentkezés</button>
+          <a class="btn btn-xl btn-danger mb-3" href="/">Vissza</a>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

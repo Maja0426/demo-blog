@@ -258,13 +258,14 @@ aside section.social ul li {
 /* ARTICLE SECTION */
 article {
   display: flex;
-  flex-basis: 950px;
   margin-right: 20px;
   margin-left: 20px;
+  flex-basis: 950px;
 }
 
 article ul li {
   display: flex;
+  justify-content: space-between;
   border-bottom: 1px dotted #222;
 }
 
@@ -293,6 +294,7 @@ article ul li.post-preview {
 
 article ul li.post-preview a {
   color: #000;
+  
 }
 
 article ul li.post-preview:hover {
@@ -308,7 +310,7 @@ article ul li .post-controller {
   padding: 15px 0;
   align-content: flex-end;
   /* background-color: #acaaaa; */
-  min-width: 120px;
+  min-width: 150px;
 }
 
 article ul li .post-controller p {

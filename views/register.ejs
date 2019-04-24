@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Blog-ma</title>
+  <link href="https://fonts.googleapis.com/css?family=Antic+Slab|Roboto|Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body id="page-top" class="">
+      <h1 class="mb-4">Regisztráció</h1>
+      <form action="/register" method="POST">
+        <div class="form-row">
+          <div class="form-group col-md-8 mx-auto">
+            <input class="form-control" type="email" name="email" placeholder="email cím" autofocus>
+          </div>
+          <div class="form-group col-md-8 mx-auto">
+            <input class="form-control" type="text" name="username" placeholder="felhasználónév">
+          </div>
+          <div class="form-group col-md-8 mx-auto">
+            <input class="form-control" type="password" name="password" placeholder="jelszó">
+          </div>
+
+          <div class="form-group col-md-8 mx-auto">
+            <input class="form-control" type="password" name="samePassword" placeholder="jelszó mégegyszer">
+          </div>
+        </div>
+
+        <button class="btn btn-md btn-primary">Regisztrálok</button>
+        <a class="btn btn-md btn-dark" href="/">Vissza</a>
+      </form>
+</body>
+
+</html>

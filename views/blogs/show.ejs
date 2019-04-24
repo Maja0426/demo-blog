@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Blog-ma</title>
+  <% moment.locale("hu") %>
+  <link href="https://fonts.googleapis.com/css?family=Antic+Slab|Roboto|Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body id="page-top" class="">
+
+  <!-- Fejléc és kereső szekció, az oldal főcíme és a fixen az oldal tetején maradó keresőmező -->
+  <section class="main-title">
+    <header>
+      <h1>SMPL</h1>
+    </header>
+
+    <div class="searchbar">
+      <form action="#" method="GET">
+        <input type="search" name="searchbar" id="searchbar" placeholder="Keresés">
+        <!-- <button type="submit">Na nézzük...</button> -->
+      </form>
+    </div>
+  </section>
+  <!-- Fejléc és kereső szekció lezárása -->
+
+  <!-- A "Main" szekció, maga az oldal a bal oldali sávval és a tartalom konténerrel -->
+  <main>
+
+    <!-- A bal oldali "vezérlő, segítő" panel. Bio, social buttons, kategóriák, copyright -->
+    <aside>
+
+      <section>
+        <p class="about-me">Célom a Nógrád megyei mikro -és kisvállalkozásoknak történő segítségnyújtás a digitális
+          jelenlét biztosításával. Azon
+          tévhitek eloszlatása, hogy a kisvállalkozások számára egy modern, gyors, biztonságos üzleti weboldal nem
+          megfizethető.
+        </p>
+        <figure class="profile-photo">
+          <img src="/img/DSC_0201.jpg" alt="Maja profile photo">
+        </figure>
+        <div class="social-follow">
+          <a class="twitter-follow-button" href="https://twitter.com/SmartBeeWeb" data-size="large">
+            Follow @SmartBeeWeb</a>
+        </div>
+      </section>
+
+      <section class="color-switcher">
+        <i class="fas fa-adjust"></i> <a href="#!"
+          onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
+          title="Dark/light id=" switch"> Világos / Sötét</a>
+      </section>
+
+      <section class="categories">
+        <a href="#" class="btn">A kat.</a>
+        <a href="#" class="btn">B kategory.</a>
+        <a href="#" class="btn">C kat.</a>
+        <a href="#" class="btn">D.</a>
+        <a href="#" class="btn">D kat.</a>
+        <a href="#" class="btn">D kat.</a>
+      </section>
+
+      <footer>
+        <section class="social">
+          <ul>
+            <li><a href="https://twitter.com/SmartBeeWeb" target="_blank"><i
+                  class="fab fa-twitter-square fa-2x"></i></a></li>
+            <li><a href="https://www.facebook.com/smartbeeweb" target="_blank"><i
+                  class="fab fa-facebook-square fa-2x"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/majoros-tamas/" target="_blank"><i
+                  class="fab fa-linkedin fa-2x"></i></a></li>
+            <li><a href="https://www.instagram.com/smartbeeweboldalak/" target="_blank"><i
+                  class="fab fa-instagram fa-2x"></i></a></li>
+          </ul>
+        </section>
+        <section class="copyright">
+          <p><i class="far fa-copyright"></i> 2019 <a href="https://smartbeeweb.hu" target="_blank">Smart-Bee Web</a>
+          </p>
+          <br>
+          <p>Inspired by <a href="https://flaviocopes.com" target="_blank">Flavio Copes</a>.<span> 🙏</span></p>
+        </section>
+      </footer>
+    </aside>
+    <!-- A bal oldali "vezérlő" lezárása -->
+
+    <!-- Maga a lényegi tartalom -->
+    <article>
+      <ul>
+        <li class="post-preview">
+          <a href="/blogs/<%= blog.id %>">
+            <h3 class="post-title"><%= blog.title %></h3>
+            <p class="post-description"><%= blog.description %></p>
+          </a>
+        </li>
+      </ul>
+    </article>
+    <!- Maga a lényegi tartalom lezárása -->
+
+  </main>
+  <!-- A "Main" szekció lezárása -->
+
+  <a href="#page-top" id="back-to-top" class="back-to-top"><i class="fas fa-chevron-up fa-2x"></i></a>
+
+  <!-- Twitter follower script -->
+  <script>
+    window.twttr = (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+
+      t._e = [];
+      t.ready = function (f) {
+        t._e.push(f);
+      };
+
+      return t;
+    }(document, "script", "twitter-wjs"));
+  </script>
+
+  <!-- Floating scroll script -->
+  <script>
+    var link = document.getElementById("back-to-top");
+    var amountScrolled = 250;
+
+    function addClass(el, className) {
+
+      if (el.classList) {
+        el.classList.add(className);
+      } else {
+        el.className += ' ' + className;
+      }
+
+    }
+
+    function removeClass(el, className) {
+      if (el.classList)
+        el.classList.remove(className);
+      else
+        el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'),
+          ' ');
+    }
+
+    window.addEventListener('scroll', function (e) {
+      if (window.scrollY > amountScrolled) {
+        addClass(link, 'show');
+      } else {
+        removeClass(link, 'show');
+      }
+    });
+  </script>
+
+  <!-- theme switch (light/dark) -->
+  <script>
+    localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark');
+    localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document
+      .querySelector('body').classList.remove('dark')
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark'):
+        document.querySelector('body').classList.remove('dark')
+    })
+  </script>
+</body>
+
+</html>

@@ -15,14 +15,14 @@ middlewareObj.checkAdmin = function (req, res, next) {
     return next();
   }
   req.flash("error", "Ehhez a művelethez nincs jogosultságod!");
-  res.redirect("/welcome");
+  res.redirect("/blogs");
 }
 
 middlewareObj.checkAllBlogPosts = function (req, res, next) {
   Blogs.find({}, function (err, allBlog) {
     if (err || !allBlog) {
       req.flash('error', 'Nem találhatók cikkek!')
-      res.redirect('/welcome')
+      res.redirect('/blogs')
     } else {
       blogs = allBlog
     }

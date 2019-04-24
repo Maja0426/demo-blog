@@ -6,10 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Blog-ma</title>
+  <% moment.locale("hu") %>
   <link href="https://fonts.googleapis.com/css?family=Antic+Slab|Roboto|Raleway" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/main.css" id="theme">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body id="page-top" class="">
@@ -17,7 +18,7 @@
   <!-- Fejléc és kereső szekció, az oldal főcíme és a fixen az oldal tetején maradó keresőmező -->
   <section class="main-title">
     <header>
-      <h1>Ez a frappáns főcím</h1>
+      <h1>SMPL</h1>
     </header>
 
     <div class="searchbar">
@@ -91,114 +92,18 @@
     <!-- Maga a lényegi tartalom -->
     <article>
       <ul>
+        <% blogs.forEach(function(blog) { %> 
         <li class="post-preview">
-          <a href="#">
-            <h3 class="post-title">Ez 0. bejegyzés címe</h3>
-            <p class="post-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, minima
-              vitae omnis
-              repellat rerum repellendus aspernatur quae eum voluptatem assumenda.</p>
+          <a href="/blogs/<%= blog.id %>">
+            <h3 class="post-title"><%= blog.title %></h3>
+            <p class="post-description"><%= blog.subTitle %></p>
           </a>
           <div class="post-controller">
-            <p>2019. április 23.</p>
-            <a href="#" class="btn btn-md">A kat.</a>
+            <p><%= moment(blog.createdAt).fromNow() %></p>
+            <a href="#!" class="btn btn-md"><%= blog.category %></a>
           </div>
         </li>
-        <li class="post-preview">
-          <a href="#">
-            <h3 class="post-title">Ez 1. bejegyzés címe</h3>
-            <p class="post-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, minima
-              vitae omnis
-              repellat rerum repellendus aspernatur quae eum voluptatem assumenda.</p>
-          </a>
-          <div class="post-controller">
-            <p>2019. április 23.</p>
-            <a href="#" class="btn btn-md">A kat.</a>
-          </div>
-        </li>
-        <li class="post-preview">
-          <a href="#">
-            <h3 class="post-title">Ez 2. bejegyzés címe</h3>
-            <p class="post-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, minima
-              vitae omnis
-              repellat rerum repellendus aspernatur quae eum voluptatem assumenda.</p>
-          </a>
-          <div class="post-controller">
-            <p>2019. április 23.</p>
-            <a href="#" class="btn btn-md">Vállalkozás</a>
-          </div>
-        </li>
-        <li class="post-preview">
-          <a href="#">
-            <h3 class="post-title">Ez 3. bejegyzés címe</h3>
-            <p class="post-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, minima
-              vitae omnis
-              repellat rerum repellendus aspernatur quae eum voluptatem assumenda.</p>
-          </a>
-          <div class="post-controller">
-            <p>2019. április 23.</p>
-            <a href="#" class="btn btn-md">A kat.</a>
-          </div>
-        </li>
-        <li class="post-preview">
-          <a href="#">
-            <h3 class="post-title">Ez 4. bejegyzés címe</h3>
-            <p class="post-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, minima
-              vitae omnis
-              repellat rerum repellendus aspernatur quae eum voluptatem assumenda.</p>
-          </a>
-          <div class="post-controller">
-            <p>2019. április 23.</p>
-            <a href="#" class="btn btn-md">A kat.</a>
-          </div>
-        </li>
-        <li class="post-preview">
-          <a href="#">
-            <h3 class="post-title">Ez 4. bejegyzés címe</h3>
-            <p class="post-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, minima
-              vitae omnis
-              repellat rerum repellendus aspernatur quae eum voluptatem assumenda.</p>
-          </a>
-          <div class="post-controller">
-            <p>2019. április 23.</p>
-            <a href="#" class="btn btn-md">A kat.</a>
-          </div>
-        </li>
-        <li class="post-preview">
-          <a href="#">
-            <h3 class="post-title">Ez 4. bejegyzés címe</h3>
-            <p class="post-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, minima
-              vitae omnis
-              repellat rerum repellendus aspernatur quae eum voluptatem assumenda.</p>
-          </a>
-          <div class="post-controller">
-            <p>2019. április 23.</p>
-            <a href="#" class="btn btn-md">A kat.</a>
-          </div>
-        </li>
-        <li class="post-preview">
-          <a href="#">
-            <h3 class="post-title">Ez 4. bejegyzés címe</h3>
-            <p class="post-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, minima
-              vitae omnis
-              repellat rerum repellendus aspernatur quae eum voluptatem assumenda.</p>
-          </a>
-          <div class="post-controller">
-            <p>2019. április 23.</p>
-            <a href="#" class="btn btn-md">A kat.</a>
-          </div>
-        </li>
-        <li class="post-preview">
-          <a href="#">
-            <h3 class="post-title">Ez 4. bejegyzés címe</h3>
-            <p class="post-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, minima
-              vitae omnis
-              repellat rerum repellendus aspernatur quae eum voluptatem assumenda.</p>
-          </a>
-          <div class="post-controller">
-            <p>2019. április 23.</p>
-            <a href="#" class="btn btn-md">A kat.</a>
-          </div>
-        </li>
+        <% }) %>
       </ul>
     </article>
     <!- Maga a lényegi tartalom lezárása -->

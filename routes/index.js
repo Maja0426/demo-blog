@@ -4,7 +4,7 @@ var passport = require('passport');
 var User = require('../models/user');
 
 router.get('/', function (req, res) {
-  res.render('blogs/index');
+  res.redirect('/blogs');
 });
 
 
@@ -46,7 +46,7 @@ router.post('/register', function (req, res) {
         res.redirect('/register');
       } else {
         passport.authenticate('local')(req, res, function () {
-          req.flash('success', 'Üdvözlet a Nógrád Aprón ' + regUser.username + '.');
+          req.flash('success', 'Üdvözlet a SMPL Blogon ' + regUser.username + '.');
           res.redirect('/blogs');
         });
       }
@@ -59,7 +59,7 @@ router.post('/register', function (req, res) {
 
 router.get('/logout', function (req, res) {
   req.logout();
-  req.flash('success', 'Sikeresen kijelentkezett!');
+  req.flash('success', 'Sikeresen kijelentkeztél!');
   res.redirect('/blogs');
 });
 

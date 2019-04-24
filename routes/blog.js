@@ -70,7 +70,7 @@ router.get('/', function (req, res) {
           console.log(err);
         } else {
           res.render('blogs/index', {
-            Blogs: allBlogs,
+            blogs: allBlogs,
             current: pageNumber,
             pages: Math.ceil(count / perPage),
             noMatch: noMatch,
@@ -137,7 +137,7 @@ router.post('/', middleware.isLoggedIn, upload.single('image'), function (req, r
           res.redirect('blogs');
         } else {
           req.flash('success', 'Az új bejegyzésed kész!');
-          res.redirect('/blogs/' + createdBlogs.id);
+          res.redirect('/blogs');
         }
       })
     });
@@ -149,7 +149,7 @@ router.post('/', middleware.isLoggedIn, upload.single('image'), function (req, r
         res.redirect('blogs');
       } else {
         req.flash('success', 'Az új bejegyzésed kész!');
-        res.redirect('/blogs/' + createdBlogs.id);
+        res.redirect('/blogs');
       }
     })
   }
@@ -172,7 +172,7 @@ router.get('/:id', function (req, res) {
 // EDIT PAGE - EDIT THE SELECTED BLOG
 router.get('/:id/edit', middleware.checkAdmin, function (req, res) {
   Blogs.findById(req.params.id, function (err, foundBlog) {
-    res.render('Blogs/edit', {
+    res.render('blogs/edit', {
       blog: foundBlog
     });
   });
@@ -192,7 +192,7 @@ router.put('/:id', middleware.checkAdmin, upload.single('image'), function (req,
           res.redirect('blogs');
         } else {
           req.flash('success', 'A bejegyzésed módosítva!');
-          res.redirect('/blogs/' + updatedBlog.id);
+          res.redirect('/blogs');
         }
       })
     });
@@ -204,7 +204,7 @@ router.put('/:id', middleware.checkAdmin, upload.single('image'), function (req,
         res.redirect('/blogs');
       } else {
         req.flash('success', 'A bejegyzésed módosítva!');
-        res.redirect('/blogs/' + updateBlog.id);
+        res.redirect('/blogs');
       }
     })
   }
