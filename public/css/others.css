@@ -1,0 +1,83 @@
+p {
+  padding: 0 20px;
+}
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper h1 {
+  text-shadow: 3px 3px 3px #fff;
+}
+
+.btn {
+  border-radius: 300px;
+  font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.btn-xl {
+  font-size: 16px;
+  padding: 15px 45px;
+}
+
+.log-bg {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: #000;
+  background: url("https://res.cloudinary.com/maja0426/image/upload/v1555601885/bgydemo/black-and-white-buildings-city-2255.jpg") no-repeat center/cover;
+}
+
+.btn-custom-light {
+  background: #fff;
+  color: #000;
+  /* border: 1px solid #000; */
+}
+
+.btn-custom-light:hover {
+  background: #000;
+  color: #f9e098;
+}
+
+/*=========== Floating Button ===============*/
+
+.back-to-top {
+  background: #000000;
+  color: #FFFFFF !important;
+  opacity: 0;
+  transition: opacity .6s ease-in-out;
+  z-index: 10;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 45px;
+  height: 45px;
+  box-sizing: border-box;
+  border-radius: 0;
+}
+
+a.back-to-top {
+  font-weight: 1000;
+  letter-spacing: 2px;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.6;
+  padding-left: 2px;
+  padding-top: 9px;
+}
+
+.back-to-top:hover {
+  color: #f9e098 !important;
+}
+
+.back-to-top.show {
+  opacity: 1;
+}

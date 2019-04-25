@@ -80,6 +80,9 @@ app.use('/', indexRoutes);
 app.use('/blogs', blogsRoutes);
 // app.use('/admin', adminRoutes);
 
+// app.get('blogs/', (req, res) => {
+//   res.render('/blogs/index');
+// })
 
 // 404 ERROR PAGE
 app.get('*', function (req, res) {

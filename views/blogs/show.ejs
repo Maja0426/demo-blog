@@ -50,20 +50,25 @@
             Follow @SmartBeeWeb</a>
         </div>
       </section>
-
+<!-- 
       <section class="color-switcher">
         <i class="fas fa-adjust"></i> <a href="#!"
           onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
           title="Dark/light id=" switch"> Világos / Sötét</a>
+      </section> -->
+
+      <% if(currentUser && currentUser.isAdmin) { %>
+      <section>
+        <a class="btn new-btn" href="/blogs/new" role="button">Új post</a>
+        <a class="btn new-btn" href="/logout" role="button">Logout</a>
       </section>
+      <% } %>
 
       <section class="categories">
-        <a href="#" class="btn">A kat.</a>
-        <a href="#" class="btn">B kategory.</a>
-        <a href="#" class="btn">C kat.</a>
-        <a href="#" class="btn">D.</a>
-        <a href="#" class="btn">D kat.</a>
-        <a href="#" class="btn">D kat.</a>
+        <a href="#" class="btn">Vállalkozás</a>
+        <a href="#" class="btn">Webfejlesztés</a>
+        <a href="#" class="btn">Gondolatébresztő</a>
+        <a href="#" class="btn">Egyéb</a>
       </section>
 
       <footer>
@@ -90,18 +95,28 @@
     <!-- A bal oldali "vezérlő" lezárása -->
 
     <!-- Maga a lényegi tartalom -->
-    <article>
+    <article class="show-post">
       <ul>
         <li class="post-preview">
-          <a href="/blogs/<%= blog.id %>">
+          <a href="#!">
             <h3 class="post-title"><%= blog.title %></h3>
-            <p class="post-description"><%= blog.description %></p>
+            <span class="post-description"><%- blog.description %></span>
           </a>
         </li>
+        <section class="delete-form">
+          <% if(currentUser && currentUser.isAdmin) { %>
+          <% if (blog.description) { %>
+          <a href="/blogs/<%= blog._id %>/edit" class="btn" role="button">Szerkesztés</a>
+          <% } %>
+          <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+            <button class="btn">Törlés!</button>
+          </form>
+          <% } %>
+          <a class="btn" href="/blogs" role="button">Vissza</a>
+        </section>
       </ul>
     </article>
     <!- Maga a lényegi tartalom lezárása -->
-
   </main>
   <!-- A "Main" szekció lezárása -->
 
@@ -160,7 +175,7 @@
   </script>
 
   <!-- theme switch (light/dark) -->
-  <script>
+  <!-- <script>
     localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark');
     localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document
       .querySelector('body').classList.remove('dark')
@@ -169,7 +184,7 @@
       ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark'):
         document.querySelector('body').classList.remove('dark')
     })
-  </script>
+  </script> -->
 </body>
 
 </html>

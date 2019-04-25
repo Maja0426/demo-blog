@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Antic+Slab|Roboto|Raleway" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body id="page-top" class="">
@@ -43,7 +43,7 @@
           megfizethető.
         </p>
         <figure class="profile-photo">
-          <img src="img/DSC_0201.jpg" alt="Maja profile photo">
+          <img src="/img/DSC_0201.jpg" alt="Maja profile photo">
         </figure>
         <div class="social-follow">
           <a class="twitter-follow-button" href="https://twitter.com/SmartBeeWeb" data-size="large">
@@ -57,13 +57,18 @@
           title="Dark/light id=" switch"> Világos / Sötét</a>
       </section>
 
+      <% if(currentUser && currentUser.isAdmin) { %>
+      <section>
+         <a class="btn new-btn" href="/blogs/new" role="button">Új post</a>
+         <a class="btn new-btn" href="/logout" role="button">Logout</a>
+      </section>
+       <% } %>
+
       <section class="categories">
-        <a href="#" class="btn">A kat.</a>
-        <a href="#" class="btn">B kategory.</a>
-        <a href="#" class="btn">C kat.</a>
-        <a href="#" class="btn">D.</a>
-        <a href="#" class="btn">D kat.</a>
-        <a href="#" class="btn">D kat.</a>
+        <a href="#" class="btn">Vállalkozás</a>
+        <a href="#" class="btn">Webfejlesztés</a>
+        <a href="#" class="btn">Gondolatébresztő</a>
+        <a href="#" class="btn">Egyéb</a>
       </section>
 
       <footer>
@@ -90,7 +95,7 @@
     <!-- A bal oldali "vezérlő" lezárása -->
 
     <!-- Maga a lényegi tartalom -->
-    <article>
+    <article class="index">
       <ul>
         <% blogs.forEach(function(blog) { %> 
         <li class="post-preview">

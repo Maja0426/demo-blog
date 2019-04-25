@@ -6,10 +6,15 @@
   box-sizing: border-box;
 }
 
+
 html {
   font: normal 18px 'Roboto',
     sans-serif;
   scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
 }
 
 body {
@@ -17,22 +22,25 @@ body {
 }
 
 /* Dark theme */
-body.dark {
+/* body.dark {
   background-color: #1e2227;
   color: #fff;
 }
 
 body.dark section a,
+body.dark button.btn,
 body.dark section p {
   color: #fff;
 }
 
 body.dark section a:hover {
-  color: #ffc107;
+  color: #fff;
   border-color: #ffc107;
 }
 
-body.dark section.categories a.btn {
+body.dark section a.btn,
+body.dark button.btn,
+a.new-btn {
   box-shadow: 0 3px 0 #fff;
 }
 
@@ -45,7 +53,7 @@ body.dark .social ul li i:hover {
 }
 
 body.dark article ul li {
-  border-color: #acaaaa;
+  border-color: #524d4d;
   color: #e9e9e9;
 }
 
@@ -71,9 +79,13 @@ body.dark .back-to-top:hover {
   color: #000 !important;
 }
 
+body.dark form.form-main input.input-image {
+  color: #000;
+} */
+
 /* Dark theme end */
 
-a {
+body section a {
   text-decoration: none;
   color: #000;
 }
@@ -178,18 +190,18 @@ section p.about-me {
 img {
   width: 100%;
   border-radius: 10px;
-  border: 3px solid #e9e9e9;
+  border: 3px solid rgb(240, 220, 220);
   margin-bottom: 30px;
   filter: grayscale(100%);
 }
 
 /* categories */
-section.categories a {
-  opacity: .75;
+section a {
+  opacity: .9;
   color: #fff;
 }
 
-section.categories a:hover {
+section a:hover {
   opacity: 1;
 }
 
@@ -198,14 +210,20 @@ section.categories {
   flex-wrap: wrap;
 }
 
-section.categories a.btn {
-  /* border-radius: 4px; */
-  background-color: #1736e4;
+section a.btn,
+ button.btn,
+ a.new-btn {
+  border: none;
+  background-color: #5c74fd;
   padding: 10px 20px;
   margin: 6px 2px;
   font-size: 14px;
   font-weight: bold;
   box-shadow: 0 3px 0 #000;
+}
+
+button.btn:hover {
+  cursor: pointer;
 }
 
 /* color switcher */
@@ -216,8 +234,8 @@ section.color-switcher a {
 }
 
 section.color-switcher a:hover {
-  color: #1736e4;
-  border-bottom: 1px dashed #1736e4;
+  color: #5c74fd;
+  border-bottom: 1px dashed #5c74fd;
   cursor: pointer;
 }
 
@@ -231,8 +249,8 @@ footer .copyright span {
 }
 
 footer .copyright a:hover {
-  color: #1736e4;
-  border-bottom: 1px dashed #1736e4;
+  color: #5c74fd;
+  border-bottom: 1px dashed #5c74fd;
 }
 
 /* social buttons */
@@ -267,6 +285,13 @@ article ul li {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px dotted #222;
+}
+
+/* under 800px width content the first */
+@media (max-width: 800px) {
+  article {
+    order: -1;
+  }
 }
 
 article h3 {
@@ -347,6 +372,7 @@ article ul li .post-controller a:hover {
 }
 
 article ul li .post-controller a.btn {
+  text-decoration: none;
   border-radius: 2px;
   background-color: #ffc107;
   padding: 10px 12px;
@@ -354,6 +380,47 @@ article ul li .post-controller a.btn {
   font-weight: bold;
 }
 
+/* FORM SECTION */
+
+form.form-main {
+  flex-direction: column;
+  max-width: 950px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+/* under 800px width content the first */
+@media (max-width: 800px) {
+  aside {
+    order: 1;
+  }
+}
+
+form.form-main input,
+form.form-main select,
+form.form-main textarea {
+  padding: 12px;
+  font-size: 18px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+form h6 {
+  font-size: 20px;
+}
+
+form.form-main input.input-image {
+  background-color: #e9e9e9;
+}
+
+section.delete-form {
+  display: flex;
+  flex-direction: row;
+}
+
+section.delete-form a, section.delete-form form button {
+  display: inline-block;
+}
 /*=========== Floating Button ===============*/
 
 .back-to-top {
