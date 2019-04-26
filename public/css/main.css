@@ -44,6 +44,12 @@ body.dark section a:hover {
   border-color: #ffc107;
 }
 
+body.dark section.copyright a:hover,
+body.dark section.color-switcher a:hover {
+  color: #ffc107;
+  border-color: #ffc107;
+}
+
 body.dark section a.btn,
 body.dark button.btn,
 a.new-btn {

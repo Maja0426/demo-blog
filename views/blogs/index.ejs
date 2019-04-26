@@ -52,9 +52,9 @@
       </section>
 
       <section class="color-switcher">
-        <i class="fas fa-adjust"></i> <a href="#"
+        <i class="fas fa-adjust"></i> <a href="#!"
           onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
-          title="Dark/light id=" switch"> Világos / Sötét</a>
+          title="Dark/light id="switch"> Világos / Sötét</a>
       </section>
 
       <% if(currentUser && currentUser.isAdmin) { %>
@@ -171,7 +171,12 @@
   </script>
 
   <!-- theme switch (light/dark) -->
-
+  <script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+  ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark'):
+  document.querySelector('body').classList.remove('dark')
+  })
+  </script>
 </body>
 
 </html>
