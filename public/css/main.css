@@ -301,7 +301,7 @@ article {
   flex-basis: 950px;
 }
 
-article ul li {
+article li, article.show-post {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px dotted #222;
@@ -325,28 +325,30 @@ article h3 {
   flex-direction: row;
 } */
 
-article ul li.post-preview p {
+article li.post-preview p,
+article span.post-description {
   font-size: 20px;
   padding-bottom: 10px;
   line-height: 1.2;
 }
 
-article ul li.post-preview {
-  padding: 10px 20px;
+article li.post-preview {
+  padding: 10px;
   color: #000;
 }
 
-article ul li.post-preview a {
+article li.post-preview a {
   color: #000;
   
 }
 
-article ul li.post-preview:hover {
+article li.post-preview:hover {
   background-color: #e9e9e9;
 }
 
 /* Article post-controller, date and category badge */
-article ul li .post-controller {
+article li .post-controller,
+article.show-post {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -357,7 +359,11 @@ article ul li .post-controller {
   min-width: 150px;
 }
 
-article ul li .post-controller p {
+article.show-post {
+  justify-content: flex-start;
+}
+
+article > li .post-controller p {
   align-self: center;
   font-size: 14px;
 }
@@ -381,16 +387,16 @@ article ul li .post-controller p {
   }
 }
 
-article ul li .post-controller a {
+article li .post-controller a {
   opacity: .8;
   color: #000;
 }
 
-article ul li .post-controller a:hover {
+article li .post-controller a:hover {
   opacity: 1;
 }
 
-article ul li .post-controller a.btn {
+article li .post-controller a.btn {
   text-decoration: none;
   border-radius: 2px;
   background-color: #ffc107;
@@ -473,7 +479,7 @@ a.back-to-top {
 }
 
 .back-to-top.show {
-  opacity: .6;
+  opacity: .7;
 }
 
 @media (prefers-color-scheme: dark) {
