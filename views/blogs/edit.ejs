@@ -19,7 +19,7 @@
   <!-- Fejléc és kereső szekció, az oldal főcíme és a fixen az oldal tetején maradó keresőmező -->
   <section class="main-title">
     <header>
-      <h1>SMPL CREATE NEW POST</h1>
+      <h1>EdIt NeW mNmL pOsT</h1>
     </header>
   </section>
   <!-- Fejléc és kereső szekció lezárása -->
@@ -31,10 +31,14 @@
     <aside>
 
       <section>
-        <p class="about-me">Célom a Nógrád megyei mikro -és kisvállalkozásoknak történő segítségnyújtás a digitális
-          jelenlét biztosításával. Azon
-          tévhitek eloszlatása, hogy a kisvállalkozások számára egy modern, gyors, biztonságos üzleti weboldal nem
-          megfizethető.
+        <p class="icons">
+          <i class="fas fa-code"></i> <i class="fab fa-dev"></i>
+          <i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i> <i class="fab fa-js"></i> <i
+            class="fab fa-node-js"></i> <i class="fas fa-database"></i> <i class="fab fa-git-square"></i> <i
+            class="fab fa-github"></i>
+        </p>
+        <p class="about-me">„Szeme villám! haja libeg! Hármas kört reá elébb, s csukja szemünk szent borzalom, mert
+          mézen élt, mézharmaton, s itta a Mennyország tejét!”
         </p>
         <figure class="profile-photo">
           <img src="/img/DSC_0201.jpg" alt="Maja profile photo">
@@ -45,10 +49,17 @@
         </div>
       </section>
 
+      <% if(currentUser && currentUser.isAdmin) { %>
+      <section>
+        <a class="btn new-btn" href="/blogs/new" role="button">Új post</a>
+        <a class="btn new-btn" href="/logout" role="button">Logout</a>
+      </section>
+      <% } %>
+
       <section class="color-switcher">
         <i class="fas fa-adjust"></i> <a href="#!"
           onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
-          title="Dark/light id="switch"> Világos / Sötét</a>
+          title="Dark/light id="switch"> Világos|Sötét</a>
       </section>
 
       <section class="categories">
@@ -88,13 +99,9 @@
         <input class="form-control" type="text" name="blogs[title]" placeholder="hirdetés címe, max. 70 karakter"
           maxlength="170" required autofocus value="<%=blog.title%>">
 
-
-
         <input class="form-control" type="text" name="blogs[subTitle]" placeholder="alcím" maxlength="170" required
           value="<%=blog.subTitle%>"
           >
-
-
 
         <h6>Kategória:</h6>
 
@@ -110,7 +117,6 @@
           <input type="file" id="image" class="input-image"
             value="https://res.cloudinary.com/maja0426/image/upload/v1550587836/Aprohirdetes/NoImageFound.png"
             name="image" accept="image/*"></label>
-
 
         <textarea id="summernote" rows="15" class="form-control" placeholder="blog" name="blogs[description]"
           required><%= blog.description %></textarea>

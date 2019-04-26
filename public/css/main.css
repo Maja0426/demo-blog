@@ -26,6 +26,10 @@ body {
   padding: 20px 0 40px;
 }
 
+p.icons {
+  font-size: 24px;
+}
+
 /* Dark theme */
 body.dark {
   background-color: #1e2227;
@@ -165,7 +169,7 @@ section.main-title .searchbar {
 .searchbar form input {
   padding: 12px;
   font-size: 18px;
-  width: 340px;
+  width: 550px;
 }
 
 /* .searchbar form button {
@@ -213,6 +217,14 @@ img {
   margin-bottom: 30px;
   /* filter: grayscale(100%); */
 }
+
+/* figcaption {
+  margin-bottom: 30px;
+  background: #1e2227;
+  color: #fff;
+  margin-top: -6px;
+  padding: 0 5px;
+} */
 
 /* categories */
 section a {
@@ -325,10 +337,15 @@ article.show-post li {
 
 article h3 {
   font-weight: bold;
-  font-size: 45px;
+  font-size: 60px;
   padding: 0 0 30px;
 }
 
+.show-post .post-preview header p {
+  margin-top: -30px;
+  margin-bottom: 30px;
+  opacity: .6;
+}
 /* article ul li.post-preview {
   flex-direction: row;
 } */

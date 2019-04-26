@@ -18,7 +18,7 @@
   <!-- Fejléc és kereső szekció, az oldal főcíme és a fixen az oldal tetején maradó keresőmező -->
   <section class="main-title">
     <header>
-      <h1>MNML BLOG</h1>
+      <h1>MaJa mNml bLoG</h1>
     </header>
 
     <div class="searchbar">
@@ -37,10 +37,14 @@
     <aside>
 
       <section>
-        <p class="about-me">Célom a Nógrád megyei mikro -és kisvállalkozásoknak történő segítségnyújtás a digitális
-          jelenlét biztosításával. Azon
-          tévhitek eloszlatása, hogy a kisvállalkozások számára egy modern, gyors, biztonságos üzleti weboldal nem
-          megfizethető.
+        <p class="icons">
+          <i class="fas fa-code"></i> <i class="fab fa-dev"></i>
+          <i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i> <i class="fab fa-js"></i> <i
+            class="fab fa-node-js"></i> <i class="fas fa-database"></i> <i class="fab fa-git-square"></i> <i
+            class="fab fa-github"></i>
+        </p>
+        <p class="about-me">„Szeme villám! haja libeg! Hármas kört reá elébb, s csukja szemünk szent borzalom, mert
+          mézen élt, mézharmaton, s itta a Mennyország tejét!”
         </p>
         <figure class="profile-photo">
           <img src="/img/DSC_0201.jpg" alt="Maja profile photo">
@@ -51,18 +55,18 @@
         </div>
       </section>
 
-      <section class="color-switcher">
-        <i class="fas fa-adjust"></i> <a href="#!"
-          onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
-          title="Dark/light id=" switch"> Világos / Sötét</a>
-      </section>
-
       <% if(currentUser && currentUser.isAdmin) { %>
       <section>
         <a class="btn new-btn" href="/blogs/new" role="button">Új post</a>
         <a class="btn new-btn" href="/logout" role="button">Logout</a>
       </section>
       <% } %>
+
+      <section class="color-switcher">
+        <i class="fas fa-adjust"></i> <a href="#!"
+          onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
+          title="Dark/light id=" switch"> Világos|Sötét</a>
+      </section>
 
       <section class="categories">
         <a href="#" class="btn">Vállalkozás</a>
@@ -101,10 +105,11 @@
           <header>
             <% if (blog.image !== 'https://res.cloudinary.com/maja0426/image/upload/v1552336982/Aprohirdetes/no-image-icon-11.png') { %>
             <figure>
-              <img src="<%= blog.image %>" alt="<%= blog.image %> borítókép">
+              <img src="<%= blog.image %>" alt="<%= blog.title %> borítókép">
             </figure>
             <% } %>
             <h3 class="post-title"><%= blog.title %></h3>
+            <p><small>Közzétéve: <%= moment(blog.createdAt).format('YYYY. MM. D. dddd') %></small></p>
           </header>
             <span class="post-description"><%- blog.description %></span>
         </section>
