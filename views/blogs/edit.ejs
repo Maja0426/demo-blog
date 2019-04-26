@@ -99,11 +99,11 @@
         <h6>Kategória:</h6>
 
         <select class="custom-select font-weight-bold" name="blogs[category]" required>
+          <option value="<%= blog.category %>" selected><%= blog.category %></option>
           <option value="Vállalkozás">Vállalkozás</option>
-          <option value="Vállalkozás"><%= blog.category %></option>
           <option value="Webfejlesztés">Webfejlesztés</option>
           <option value="Gondolatébresztő">Gondolatébresztő</option>
-          <option value="Egyéb" selected>Egyéb</option>
+          <option value="Egyéb">Egyéb</option>
         </select>
 
         <label for="image"><i class="fas fa-image"></i> Képfeltöltés

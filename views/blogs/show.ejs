@@ -18,7 +18,7 @@
   <!-- Fejléc és kereső szekció, az oldal főcíme és a fixen az oldal tetején maradó keresőmező -->
   <section class="main-title">
     <header>
-      <h1>SMPL</h1>
+      <h1>MNML BLOG</h1>
     </header>
 
     <div class="searchbar">
@@ -99,6 +99,11 @@
     
         <section class="post-preview">
           <header>
+            <% if (blog.image !== 'https://res.cloudinary.com/maja0426/image/upload/v1552336982/Aprohirdetes/no-image-icon-11.png') { %>
+            <figure>
+              <img src="<%= blog.image %>" alt="<%= blog.image %> borítókép">
+            </figure>
+            <% } %>
             <h3 class="post-title"><%= blog.title %></h3>
           </header>
             <span class="post-description"><%- blog.description %></span>

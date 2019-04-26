@@ -165,7 +165,7 @@ section.main-title .searchbar {
 .searchbar form input {
   padding: 12px;
   font-size: 18px;
-  width: 350px;
+  width: 340px;
 }
 
 /* .searchbar form button {
@@ -208,8 +208,8 @@ section p.about-me {
 
 img {
   width: 100%;
-  /* border-radius: 50%; */
-  border: 3px solid rgb(240, 220, 220);
+  border-radius: 5px;
+  /* border: 3px solid rgb(240, 220, 220); */
   margin-bottom: 30px;
   /* filter: grayscale(100%); */
 }
@@ -314,10 +314,10 @@ article.show-post li {
 /* under 800px width content the first */
 @media (max-width: 800px) {
   article {
-    flex-basis: 100px;
+    flex-basis: 20px;
     order: -1;
   }
-  article header h3 {
+  article header h3, article.index h3 {
     font-size: 35px;
     font-weight: bold;
   }
@@ -370,7 +370,7 @@ article.show-post {
 
 article.show-post {
   justify-content: flex-start;
-  padding: 0;
+  margin: 0 10px;
 }
 
 article > li .post-controller p {
