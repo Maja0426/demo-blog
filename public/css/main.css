@@ -201,6 +201,12 @@ section p.about-me {
   line-height: 1.5;
 }
 
+@media (max-width: 800px) {
+section p.about-me {
+  margin-top: 25px;
+}
+}
+
 img {
   width: 100%;
   /* border-radius: 50%; */
@@ -304,6 +310,7 @@ article ul li {
 /* under 800px width content the first */
 @media (max-width: 800px) {
   article {
+    flex-basis: 100px;
     order: -1;
   }
 }
