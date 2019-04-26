@@ -307,6 +307,11 @@ article li, article.show-post {
   border-bottom: 1px dotted #222;
 }
 
+article.show-post li {
+  border-bottom: none;
+  
+}
+
 /* under 800px width content the first */
 @media (max-width: 800px) {
   article {
@@ -331,6 +336,7 @@ article span.post-description {
   padding-bottom: 10px;
   line-height: 1.2;
 }
+
 
 article li.post-preview {
   padding: 10px;
@@ -385,6 +391,7 @@ article > li .post-controller p {
     margin-right: 10px;
     order: -1;
   }
+
 }
 
 article li .post-controller a {

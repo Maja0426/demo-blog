@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css?family=Rokkitt|Ubuntu+Mono" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">
 </head>
 
@@ -111,7 +112,7 @@
             name="image" accept="image/*"></label>
 
 
-        <textarea rows="15" class="form-control" placeholder="blog" name="blogs[description]"
+        <textarea id="summernote" rows="15" class="form-control" placeholder="blog" name="blogs[description]"
           required><%= blog.description %></textarea>
 
          <% if(currentUser && currentUser.isAdmin) { %>
@@ -195,6 +196,16 @@
      ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark'):
        document.querySelector('body').classList.remove('dark')
    })
+ </script>
+
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.js"></script>
+ <script src="/js/summernote-hu-HU.js"></script>
+ <script>
+   $('#summernote').summernote({
+     height: 600,
+     lang: 'hu-HU'
+   });
  </script>
 </body>
 
