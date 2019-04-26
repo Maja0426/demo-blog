@@ -7,13 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Blog-ma</title>
   <% moment.locale("hu") %>
-  <link href="https://fonts.googleapis.com/css?family=Antic+Slab|Roboto|Raleway" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Rokkitt|Ubuntu+Mono" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
 </head>
 
-<body id="page-top" class="">
+<body id="page-top">
 
   <!-- Fejléc és kereső szekció, az oldal főcíme és a fixen az oldal tetején maradó keresőmező -->
   <section class="main-title">
@@ -50,12 +50,12 @@
             Follow @SmartBeeWeb</a>
         </div>
       </section>
-<!-- 
+
       <section class="color-switcher">
         <i class="fas fa-adjust"></i> <a href="#!"
           onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
           title="Dark/light id=" switch"> Világos / Sötét</a>
-      </section> -->
+      </section>
 
       <% if(currentUser && currentUser.isAdmin) { %>
       <section>
@@ -97,12 +97,12 @@
     <!-- Maga a lényegi tartalom -->
     <article class="show-post">
       <ul>
-        <li class="post-preview">
-          <a href="#!">
+        <section class="post-preview">
+          <header>
             <h3 class="post-title"><%= blog.title %></h3>
+          </header>
             <span class="post-description"><%- blog.description %></span>
-          </a>
-        </li>
+        </section>
         <section class="delete-form">
           <% if(currentUser && currentUser.isAdmin) { %>
           <% if (blog.description) { %>
@@ -174,17 +174,6 @@
     });
   </script>
 
-  <!-- theme switch (light/dark) -->
-  <!-- <script>
-    localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark');
-    localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document
-      .querySelector('body').classList.remove('dark')
-
-    document.addEventListener('DOMContentLoaded', (event) => {
-      ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark'):
-        document.querySelector('body').classList.remove('dark')
-    })
-  </script> -->
 </body>
 
 </html>

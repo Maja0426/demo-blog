@@ -8,9 +8,15 @@
 
 
 html {
-  font: normal 18px 'Roboto',
-    sans-serif;
+  font: normal 20px 'Ubuntu Mono',
+  monospace;
   scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+  font-family: 'Rokkitt',
+  serif;
+
 }
 
 a {
@@ -22,7 +28,7 @@ body {
 }
 
 /* Dark theme */
-/* body.dark {
+body.dark {
   background-color: #1e2227;
   color: #fff;
 }
@@ -69,6 +75,10 @@ body.dark article ul li.post-preview:hover {
   background-color: #2d3136;
 }
 
+body.dark article.show-post .post-preview span {
+  color: #FFFFFF;
+}
+
 body.dark .back-to-top {
   background: #fff;
   color: #000;
@@ -81,7 +91,7 @@ body.dark .back-to-top:hover {
 
 body.dark form.form-main input.input-image {
   color: #000;
-} */
+}
 
 /* Dark theme end */
 
@@ -123,8 +133,6 @@ section.main-title {
 }
 
 section.main-title h1 {
-  font-family: 'Raleway',
-    sans-serif;
   font-size: 80px;
   margin-bottom: 30px;
 }
@@ -180,7 +188,7 @@ aside {
 
 /* about me */
 section p.about-me {
-  font-size: 14px;
+  font-size: 16px;
   text-align: justify;
   /* font-weight: bold; */
   margin-bottom: 30px;
@@ -189,10 +197,10 @@ section p.about-me {
 
 img {
   width: 100%;
-  border-radius: 10px;
+  /* border-radius: 50%; */
   border: 3px solid rgb(240, 220, 220);
   margin-bottom: 30px;
-  filter: grayscale(100%);
+  /* filter: grayscale(100%); */
 }
 
 /* categories */
@@ -230,7 +238,7 @@ button.btn:hover {
 section.color-switcher a {
   border: none;
   border-bottom: 1px solid transparent;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 section.color-switcher a:hover {
@@ -241,7 +249,7 @@ section.color-switcher a:hover {
 
 footer .copyright {
   color: #000;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 footer .copyright span {
@@ -295,11 +303,9 @@ article ul li {
 }
 
 article h3 {
-  font-family: 'Antic Slab',
-    serif;
   font-weight: 700;
-  font-size: 30px;
-  padding: 10px 0 30px;
+  font-size: 45px;
+  padding: 0 0 30px;
 }
 
 /* article ul li.post-preview {
@@ -307,9 +313,9 @@ article h3 {
 } */
 
 article ul li.post-preview p {
-  font-size: 18px;
+  font-size: 20px;
   padding-bottom: 10px;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 article ul li.post-preview {
