@@ -30,4 +30,5 @@ middlewareObj.checkAllBlogPosts = function (req, res, next) {
   })
 }
 
+
 module.exports = middlewareObj;

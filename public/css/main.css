@@ -270,7 +270,7 @@ section a.btn,
   background-color: #5c74fd;
   padding: 10px 20px;
   margin: 6px 2px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   box-shadow: 0 3px 0 #000;
 }
@@ -553,19 +553,26 @@ body .back-to-top img {
 
 /* CATEGORY COLORS */
 .bg-Gondolatébresztő {
-  background-color: red !important;
+  background-color: #004777 !important;
   color: #fff !important;
 }
 
 .bg-Egyéb {
-  background-color: #ffc107 !important;
+  background-color: #FF7700 !important;
   color: #000 !important;
 }
 
 .bg-Vállalkozás {
-  background-color: green !important;
+  background-color: #00AFB5 !important;
+  color: #000;
 }
 
 .bg-Webfejlesztés {
-  background-color: #5c74fd !important;
+  background-color: #EFD28D !important;
+  color: #000 !important;
+}
+
+.bg-Súgó {
+  background-color: #870058 !important;
+  color: #FFFFFF;
 }
