@@ -71,10 +71,10 @@
       </section>
 
       <section class="categories">
-        <a href="blogs/category/Vállalkozás" class="btn">Vállalkozás</a>
-        <a href="blogs/category/Webfejlesztés" class="btn">Webfejlesztés</a>
-        <a href="blogs/category/Gondolatébresztő" class="btn">Gondolatébresztő</a>
-        <a href="blogs/category/Egyéb" class="btn">Egyéb</a>
+        <a href="blogs/category/Vállalkozás" class="btn bg-Vállalkozás">Vállalkozás</a>
+        <a href="blogs/category/Webfejlesztés" class="btn bg-Webfejlesztés">Webfejlesztés</a>
+        <a href="blogs/category/Gondolatébresztő" class="btn bg-Gondolatébresztő">Gondolatébresztő</a>
+        <a href="blogs/category/Egyéb" class="btn bg-Egyéb">Egyéb</a>
       </section>
 
       <footer>
@@ -105,7 +105,7 @@
           </a>
           <div class="post-controller">
             <p>📅 <%= moment(blog.createdAt).format('YYYY. MM. D.') %></p>
-            <a href="blogs/category/<%= blog.category %>" class="btn btn-md" role="button"><%= blog.category %></a>
+            <a href="/blogs/category/<%= blog.category %>" class="btn bg-<%= blog.category %>" role="button"><%= blog.category %></a>
           </div>
         </li>
         <% }) %>

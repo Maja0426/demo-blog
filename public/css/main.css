@@ -536,6 +536,7 @@ body .back-to-top img {
   opacity: .8;
 }
 
+/* COLORS SCHEME (SOME BROWSERS) */
 @media (prefers-color-scheme: dark) {
   body {
     background-color: black;
@@ -548,4 +549,23 @@ body .back-to-top img {
     background-color: white;
     color: black;
   }
+}
+
+/* CATEGORY COLORS */
+.bg-Gondolatébresztő {
+  background-color: red !important;
+  color: #fff !important;
+}
+
+.bg-Egyéb {
+  background-color: #ffc107 !important;
+  color: #000 !important;
+}
+
+.bg-Vállalkozás {
+  background-color: green !important;
+}
+
+.bg-Webfejlesztés {
+  background-color: #5c74fd !important;
 }
