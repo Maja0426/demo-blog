@@ -8,8 +8,6 @@
   <title>Blog-ma</title>
   <% moment.locale("hu") %>
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">
 </head>
@@ -30,13 +28,22 @@
     <!-- A bal oldali "vezérlő, segítő" panel. Bio, social buttons, kategóriák, copyright -->
     <aside>
 
+      <section class="home-back">
+        🐝 <a href="/">Kezdőlap</a>
+      </section>
+
       <section>
-        <p class="icons">
-          <i class="fas fa-code"></i> <i class="fab fa-dev"></i>
-          <i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i> <i class="fab fa-js"></i> <i
-            class="fab fa-node-js"></i> <i class="fas fa-database"></i> <i class="fab fa-git-square"></i> <i
-            class="fab fa-github"></i>
-        </p>
+        <header class="icons">
+          <img src="/img/awesome/code.svg" alt="kód ikon">
+          <img src="/img/awesome/dev.svg" alt="fejlesztés ikon">
+          <img src="/img/awesome/html5.svg" alt="html5 ikon">
+          <img src="/img/awesome/css3-alt.svg" alt="css3 ikon">
+          <img src="/img/awesome/js.svg" alt="javascript ikon">
+          <img src="/img/awesome/node-js.svg" alt="node.js ikon">
+          <img src="/img/awesome/database.svg" alt="adatbázis ikon">
+          <img src="/img/awesome/git.svg" alt="git ikon">
+          <img src="/img/awesome/github.svg" alt="github ikon">
+        </header>
         <p class="about-me">„Szeme villám! haja libeg! Hármas kört reá elébb, s csukja szemünk szent borzalom, mert
           mézen élt, mézharmaton, s itta a Mennyország tejét!”
         </p>
@@ -71,16 +78,10 @@
 
       <footer>
         <section class="social">
-          <ul>
-            <li><a href="https://twitter.com/SmartBeeWeb" target="_blank"><i
-                  class="fab fa-twitter-square fa-2x"></i></a></li>
-            <li><a href="https://www.facebook.com/smartbeeweb" target="_blank"><i
-                  class="fab fa-facebook-square fa-2x"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/majoros-tamas/" target="_blank"><i
-                  class="fab fa-linkedin fa-2x"></i></a></li>
-            <li><a href="https://www.instagram.com/smartbeeweboldalak/" target="_blank"><i
-                  class="fab fa-instagram fa-2x"></i></a></li>
-          </ul>
+          <a href="https://twitter.com/SmartBeeWeb" target="_blank">twitter</a>
+          <a href="https://www.facebook.com/smartbeeweb" target="_blank">facebook</a>
+          <a href="https://www.linkedin.com/in/majoros-tamas/" target="_blank">linkedin</a>
+          <a href="https://www.instagram.com/smartbeeweboldalak/" target="_blank">instagram</a>
         </section>
         <section class="copyright">
           <p><i class="far fa-copyright"></i> 2019 <a href="https://smartbeeweb.hu" target="_blank">Smart-Bee Web</a>
@@ -141,7 +142,7 @@
   </main>
   <!-- A "Main" szekció lezárása -->
 
-  <a href="#page-top" id="back-to-top" class="back-to-top"><i class="fas fa-chevron-up fa-2x"></i></a>
+  <a href="#page-top" id="back-to-top" class="back-to-top">⬆️</a>
 
   <!-- Twitter follower script -->
   <script>

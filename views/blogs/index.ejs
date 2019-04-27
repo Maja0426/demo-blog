@@ -8,8 +8,6 @@
   <title>Blog-ma</title>
   <% moment.locale("hu") %>
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
 </head>
 
@@ -37,12 +35,17 @@
     <aside>
 
       <section>
-        <p class="icons">
-        <i class="fas fa-code"></i> <i class="fab fa-dev"></i> 
-        <i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i> <i class="fab fa-js"></i> <i
-          class="fab fa-node-js"></i> <i class="fas fa-database"></i> <i
-            class="fab fa-git-square"></i> <i class="fab fa-github"></i>
-        </p>
+        <header class="icons">
+          <img src="/img/awesome/code.svg" alt="kód ikon">
+          <img src="/img/awesome/dev.svg" alt="fejlesztés ikon">
+          <img src="/img/awesome/html5.svg" alt="html5 ikon">
+          <img src="/img/awesome/css3-alt.svg" alt="css3 ikon">
+          <img src="/img/awesome/js.svg" alt="javascript ikon">
+          <img src="/img/awesome/node-js.svg" alt="node.js ikon">
+          <img src="/img/awesome/database.svg" alt="adatbázis ikon">
+          <img src="/img/awesome/git.svg" alt="git ikon">
+          <img src="/img/awesome/github.svg" alt="github ikon">
+        </header>
         <p class="about-me">„Szeme villám! haja libeg! Hármas kört reá elébb, s csukja szemünk szent borzalom, mert mézen élt, mézharmaton, s itta a Mennyország tejét!”
         </p>
         <figure class="profile-photo">
@@ -62,9 +65,9 @@
       <% } %>
 
       <section class="color-switcher">
-        <i class="fas fa-adjust"></i> <a href="#!"
+         🌓 <a href="#!"
           onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
-          title="Dark/light id="switch"> Világos|Sötét</a>
+          title="Világos/sötét mód" id="switch">Világos|Sötét</a>
       </section>
 
       <section class="categories">
@@ -76,19 +79,13 @@
 
       <footer>
         <section class="social">
-          <ul>
-            <li><a href="https://twitter.com/SmartBeeWeb" target="_blank"><i
-                  class="fab fa-twitter-square fa-2x"></i></a></li>
-            <li><a href="https://www.facebook.com/smartbeeweb" target="_blank"><i
-                  class="fab fa-facebook-square fa-2x"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/majoros-tamas/" target="_blank"><i
-                  class="fab fa-linkedin fa-2x"></i></a></li>
-            <li><a href="https://www.instagram.com/smartbeeweboldalak/" target="_blank"><i
-                  class="fab fa-instagram fa-2x"></i></a></li>
-          </ul>
+          <a href="https://twitter.com/SmartBeeWeb" target="_blank">twitter</a>
+          <a href="https://www.facebook.com/smartbeeweb" target="_blank">facebook</a>
+          <a href="https://www.linkedin.com/in/majoros-tamas/" target="_blank">linkedin</a>
+          <a href="https://www.instagram.com/smartbeeweboldalak/" target="_blank">instagram</a>
         </section>
         <section class="copyright">
-          <p><i class="far fa-copyright"></i> 2019 <a href="https://smartbeeweb.hu" target="_blank">Smart-Bee Web</a>
+          <p>©️ 2019 <a href="https://smartbeeweb.hu" target="_blank">Smart-Bee Web</a>
           </p>
           <br>
           <p>Inspired by <a href="https://flaviocopes.com" target="_blank">Flavio Copes</a>.<span> 🙏</span></p>
@@ -107,8 +104,8 @@
             <p class="post-description"><%= blog.subTitle %></p>
           </a>
           <div class="post-controller">
-            <p><%= moment(blog.createdAt).format('YYYY. MM. D. dddd') %></p>
-            <a href="#!" class="btn btn-md"><%= blog.category %></a>
+            <p>📅 <%= moment(blog.createdAt).format('YYYY. MM. D.') %></p>
+            <a href="#!" class="btn btn-md" role="button"><%= blog.category %></a>
           </div>
         </li>
         <% }) %>
@@ -119,7 +116,7 @@
   </main>
   <!-- A "Main" szekció lezárása -->
 
-  <a href="#page-top" id="back-to-top" class="back-to-top"><i class="fas fa-chevron-up fa-2x"></i></a>
+  <a href="#page-top" id="back-to-top" class="back-to-top">⬆️</a>
 
   <!-- Twitter follower script -->
   <script>
