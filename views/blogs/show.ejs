@@ -111,8 +111,8 @@
             </figure>
             <% } %>
             <h3 class="post-title"><%= blog.title %></h3>
-            <p><small>Közzétéve: <%= moment(blog.createdAt).format('YYYY. MM. D. dddd') %>
-                <span>#<%= blog.category %></span></small></p>
+            <p><small class="date">Közzétéve: <%= moment(blog.createdAt).format('YYYY. MM. D. dddd') %>
+                </small><span class="cat bg-<%= blog.category %>"><small><%= blog.category %></small></span></p>
           </header>
             <span class="post-description"><%- blog.description %></span>
         </section>

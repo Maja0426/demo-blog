@@ -369,8 +369,13 @@ article h3 {
   margin-bottom: 30px;
 }
 
-.show-post .post-preview header p small {
+.show-post .post-preview header p small.date {
   opacity: .6;
+}
+
+.show-post .post-preview header p span.cat {
+  padding: 0 4px;
+  border-radius: 5px;
 }
 
 /* article ul li.post-preview {
@@ -564,7 +569,7 @@ body .back-to-top img {
 
 .bg-Vállalkozás {
   background-color: #00AFB5 !important;
-  color: #000;
+  color: #000 !important;
 }
 
 .bg-Webfejlesztés {
