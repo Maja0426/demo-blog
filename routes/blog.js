@@ -83,7 +83,7 @@ router.get('/', function (req, res) {
   }
 });
 
-// BADGES - CATEGORY (TYPE)
+// CATEGORIES - CATEGORY (TYPE)
 router.get('/category/:id', function (req, res) {
   var perPage = 16;
   var pageQuery = parseInt(req.query.page);
@@ -100,7 +100,7 @@ router.get('/category/:id', function (req, res) {
       if (err) {
         console.log(err);
       } else {
-        res.render('blogs/indexbadges', {
+        res.render('blogs/catindex', {
           blogs: allBlogs,
           current: pageNumber,
           category: req.params.id,

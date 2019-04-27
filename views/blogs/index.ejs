@@ -20,8 +20,8 @@
     </header>
 
     <div class="searchbar">
-      <form action="#" method="GET">
-        <input type="search" name="searchbar" id="searchbar" placeholder="Keresés">
+      <form action="/blogs" method="GET">
+        <input type="search" name="search" id="searchbar" placeholder="Keresés">
         <!-- <button type="submit">Na nézzük...</button> -->
       </form>
     </div>
@@ -71,10 +71,10 @@
       </section>
 
       <section class="categories">
-        <a href="#" class="btn">Vállalkozás</a>
-        <a href="#" class="btn">Webfejlesztés</a>
-        <a href="#" class="btn">Gondolatébresztő</a>
-        <a href="#" class="btn">Egyéb</a>
+        <a href="blogs/category/Vállalkozás" class="btn">Vállalkozás</a>
+        <a href="blogs/category/Webfejlesztés" class="btn">Webfejlesztés</a>
+        <a href="blogs/category/Gondolatébresztő" class="btn">Gondolatébresztő</a>
+        <a href="blogs/category/Egyéb" class="btn">Egyéb</a>
       </section>
 
       <footer>
@@ -105,7 +105,7 @@
           </a>
           <div class="post-controller">
             <p>📅 <%= moment(blog.createdAt).format('YYYY. MM. D.') %></p>
-            <a href="#!" class="btn btn-md" role="button"><%= blog.category %></a>
+            <a href="blogs/category/<%= blog.category %>" class="btn btn-md" role="button"><%= blog.category %></a>
           </div>
         </li>
         <% }) %>

@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Blog-ma</title>
   <% moment.locale("hu") %>
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">
 </head>
 
@@ -76,11 +76,11 @@
       </section>
 
       <section class="categories">
-        <a href="category/Vállalkozás" class="btn">Vállalkozás</a>
-        <a href="category/Webfejlesztés" class="btn">Webfejlesztés</a>
-        <a href="category/Gondolatébresztő" class="btn">Gondolatébresztő</a>
-        <a href="category/Egyéb" class="btn">Egyéb</a>
-      </se
+        <a href="/blogs/category/Vállalkozás" class="btn">Vállalkozás</a>
+        <a href="/blogs/category/Webfejlesztés" class="btn">Webfejlesztés</a>
+        <a href="/blogs/category/Gondolatébresztő" class="btn">Gondolatébresztő</a>
+        <a href="/blogs/category/Egyéb" class="btn">Egyéb</a>
+      </section>
 
       <footer>
         <section class="social">
@@ -100,35 +100,24 @@
     <!-- A bal oldali "vezérlő" lezárása -->
 
     <!-- Maga a lényegi tartalom -->
-    <article class="show-post">
-    
-        <section class="post-preview">
-          <header>
-            <% if (blog.image !== 'https://res.cloudinary.com/maja0426/image/upload/v1552336982/Aprohirdetes/no-image-icon-11.png') { %>
-            <figure>
-              <img src="<%= blog.image %>" alt="<%= blog.title %> borítókép">
-            </figure>
-            <% } %>
+    <article class="index">
+      <ul>
+        <% blogs.forEach(function(blog) { %>
+        <li class="post-preview">
+          <a href="/blogs/<%= blog.id %>">
             <h3 class="post-title"><%= blog.title %></h3>
-            <p><small>Közzétéve: <%= moment(blog.createdAt).format('YYYY. MM. D. dddd') %>
-                <span>#<%= blog.category %></span></small></p>
-          </header>
-            <span class="post-description"><%- blog.description %></span>
-        </section>
-        <section class="delete-form">
-          <% if(currentUser && currentUser.isAdmin) { %>
-          <% if (blog.description) { %>
-          <a href="/blogs/<%= blog._id %>/edit" class="btn" role="button">Szerkesztés</a>
-          <% } %>
-          <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
-            <button class="btn">Törlés!</button>
-          </form>
-          <% } %>
-          <a class="btn" href="/blogs" role="button">Vissza</a>
-        </section>
-      
+            <p class="post-description"><%= blog.subTitle %></p>
+          </a>
+          <div class="post-controller">
+            <p>📅 <%= moment(blog.createdAt).format('YYYY. MM. D.') %></p>
+            <a href="#!" class="btn btn-md" role="button"><%= blog.category %></a>
+          </div>
+        </li>
+        <% }) %>
+      </ul>
     </article>
     <!- Maga a lényegi tartalom lezárása -->
+
   </main>
   <!-- A "Main" szekció lezárása -->
 
@@ -186,12 +175,14 @@
       }
     });
   </script>
- <script>
-   document.addEventListener('DOMContentLoaded', (event) => {
-     ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark'):
-       document.querySelector('body').classList.remove('dark')
-   })
- </script>
+
+  <!-- theme switch (light/dark) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark'):
+        document.querySelector('body').classList.remove('dark')
+    })
+  </script>
 </body>
 
 </html>
