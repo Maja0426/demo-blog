@@ -8,6 +8,7 @@ const LocalStrategy = require('passport-local');
 const flash = require('connect-flash');
 const middleware = require('./middleware');
 const sm = require('sitemap');
+var sslRedirect = require('heroku-ssl-redirect'); // SSL Redirect, must have heroku
 const app = express();
 
 const blogsRoutes = require('./routes/blog');
@@ -64,7 +65,7 @@ app.use(methodOverride("_method"));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-//app.use(sslRedirect()); // Redirect Heroku SSl. MUST HAVE to HEROKU!!
+app.use(sslRedirect()); // Redirect Heroku SSl. MUST HAVE to HEROKU!!
 app.use(expressSanitizer());
 
 app.use(function (req, res, next) {
