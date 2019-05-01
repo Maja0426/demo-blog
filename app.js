@@ -27,7 +27,7 @@ mongoose.set('useCreateIndex', true);
 app.set('view engine', 'ejs');
 app.use(flash());
 
-SITEMAP GENERATOR (ADD sitemap.xml to google console)
+//SITEMAP GENERATOR (ADD sitemap.xml to google console)
 var sitemap = sm.createSitemap({
   hostname: 'https://smartbee.info',
   cacheTime: 600000, // 600 sec - cache purge period
