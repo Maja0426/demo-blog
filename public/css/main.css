@@ -116,16 +116,16 @@ body.dark form.form-main input.input-image {
   color: #000;
 }
 
-body.dark img {
+/* body.dark img {
   border: 1px dotted #524d4d
-}
+} */
 
-body.dark header.icons img {
+/* body.dark header.icons img {
   background-color: #fff;
   border: none;
   margin: 0;
   padding: 0;
-}
+} */
 
 body.dark .back-to-top {
   background: #fff;
