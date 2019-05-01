@@ -8,7 +8,7 @@ const LocalStrategy = require('passport-local');
 const flash = require('connect-flash');
 const middleware = require('./middleware');
 const sm = require('sitemap');
-var sslRedirect = require('heroku-ssl-redirect'); // SSL Redirect, must have heroku
+const sslRedirect = require('heroku-ssl-redirect'); // SSL Redirect, must have heroku
 const app = express();
 
 const blogsRoutes = require('./routes/blog');
