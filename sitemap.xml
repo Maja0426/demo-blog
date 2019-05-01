@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://smartbee.info/blogs</loc>
+  <lastmod>2019-05-01T18:51:30+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://smartbee.info/blogs/category/V%C3%A1llalkoz%C3%A1s</loc>
+  <lastmod>2019-05-01T18:51:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://smartbee.info/blogs/category/Webfejleszt%C3%A9s</loc>
+  <lastmod>2019-05-01T18:51:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://smartbee.info/blogs/category/Gondolat%C3%A9breszt%C5%91</loc>
+  <lastmod>2019-05-01T18:51:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://smartbee.info/blogs/category/Egy%C3%A9b</loc>
+  <lastmod>2019-05-01T18:51:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://smartbee.info/blogs/category/S%C3%BAg%C3%B3</loc>
+  <lastmod>2019-05-01T18:51:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://smartbee.info/blogs/5cc32bed396f6117c9cfe495</loc>
+  <lastmod>2019-05-01T18:51:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://smartbee.info/blogs/5cc2215a073a22001725d8c6</loc>
+  <lastmod>2019-05-01T18:51:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
