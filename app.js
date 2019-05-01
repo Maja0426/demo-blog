@@ -32,7 +32,7 @@ var sitemap = sm.createSitemap({
   hostname: 'https://smartbee.info',
   cacheTime: 600000, // 600 sec - cache purge period
   urls: [{
-    url: '/ads/',
+    url: '/blogs/',
     changefreq: 'daily',
     priority: 0.3
   }]
