@@ -7,8 +7,8 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const flash = require('connect-flash');
 const middleware = require('./middleware');
-const sm = require('sitemap');
-const sslRedirect = require('heroku-ssl-redirect'); // SSL Redirect, must have heroku
+// const sm = require('sitemap');
+// const sslRedirect = require('heroku-ssl-redirect'); // SSL Redirect, must have heroku
 const app = express();
 
 const blogsRoutes = require('./routes/blog');
@@ -27,26 +27,26 @@ mongoose.set('useCreateIndex', true);
 app.set('view engine', 'ejs');
 app.use(flash());
 
-SITEMAP GENERATOR (ADD sitemap.xml to google console)
-var sitemap = sm.createSitemap({
-  hostname: 'https://smartbee.info',
-  cacheTime: 600000, // 600 sec - cache purge period
-  urls: [{
-    url: '/blogs/',
-    changefreq: 'daily',
-    priority: 0.3
-  }]
-});
+// SITEMAP GENERATOR (ADD sitemap.xml to google console)
+// var sitemap = sm.createSitemap({
+//   hostname: 'https://smartbee.info',
+//   cacheTime: 600000, // 600 sec - cache purge period
+//   urls: [{
+//     url: '/blogs/',
+//     changefreq: 'daily',
+//     priority: 0.3
+//   }]
+// });
 
-app.get('/sitemap.xml', function (req, res) {
-  sitemap.toXML(function (err, xml) {
-    if (err) {
-      return res.status(500).end();
-    }
-    res.header('Content-Type', 'application/xml');
-    res.send(xml);
-  });
-});
+// app.get('/sitemap.xml', function (req, res) {
+//   sitemap.toXML(function (err, xml) {
+//     if (err) {
+//       return res.status(500).end();
+//     }
+//     res.header('Content-Type', 'application/xml');
+//     res.send(xml);
+//   });
+// });
 
 // PASSPORT CONFIG
 app.use(require('express-session')({
@@ -65,7 +65,7 @@ app.use(methodOverride("_method"));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.use(sslRedirect()); // Redirect Heroku SSl. MUST HAVE to HEROKU!!
+// app.use(sslRedirect()); // Redirect Heroku SSl. MUST HAVE to HEROKU!!
 app.use(expressSanitizer());
 
 app.use(function (req, res, next) {
