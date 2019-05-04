@@ -80,7 +80,8 @@
           <img src="/img/DSC_0201.jpg" alt="Maja profile photo">
         </figure>
         <div class="social-follow">
-          <a class="twitter-follow-button" href="https://twitter.com/SmartBeeWeb" data-size="large">
+          <a class="twitter-follow-button" href="https://twitter.com/SmartBeeWeb" data-size="large"
+            data-show-count="false">
             Follow @SmartBeeWeb</a>
         </div>
       </section>
@@ -122,16 +123,15 @@
     
         <section class="post-preview">
           <header>
+            <p class="subtitle"><em>"<%= blog.subTitle %>"</em></p>
             <% if (blog.image !== 'https://res.cloudinary.com/maja0426/image/upload/v1552336982/Aprohirdetes/no-image-icon-11.png') { %>
             <figure>
               <img src="<%= blog.image %>" alt="<%= blog.title %> borítókép">
             </figure>
             <% } %>
             <h3 class="post-title"><%= blog.title %></h3>
-            <p><small class="date">Közzétéve: <%= moment(blog.createdAt).format('YYYY. MM. D. dddd') %>
-                </small><span class="cat bg-<%= blog.category %>"><small><%= blog.category %></small></span></p>
+            <p><small class="date">Közzétéve: <%= moment(blog.createdAt).format('YYYY. MM. D. dddd') %></small></p>
           </header>
-          <p class="subtitle"><%= blog.subTitle %></p>
             <span class="post-description"><%- blog.description %></span>
         </section>
         <section class="delete-form">
