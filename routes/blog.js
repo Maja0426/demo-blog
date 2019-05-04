@@ -122,7 +122,7 @@ router.get('/new', middleware.isLoggedIn, function (req, res) {
 
 // CREATE NEW Blogs
 router.post('/', middleware.isLoggedIn, upload.single('image'), function (req, res) {
-  req.body.blogs.description = req.sanitize(req.body.blogs.description);
+  // req.body.blogs.description = req.sanitize(req.body.blogs.description);
   req.body.blogs.author = {
     id: req.user._id,
     username: req.user.username
@@ -180,7 +180,7 @@ router.get('/:id/edit', middleware.checkAdmin, function (req, res) {
 
 // UPDATE PAGE
 router.put('/:id', middleware.checkAdmin, upload.single('image'), function (req, res) {
-  req.body.blogs.description = req.sanitize(req.body.blogs.description);
+  // req.body.blogs.description = req.sanitize(req.body.blogs.description);
   req.body.blogs.lastModifiedAt = Date.now();
   if (req.file) {
     cloudinary.uploader.upload(req.file.path, function (result) {
