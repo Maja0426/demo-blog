@@ -55,6 +55,12 @@
         🐝 <a href="/">Kezdőlap</a>
       </section>
 
+      <section class="color-switcher">
+        🌓 <a href="#!"
+          onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
+          title="Világos/sötét mód" id="switch">Világos|Sötét</a>
+      </section>
+
       <section>
         <!-- <header class="icons">
           <img src="/img/awesome/code.svg" alt="kód ikon">
@@ -85,12 +91,6 @@
         <a class="btn new-btn" href="/logout" role="button">Logout</a>
       </section>
       <% } %>
-
-      <section class="color-switcher">
-        🌓 <a href="#!"
-          onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
-          title="Világos/sötét mód" id="switch">Világos|Sötét</a>
-      </section>
 
       <section class="categories">
         <a href="/blogs/category/Vállalkozás" class="btn bg-Vállalkozás">Vállalkozás</a>

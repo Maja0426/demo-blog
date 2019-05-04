@@ -67,10 +67,15 @@ body.dark section.social a:hover {
   border-color: #ffc107;
 }
 
-body.dark section a.btn,
+/* body.dark section a.btn,
 body.dark button.btn,
 a.new-btn {
   box-shadow: 0 3px 0 #fff;
+} */
+
+body.dark a.btn.btn-back {
+  background-color: #ffc107;
+  color: #000;
 }
 
 body.dark .social ul li i {
@@ -267,12 +272,14 @@ section a.btn,
  button.btn,
  a.new-btn {
   border: none;
-  background-color: #5c74fd;
+  border-radius: 4px;
+  background-color: #524d4d;
+  color: #FFFFFF;
   padding: 10px 20px;
   margin: 6px 2px;
   font-size: 12px;
   font-weight: bold;
-  box-shadow: 0 3px 0 #000;
+  /* box-shadow: 0 3px 0 #000; */
 }
 
 button.btn:hover {
@@ -284,6 +291,7 @@ section.color-switcher a,
 section.social a {
   border: none;
   border-bottom: 1px solid transparent;
+  font-size: 18px;
 }
 
 section.color-switcher a:hover,
@@ -346,6 +354,10 @@ article.show-post li {
   
 }
 
+p.subtitle {
+  font-weight: bold;
+}
+
 /* under 800px width content the first */
 @media (max-width: 800px) {
   article {
@@ -379,7 +391,7 @@ article h3 {
 }
 
 /* article ul li.post-preview {
-  flex-direction: row;
+  padding: 30px 15px;
 } */
 
 article .post-preview p,
@@ -424,7 +436,7 @@ article.show-post {
 
 article ul li .post-controller p {
   align-self: flex-end;
-  font-size: 14px;
+  font-size: 16px;
 }
 
   article ul li .post-controller a {
@@ -444,13 +456,16 @@ article ul li .post-controller p {
   }
 
   article ul li .post-controller a {
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     margin-right: 10px;
     order: -1;
   }
 
   article ul li .post-controller p {
-    align-self: center;
+   align-self: center;
+   padding: 0;
+   margin: 0;
+   font-size: 15px;
   }
 
 }
@@ -466,11 +481,12 @@ article li .post-controller a:hover {
 
 article li .post-controller a.btn {
   text-decoration: none;
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: #ffc107;
   padding: 10px 12px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
+  padding: 14px;
 }
 
 /* FORM SECTION */
@@ -519,7 +535,7 @@ section.delete-form a, section.delete-form form button {
 /*=========== Floating Button ===============*/
 
 .back-to-top {
-  background: #fff;
+  background: #e9e5e5;
   opacity: 0;
   transition: opacity .6s ease-in-out;
   z-index: 10;
@@ -528,6 +544,7 @@ section.delete-form a, section.delete-form form button {
   bottom: 25px;
   width: 45px;
   height: 45px;
+  border-radius: 10px;
   /* box-sizing: border-box; */
 }
 

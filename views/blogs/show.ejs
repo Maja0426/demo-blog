@@ -55,6 +55,12 @@
         🐝 <a href="/">Kezdőlap</a>
       </section>
 
+      <section class="color-switcher">
+        🌓 <a href="#!"
+          onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
+          title="Világos/sötét mód" id="switch">Világos|Sötét</a>
+      </section>
+
       <section>
         <!-- <header class="icons">
           <img src="/img/awesome/code.svg" alt="kód ikon">
@@ -85,12 +91,6 @@
         <a class="btn new-btn" href="/logout" role="button">Logout</a>
       </section>
       <% } %>
-
-      <section class="color-switcher">
-        🌓 <a href="#!"
-          onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
-          title="Világos/sötét mód" id="switch">Világos|Sötét</a>
-      </section>
 
       <section class="categories">
         <a href="/blogs/category/Vállalkozás" class="btn bg-Vállalkozás">Vállalkozás</a>
@@ -131,6 +131,7 @@
             <p><small class="date">Közzétéve: <%= moment(blog.createdAt).format('YYYY. MM. D. dddd') %>
                 </small><span class="cat bg-<%= blog.category %>"><small><%= blog.category %></small></span></p>
           </header>
+          <p class="subtitle"><%= blog.subTitle %></p>
             <span class="post-description"><%- blog.description %></span>
         </section>
         <section class="delete-form">
@@ -142,7 +143,7 @@
             <button class="btn">Törlés!</button>
           </form>
           <% } %>
-          <a class="btn" href="/blogs" role="button">Vissza</a>
+          <a class="btn btn-back" href="/blogs" role="button">Vissza</a>
         </section>
       
     </article>
