@@ -1,60 +1,81 @@
 <!DOCTYPE html>
 <html lang="hu">
+  <<head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta
+      name="description"
+      content="A Smart-Bee Web minimál blogja. Életről, vállalkozásról, webfejlesztésről"
+    />
+    <meta name="author" content="Majoros Tamás" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Smart-Bee smpl Blog" />
+    <meta
+      property="og:description"
+      content="A Smart-Bee Web minimál blogja. Életről, vállalkozásról, webfejlesztésről"
+    />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/maja0426/image/upload/v1556732748/Smartbee/smartbee_smpl_blog.jpg"
+    />
+    <meta property="og:url" content="https://smartbee.info" />
 
-<<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="robots" content="index,follow">
-  <meta name="description" content="A Smart-Bee Web minimál blogja. Életről, vállalkozásról, webfejlesztésről">
-  <meta name="author" content="Majoros Tamás">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Smart-Bee smpl Blog">
-  <meta property="og:description" content="A Smart-Bee Web minimál blogja. Életről, vállalkozásról, webfejlesztésről">
-  <meta property="og:image"
-    content="https://res.cloudinary.com/maja0426/image/upload/v1556732748/Smartbee/smartbee_smpl_blog.jpg">
-  <meta property="og:url" content="https://smartbee.info">
-
-  <meta name="twitter:title" content="Smart-Bee smpl Blog">
-  <meta name="twitter:description" content="A Smart-Bee Web minimál blogja. Életről, vállalkozásról, webfejlesztésről">
-  <meta name="twitter:image"
-    content="https://res.cloudinary.com/maja0426/image/upload/v1556732748/Smartbee/smartbee_smpl_blog.jpg">
-  <meta name="twitter:site" content="@SmartBeeWeb">
-  <meta name="twitter:creator" content="@SmartBeeWeb">
-  <title>Smart-Bee smpl Blog</title>
-  <% moment.locale("hu") %>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/main.css">
+    <meta name="twitter:title" content="Smart-Bee smpl Blog" />
+    <meta
+      name="twitter:description"
+      content="A Smart-Bee Web minimál blogja. Életről, vállalkozásról, webfejlesztésről"
+    />
+    <meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/maja0426/image/upload/v1556732748/Smartbee/smartbee_smpl_blog.jpg"
+    />
+    <meta name="twitter:site" content="@SmartBeeWeb" />
+    <meta name="twitter:creator" content="@SmartBeeWeb" />
+    <title>Smart-Bee Blog</title>
+    <% moment.locale("hu") %>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
 
-<body id="page-top" class="">
+  <body id="page-top" class="">
+    <!-- Fejléc és kereső szekció, az oldal főcíme és a fixen az oldal tetején maradó keresőmező -->
+    <section class="main-title">
+      <header>
+        <h1>CREATE POST</h1>
+      </header>
+    </section>
+    <!-- Fejléc és kereső szekció lezárása -->
 
-  <!-- Fejléc és kereső szekció, az oldal főcíme és a fixen az oldal tetején maradó keresőmező -->
-  <section class="main-title">
-    <header>
-      <h1>CREATE POST</h1>
-    </header>
-  </section>
-  <!-- Fejléc és kereső szekció lezárása -->
+    <!-- A "Main" szekció, maga az oldal a bal oldali sávval és a tartalom konténerrel -->
+    <main>
+      <!-- A bal oldali "vezérlő, segítő" panel. Bio, social buttons, kategóriák, copyright -->
+      <aside>
+        <section class="home-back">🐝 <a href="/">Kezdőlap</a></section>
 
-  <!-- A "Main" szekció, maga az oldal a bal oldali sávval és a tartalom konténerrel -->
-  <main>
+        <section class="color-switcher">
+          🌓
+          <a
+            href="#!"
+            onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
+            title="Világos/sötét mód"
+            id="switch"
+            >Világos|Sötét</a
+          >
+        </section>
 
-    <!-- A bal oldali "vezérlő, segítő" panel. Bio, social buttons, kategóriák, copyright -->
-    <aside>
-
-      <section class="home-back">
-        🐝 <a href="/">Kezdőlap</a>
-      </section>
-
-      <section class="color-switcher">
-        🌓 <a href="#!"
-          onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
-          title="Világos/sötét mód" id="switch">Világos|Sötét</a>
-      </section>
-
-      <section>
-        <!-- <header class="icons">
+        <section>
+          <!-- <header class="icons">
           <img src="/img/awesome/code.svg" alt="kód ikon">
           <img src="/img/awesome/dev.svg" alt="fejlesztés ikon">
           <img src="/img/awesome/html5.svg" alt="html5 ikon">
@@ -65,161 +86,241 @@
           <img src="/img/awesome/git.svg" alt="git ikon">
           <img src="/img/awesome/github.svg" alt="github ikon">
         </header> -->
-        <p class="about-me">„Szeme villám! haja libeg! Hármas kört reá elébb, s csukja szemünk szent borzalom, mert
-          mézen élt, mézharmaton, s itta a Mennyország tejét!”
-        </p>
-        <figure class="profile-photo">
-          <img src="/img/DSC_0201.jpg" alt="Maja profile photo">
-        </figure>
-        <div class="social-follow">
-          <a class="twitter-follow-button" href="https://twitter.com/SmartBeeWeb" data-size="large">
-            Follow @SmartBeeWeb</a>
-        </div>
-      </section>
-
-      <% if(currentUser && currentUser.isAdmin) { %>
-      <section>
-        <a class="btn new-btn" href="/blogs/new" role="button">Új post</a>
-        <a class="btn new-btn" href="/logout" role="button">Logout</a>
-      </section>
-      <% } %>
-
-      <section class="categories">
-        <a href="/blogs/category/Vállalkozás" class="btn bg-Vállalkozás">Vállalkozás</a>
-        <a href="/blogs/category/Webfejlesztés" class="btn bg-Webfejlesztés">Webfejlesztés</a>
-        <a href="/blogs/category/Gondolatébresztő" class="btn bg-Gondolatébresztő">Gondolatébresztő</a>
-        <a href="/blogs/category/Egyéb" class="btn bg-Egyéb">Egyéb</a>
-        <a href="/blogs/category/Súgó" class="btn bg-Súgó">Súgó</a>
-      </section>
-
-      <footer>
-        <section class="social">
-          <a href="https://twitter.com/SmartBeeWeb" target="_blank" rel="noreferrer">twitter</a>
-          <a href="https://www.facebook.com/smartbeeweb" target="_blank" rel="noreferrer">facebook</a>
-          <a href="https://www.linkedin.com/in/majoros-tamas/" target="_blank" rel="noreferrer">linkedin</a>
-          <a href="https://www.instagram.com/smartbeeweboldalak/" target="_blank" rel="noreferrer">instagram</a>
-        </section>
-        <section class="copyright">
-          <p>©️ 2019 <a href="https://smartbeeweb.hu" target="_blank" rel="noreferrer">Smart-Bee Web</a>
+          <p class="about-me">
+            „Szeme villám! haja libeg! Hármas kört reá elébb, s csukja szemünk
+            szent borzalom, mert mézen élt, mézharmaton, s itta a Mennyország
+            tejét!”
           </p>
-          <br>
-          <p>Inspired by <a href="https://flaviocopes.com" target="_blank" rel="noreferrer">Flavio Copes</a>.<span>
-              🙏</span></p>
+          <figure class="profile-photo">
+            <img src="/img/DSC_0201.jpg" alt="Maja profile photo" />
+          </figure>
+          <div class="social-follow">
+            <a
+              class="twitter-follow-button"
+              href="https://twitter.com/SmartBeeWeb"
+              data-size="large"
+            >
+              Follow @SmartBeeWeb</a
+            >
+          </div>
         </section>
-      </footer>
-    </aside>
-    <!-- A bal oldali "vezérlő" lezárása -->
 
-    <!-- Maga a lényegi tartalom -->
-     <section>
-    <form action="/blogs" method="POST" enctype="multipart/form-data" class="form-main">
+        <% if(currentUser && currentUser.isAdmin) { %>
+        <section>
+          <a class="btn new-btn" href="/blogs/new" role="button">Új post</a>
+          <a class="btn new-btn" href="/logout" role="button">Logout</a>
+        </section>
+        <% } %>
 
-      <input class="form-control" type="text" name="blogs[title]" placeholder="post címe, max. 170 karakter"
-        maxlength="170" required autofocus>
+        <section class="categories">
+          <a href="/blogs/category/Vállalkozás" class="btn bg-Vállalkozás"
+            >Vállalkozás</a
+          >
+          <a href="/blogs/category/Webfejlesztés" class="btn bg-Webfejlesztés"
+            >Webfejlesztés</a
+          >
+          <a
+            href="/blogs/category/Gondolatébresztő"
+            class="btn bg-Gondolatébresztő"
+            >Gondolatébresztő</a
+          >
+          <a href="/blogs/category/Egyéb" class="btn bg-Egyéb">Egyéb</a>
+          <a href="/blogs/category/Súgó" class="btn bg-Súgó">Súgó</a>
+        </section>
 
-      <input class="form-control" type="text" name="blogs[subTitle]" placeholder="alcím" maxlength="170" required
-        autofocus>
+        <footer>
+          <section class="social">
+            <a
+              href="https://twitter.com/SmartBeeWeb"
+              target="_blank"
+              rel="noreferrer"
+              >twitter</a
+            >
+            <a
+              href="https://www.facebook.com/smartbeeweb"
+              target="_blank"
+              rel="noreferrer"
+              >facebook</a
+            >
+            <a
+              href="https://www.linkedin.com/in/majoros-tamas/"
+              target="_blank"
+              rel="noreferrer"
+              >linkedin</a
+            >
+            <a
+              href="https://www.instagram.com/smartbeeweboldalak/"
+              target="_blank"
+              rel="noreferrer"
+              >instagram</a
+            >
+          </section>
+          <section class="copyright">
+            <p>
+              ©️ 2019
+              <a href="https://smartbeeweb.hu" target="_blank" rel="noreferrer"
+                >Smart-Bee Web</a
+              >
+            </p>
+            <br />
+            <p>
+              Inspired by
+              <a href="https://flaviocopes.com" target="_blank" rel="noreferrer"
+                >Flavio Copes</a
+              >.<span> 🙏</span>
+            </p>
+          </section>
+        </footer>
+      </aside>
+      <!-- A bal oldali "vezérlő" lezárása -->
 
-      <h6>Kategória:</h6>
+      <!-- Maga a lényegi tartalom -->
+      <section>
+        <form
+          action="/blogs"
+          method="POST"
+          enctype="multipart/form-data"
+          class="form-main"
+        >
+          <input
+            class="form-control"
+            type="text"
+            name="blogs[title]"
+            placeholder="post címe, max. 170 karakter"
+            maxlength="170"
+            required
+            autofocus
+          />
 
-      <select class="custom-select font-weight-bold" name="blogs[category]" required>
-        <option value="Vállalkozás" selected>Vállalkozás</option>
-        <option value="Webfejlesztés">Webfejlesztés</option>
-        <option value="Gondolatébresztő">Gondolatébresztő</option>
-        <option value="Egyéb">Egyéb</option>
-        <option value="Súgó">Súgó</option>
-      </select>
+          <input
+            class="form-control"
+            type="text"
+            name="blogs[subTitle]"
+            placeholder="alcím"
+            maxlength="170"
+            required
+            autofocus
+          />
 
-      <label for="image"><i class="fas fa-image"></i> Képfeltöltés
-      <input type="file" id="image" class="input-image"
-        value="https://res.cloudinary.com/maja0426/image/upload/v1550587836/Aprohirdetes/NoImageFound.png" name="image"
-        accept="image/*"></label>
+          <h6>Kategória:</h6>
 
-      <textarea id="summernote" rows="15" class="form-control" placeholder="blog" name="blogs[description]"
-        required></textarea>
+          <select
+            class="custom-select font-weight-bold"
+            name="blogs[category]"
+            required
+          >
+            <option value="Vállalkozás" selected>Vállalkozás</option>
+            <option value="Webfejlesztés">Webfejlesztés</option>
+            <option value="Gondolatébresztő">Gondolatébresztő</option>
+            <option value="Egyéb">Egyéb</option>
+            <option value="Súgó">Súgó</option>
+          </select>
 
-      <button class="btn">Post feltöltése</button>
-      <a class="btn" href="/blogs" role="button">Vissza</a>
-    </form>
-    </section>
+          <label for="image"
+            ><i class="fas fa-image"></i> Képfeltöltés
+            <input
+              type="file"
+              id="image"
+              class="input-image"
+              value="https://res.cloudinary.com/maja0426/image/upload/v1550587836/Aprohirdetes/NoImageFound.png"
+              name="image"
+              accept="image/*"
+          /></label>
 
-    <!-- Maga a lényegi tartalom lezárása -->
+          <textarea
+            id="summernote"
+            rows="15"
+            class="form-control"
+            placeholder="blog"
+            name="blogs[description]"
+            required
+          ></textarea>
 
-  </main>
-  <!-- A "Main" szekció lezárása -->
+          <button class="btn">Post feltöltése</button>
+          <a class="btn" href="/blogs" role="button">Vissza</a>
+        </form>
+      </section>
 
-  <a href="#page-top" id="back-to-top" class="back-to-top"><img src="/img/awesome/chevron-up.svg"
-      alt="felfelé nyíl"></a>
+      <!-- Maga a lényegi tartalom lezárása -->
+    </main>
+    <!-- A "Main" szekció lezárása -->
 
-  <!-- Twitter follower script -->
-  <script>
-    window.twttr = (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0],
-        t = window.twttr || {};
-      if (d.getElementById(id)) return t;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://platform.twitter.com/widgets.js";
-      fjs.parentNode.insertBefore(js, fjs);
+    <a href="#page-top" id="back-to-top" class="back-to-top"
+      ><img src="/img/awesome/chevron-up.svg" alt="felfelé nyíl"
+    /></a>
 
-      t._e = [];
-      t.ready = function (f) {
-        t._e.push(f);
-      };
+    <!-- Twitter follower script -->
+    <script>
+      window.twttr = (function(d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0],
+          t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
 
-      return t;
-    }(document, "script", "twitter-wjs"));
-  </script>
+        t._e = [];
+        t.ready = function(f) {
+          t._e.push(f);
+        };
 
-  <!-- Floating scroll script -->
-  <script>
-    var link = document.getElementById("back-to-top");
-    var amountScrolled = 250;
+        return t;
+      })(document, "script", "twitter-wjs");
+    </script>
 
-    function addClass(el, className) {
+    <!-- Floating scroll script -->
+    <script>
+      var link = document.getElementById("back-to-top");
+      var amountScrolled = 250;
 
-      if (el.classList) {
-        el.classList.add(className);
-      } else {
-        el.className += ' ' + className;
+      function addClass(el, className) {
+        if (el.classList) {
+          el.classList.add(className);
+        } else {
+          el.className += " " + className;
+        }
       }
 
-    }
-
-    function removeClass(el, className) {
-      if (el.classList)
-        el.classList.remove(className);
-      else
-        el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'),
-          ' ');
-    }
-
-    window.addEventListener('scroll', function (e) {
-      if (window.scrollY > amountScrolled) {
-        addClass(link, 'show');
-      } else {
-        removeClass(link, 'show');
+      function removeClass(el, className) {
+        if (el.classList) el.classList.remove(className);
+        else
+          el.className = el.className.replace(
+            new RegExp(
+              "(^|\\b)" + className.split(" ").join("|") + "(\\b|$)",
+              "gi"
+            ),
+            " "
+          );
       }
-    });
-  </script>
 
-  <!-- theme switch (light/dark) -->
-   <script>
-     document.addEventListener('DOMContentLoaded', (event) => {
-       ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark'):
-         document.querySelector('body').classList.remove('dark')
-     })
-   </script>
+      window.addEventListener("scroll", function(e) {
+        if (window.scrollY > amountScrolled) {
+          addClass(link, "show");
+        } else {
+          removeClass(link, "show");
+        }
+      });
+    </script>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.js"></script>
-<script src="/js/summernote-hu-HU.js"></script>
-<script>
-  $('#summernote').summernote({
-    height: 600,
-    lang: 'hu-HU'
-  });
-</script>
-</body>
+    <!-- theme switch (light/dark) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", event => {
+        (localStorage.getItem("mode") || "dark") === "dark"
+          ? document.querySelector("body").classList.add("dark")
+          : document.querySelector("body").classList.remove("dark");
+      });
+    </script>
 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.js"></script>
+    <script src="/js/summernote-hu-HU.js"></script>
+    <script>
+      $("#summernote").summernote({
+        height: 600,
+        lang: "hu-HU"
+      });
+    </script>
+  </body>
 </html>
