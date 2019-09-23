@@ -21,6 +21,25 @@
     <link rel="stylesheet" href="/css/main.css" />
 
     <style>
+      /*
+Copyright (c) 2017 Chris Patuzzo
+https://twitter.com/chrispatuzzo
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
       .post-description a {
         color: #4183c4 !important;
         text-decoration: none;
@@ -62,10 +81,10 @@
       .post-description h2:first-child,
       .post-description h1:first-child,
       .post-description h1:first-child + h2,
-      .post-description .post-description .post-description h3:first-child,
-      .post-description .post-description h4:first-child,
-      .post-description .post-description h5:first-child,
-      .post-description .post-description h6:first-child {
+      .post-description h3:first-child,
+      .post-description h4:first-child,
+      .post-description h5:first-child,
+      .post-description h6:first-child {
         margin-top: 0;
         padding-top: 0;
       }
@@ -88,7 +107,7 @@
       .post-description h2 code {
         font-size: inherit;
       }
-      .post-description .post-description h3 tt,
+      .post-description h3 tt,
       .post-description h3 code {
         font-size: inherit;
       }
@@ -100,7 +119,7 @@
 
       .post-description h5 tt,
       .post-description h5 code {
-        .post-description.post-description .post-description font-size: inherit;
+         font-size: inherit;
       }
 
       .post-description h6 tt,
@@ -108,81 +127,81 @@
         font-size: inherit;
       }
 
-      .post-description .post-description .post-description h1 {
+      .post-description h1 {
         font-size: 28px;
         color: black;
       }
 
-      .post-description .post-description .post-description h2 {
+      .post-description h2 {
         font-size: 24px;
         border-bottom: 1px solid #cccccc;
         color: black;
       }
 
-      .post-description .post-description .post-description h3 {
+      .post-description h3 {
         font-size: 18px;
       }
 
-      .post-description .post-description h4 {
+      .post-description h4 {
         font-size: 16px;
       }
 
-      .post-description .post-description h5 {
+      .post-description h5 {
         font-size: 14px;
       }
 
-      .post-description .post-description h6 {
+      .post-description h6 {
         color: #777777;
         font-size: 14px;
       }
 
-      .post-description .post-description p,
-      .post-description .post-description blockquote,
-      .post-description .post-description ul,
-      .post-description .post-description ol,
-      .post-description .post-description dl,
-      .post-description .post-description li,
-      .post-description .post-description table,
-      .post-description .post-description pre {
+      .post-description p,
+      .post-description blockquote,
+      .post-description ul,
+      .post-description ol,
+      .post-description dl,
+      .post-description li,
+      .post-description table,
+      .post-description pre {
         margin: 15px 0;
       }
 
-      .post-description .post-description hr {
+      .post-description hr {
         border: 0 none;
         color: #cccccc;
         height: 4px;
         padding: 0;
       }
 
-      .post-description .post-description body > h2:first-child {
+      .post-description body > h2:first-child {
         margin-top: 0;
         padding-top: 0;
       }
 
-      .post-description .post-description body > h1:first-child {
+      .post-description body > h1:first-child {
         margin-top: 0;
         padding-top: 0;
       }
 
-      .post-description .post-description body > h1:first-child + h2 {
+      .post-description body > h1:first-child + h2 {
         margin-top: 0;
         padding-top: 0;
       }
 
-      .post-description .post-description body > h3:first-child,
-      .post-description .post-description body > h4:first-child,
-      .post-description .post-description body > h5:first-child,
-      .post-description .post-description body > h6:first-child {
+      .post-description body > h3:first-child,
+      .post-description body > h4:first-child,
+      .post-description body > h5:first-child,
+      .post-description body > h6:first-child {
         margin-top: 0;
         padding-top: 0;
       }
 
-      .post-description .post-description a:first-child h1,
-      .post-description .post-description a:first-child h2,
-      .post-description .post-description a:first-child h3,
-      .post-description .post-description a:first-child h4,
-      .post-description .post-description a:first-child h5,
-      .post-description .post-description a:first-child h6 {
+      .post-description a:first-child h1,
+      .post-description a:first-child h2,
+      .post-description a:first-child h3,
+      .post-description a:first-child h4,
+      .post-description a:first-child h5,
+      .post-description a:first-child h6 {
         margin-top: 0;
         padding-top: 0;
       }
@@ -212,14 +231,14 @@
 
       .post-description ul :last-child,
       .post-description ol :last-child {
-        .post-description .post-description margin-bottom: 0;
+        margin-bottom: 0;
       }
 
       .post-description dl {
         padding: 0;
       }
 
-      .post-description .post-description dl dt {
+      .post-description dl dt {
         font-size: 14px;
         font-weight: bold;
         font-style: italic;
@@ -227,42 +246,42 @@
         margin: 15px 0 5px;
       }
 
-      .post-description .post-description dl dt:first-child {
+      .post-description dl dt:first-child {
         padding: 0;
       }
 
-      .post-description .post-description dl dt > :first-child {
+      .post-description dl dt > :first-child {
         margin-top: 0;
       }
 
-      .post-description .post-description dl dt > :last-child {
+      .post-description dl dt > :last-child {
         margin-bottom: 0;
       }
 
-      .post-description .post-description dl dd {
+      .post-description dl dd {
         margin: 0 0 15px;
         padding: 0 15px;
       }
 
-      .post-description .post-description dl dd > :first-child {
+      .post-description dl dd > :first-child {
         margin-top: 0;
       }
 
-      .post-description .post-description dl dd > :last-child {
+      .post-description dl dd > :last-child {
         margin-bottom: 0;
       }
 
-      .post-description .post-description blockquote {
+      .post-description blockquote {
         border-left: 4px solid #dddddd;
         padding: 0 15px;
         color: #777777;
       }
 
-      .post-description .post-description blockquote > :first-child {
+      .post-description blockquote > :first-child {
         margin-top: 0;
       }
 
-      .post-description .post-description blockquote > :last-child {
+      .post-description blockquote > :last-child {
         margin-bottom: 0;
       }
 
