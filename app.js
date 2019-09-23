@@ -19,12 +19,10 @@ const indexRoutes = require('./routes/index');
 const User = require('./models/user');
 
 app.locals.moment = require('moment');
+app.locals.marked = require('marked');
 
 // Use variable to store database url and password, from .env
-const DB = process.env.DATABASE.replace(
-  '<PASSWORD>',
-  process.env.DATABASE_PASSWORD
-);
+const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
 
 // Connect to Database
 mongoose

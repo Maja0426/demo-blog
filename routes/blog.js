@@ -5,11 +5,11 @@ var middleware = require('../middleware');
 
 var multer = require('multer');
 var storage = multer.diskStorage({
-  filename: function (req, file, callback) {
+  filename: function(req, file, callback) {
     callback(null, Date.now() + file.originalname);
   }
 });
-var imageFilter = function (req, file, cb) {
+var imageFilter = function(req, file, cb) {
   // accept image files only
   if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
     return cb(new Error('Csak képfile-t lehet feltölteni!'), false);
@@ -19,7 +19,7 @@ var imageFilter = function (req, file, cb) {
 var upload = multer({
   storage: storage,
   fileFilter: imageFilter
-})
+});
 
 var cloudinary = require('cloudinary');
 cloudinary.config({
@@ -29,7 +29,7 @@ cloudinary.config({
 });
 
 // INDEX PAGE, LIST ALL Blogs
-router.get('/', function (req, res) {
+router.get('/', function(req, res) {
   var perPage = 16;
   var pageQuery = parseInt(req.query.page);
   var pageNumber = pageQuery ? pageQuery : 1;
@@ -38,100 +38,110 @@ router.get('/', function (req, res) {
     const regex = new RegExp(escapeRegex(req.query.search), 'gi');
     Blogs.find({
       title: regex
-    }).sort({
-      createdAt: -1
-    }).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allBlogs) {
-      Blogs.countDocuments({
-        title: regex
-      }).exec(function (err, count) {
-        if (err) {
-          console.log(err);
-          res.redirect('back');
-        } else {
-          if (allBlogs.length < 1) {
-            noMatch = "Nem találtam egyező hirdetést, próbáld meg másképp.";
+    })
+      .sort({
+        createdAt: -1
+      })
+      .skip(perPage * pageNumber - perPage)
+      .limit(perPage)
+      .exec(function(err, allBlogs) {
+        Blogs.countDocuments({
+          title: regex
+        }).exec(function(err, count) {
+          if (err) {
+            console.log(err);
+            res.redirect('back');
+          } else {
+            if (allBlogs.length < 1) {
+              noMatch = 'Nem találtam egyező blogbejegyzést, próbáld meg másképp.';
+            }
+            res.render('blogs/index', {
+              blogs: allBlogs,
+              current: pageNumber,
+              pages: Math.ceil(count / perPage),
+              noMatch: noMatch,
+              search: req.query.search
+            });
           }
-          res.render('blogs/index', {
-            blogs: allBlogs,
-            current: pageNumber,
-            pages: Math.ceil(count / perPage),
-            noMatch: noMatch,
-            search: req.query.search
-          });
-        }
-      })
-    })
+        });
+      });
   } else {
-    Blogs.find({}).sort({
-      createdAt: -1
-    }).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allBlogs) {
-      Blogs.countDocuments().exec(function (err, count) {
-        if (err) {
-          console.log(err);
-        } else {
-          res.render('blogs/index', {
-            blogs: allBlogs,
-            current: pageNumber,
-            pages: Math.ceil(count / perPage),
-            noMatch: noMatch,
-            search: false
-          });
-        }
+    Blogs.find({})
+      .sort({
+        createdAt: -1
       })
-
-    })
+      .skip(perPage * pageNumber - perPage)
+      .limit(perPage)
+      .exec(function(err, allBlogs) {
+        Blogs.countDocuments().exec(function(err, count) {
+          if (err) {
+            console.log(err);
+          } else {
+            res.render('blogs/index', {
+              blogs: allBlogs,
+              current: pageNumber,
+              pages: Math.ceil(count / perPage),
+              noMatch: noMatch,
+              search: false
+            });
+          }
+        });
+      });
   }
 });
 
 // CATEGORIES - CATEGORY (TYPE)
-router.get('/category/:id', function (req, res) {
+router.get('/category/:id', function(req, res) {
   var perPage = 16;
   var pageQuery = parseInt(req.query.page);
   var pageNumber = pageQuery ? pageQuery : 1;
   var noMatch = null;
   Blogs.find({
     category: req.params.id
-  }).sort({
-    createdAt: -1
-  }).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allBlogs) {
-    Blogs.countDocuments({
-      category: req.params.id
-    }).exec(function (err, count) {
-      if (err) {
-        console.log(err);
-      } else {
-        res.render('blogs/catindex', {
-          blogs: allBlogs,
-          current: pageNumber,
-          category: req.params.id,
-          findRoute: 'category',
-          pages: Math.ceil(count / perPage),
-          noMatch: noMatch,
-          search: false
-        });
-      }
-    })
-
   })
-})
+    .sort({
+      createdAt: -1
+    })
+    .skip(perPage * pageNumber - perPage)
+    .limit(perPage)
+    .exec(function(err, allBlogs) {
+      Blogs.countDocuments({
+        category: req.params.id
+      }).exec(function(err, count) {
+        if (err) {
+          console.log(err);
+        } else {
+          res.render('blogs/catindex', {
+            blogs: allBlogs,
+            current: pageNumber,
+            category: req.params.id,
+            findRoute: 'category',
+            pages: Math.ceil(count / perPage),
+            noMatch: noMatch,
+            search: false
+          });
+        }
+      });
+    });
+});
 
 // NEW Blogs PAGE - ADDED NEW BLOGPOST
-router.get('/new', middleware.isLoggedIn, function (req, res) {
+router.get('/new', middleware.isLoggedIn, function(req, res) {
   res.render('blogs/new');
 });
 
 // CREATE NEW Blogs
-router.post('/', middleware.isLoggedIn, upload.single('image'), function (req, res) {
+router.post('/', middleware.isLoggedIn, upload.single('image'), function(req, res) {
   // req.body.blogs.description = req.sanitize(req.body.blogs.description);
   req.body.blogs.author = {
     id: req.user._id,
     username: req.user.username
   };
   if (req.file) {
-    cloudinary.uploader.upload(req.file.path, function (result) {
+    cloudinary.uploader.upload(req.file.path, function(result) {
       // add cloudinary url for the image to the Blogs object under image property
       req.body.blogs.image = result.secure_url;
-      Blogs.create(req.body.blogs, function (err, createdBlogs) {
+      Blogs.create(req.body.blogs, function(err, createdBlogs) {
         if (err) {
           req.flash('error', 'Valami hiba történt. Próbálja újra.');
           res.redirect('blogs');
@@ -139,11 +149,12 @@ router.post('/', middleware.isLoggedIn, upload.single('image'), function (req, r
           req.flash('success', 'Az új bejegyzésed kész!');
           res.redirect('/blogs');
         }
-      })
+      });
     });
   } else {
-    req.body.blogs.image = 'https://res.cloudinary.com/maja0426/image/upload/v1552336982/Aprohirdetes/no-image-icon-11.png';
-    Blogs.create(req.body.blogs, function (err, createdBlogs) {
+    req.body.blogs.image =
+      'https://res.cloudinary.com/maja0426/image/upload/v1552336982/Aprohirdetes/no-image-icon-11.png';
+    Blogs.create(req.body.blogs, function(err, createdBlogs) {
       if (err) {
         req.flash('error', 'Valami hiba történt. Próbálja újra.');
         res.redirect('blogs');
@@ -151,13 +162,13 @@ router.post('/', middleware.isLoggedIn, upload.single('image'), function (req, r
         req.flash('success', 'Az új bejegyzésed kész!');
         res.redirect('/blogs');
       }
-    })
+    });
   }
 });
 
 // SHOW PAGE - SHOW THE SELECTED AD
-router.get('/:id', function (req, res) {
-  Blogs.findById(req.params.id, function (err, foundBlog) {
+router.get('/:id', function(req, res) {
+  Blogs.findById(req.params.id, function(err, foundBlog) {
     if (err || !foundBlog) {
       req.flash('error', 'Valami hiba történt. Próbálja újra.');
       res.redirect('/blogs');
@@ -166,12 +177,12 @@ router.get('/:id', function (req, res) {
         blog: foundBlog
       });
     }
-  })
+  });
 });
 
 // EDIT PAGE - EDIT THE SELECTED BLOG
-router.get('/:id/edit', middleware.checkAdmin, function (req, res) {
-  Blogs.findById(req.params.id, function (err, foundBlog) {
+router.get('/:id/edit', middleware.checkAdmin, function(req, res) {
+  Blogs.findById(req.params.id, function(err, foundBlog) {
     res.render('blogs/edit', {
       blog: foundBlog
     });
@@ -179,14 +190,14 @@ router.get('/:id/edit', middleware.checkAdmin, function (req, res) {
 });
 
 // UPDATE PAGE
-router.put('/:id', middleware.checkAdmin, upload.single('image'), function (req, res) {
+router.put('/:id', middleware.checkAdmin, upload.single('image'), function(req, res) {
   // req.body.blogs.description = req.sanitize(req.body.blogs.description);
   req.body.blogs.lastModifiedAt = Date.now();
   if (req.file) {
-    cloudinary.uploader.upload(req.file.path, function (result) {
+    cloudinary.uploader.upload(req.file.path, function(result) {
       // add cloudinary url for the image to the Blogs object under image property
       req.body.blogs.image = result.secure_url;
-      Blogs.findByIdAndUpdate(req.params.id, req.body.blogs, function (err, updatedBlog) {
+      Blogs.findByIdAndUpdate(req.params.id, req.body.blogs, function(err, updatedBlog) {
         if (err) {
           req.flash('error', 'Valami hiba történt. Próbálja újra.');
           res.redirect('blogs');
@@ -194,11 +205,11 @@ router.put('/:id', middleware.checkAdmin, upload.single('image'), function (req,
           req.flash('success', 'A bejegyzésed módosítva!');
           res.redirect('/blogs');
         }
-      })
+      });
     });
   } else {
     // req.body.Blogs.image = 'https://res.cloudinary.com/maja0426/image/upload/v1550587836/Aprohirdetes/NoImageFound.png';
-    Blogs.findByIdAndUpdate(req.params.id, req.body.blogs, function (err, updateBlog) {
+    Blogs.findByIdAndUpdate(req.params.id, req.body.blogs, function(err, updateBlog) {
       if (err) {
         req.flash('error', 'Valami hiba történt. Próbálja újra.');
         res.redirect('/blogs');
@@ -206,13 +217,13 @@ router.put('/:id', middleware.checkAdmin, upload.single('image'), function (req,
         req.flash('success', 'A bejegyzésed módosítva!');
         res.redirect('/blogs');
       }
-    })
+    });
   }
 });
 
 // DELETE PAGE
-router.delete('/:id', middleware.checkAdmin, function (req, res) {
-  Blogs.findByIdAndRemove(req.params.id, function (err) {
+router.delete('/:id', middleware.checkAdmin, function(req, res) {
+  Blogs.findByIdAndRemove(req.params.id, function(err) {
     if (err) {
       req.flash('error', 'Valami hiba történt. Próbálja újra.');
       res.redirect('/blogs');
@@ -221,13 +232,12 @@ router.delete('/:id', middleware.checkAdmin, function (req, res) {
       req.flash('success', 'Blogpost törölve!');
       res.redirect('/blogs');
     }
-  })
+  });
 });
 
 // SEARCH REGEX
 function escapeRegex(text) {
-  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-};
-
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+}
 
 module.exports = router;

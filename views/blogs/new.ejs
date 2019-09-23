@@ -2,15 +2,9 @@
 <html lang="hu">
   <<head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="robots" content="index,follow" />
-    <meta
-      name="description"
-      content="A Smart-Bee Web minimál blogja. Életről, vállalkozásról, webfejlesztésről"
-    />
+    <meta name="description" content="A Smart-Bee Web minimál blogja. Életről, vállalkozásról, webfejlesztésről" />
     <meta name="author" content="Majoros Tamás" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Smart-Bee smpl Blog" />
@@ -37,14 +31,11 @@
     <meta name="twitter:creator" content="@SmartBeeWeb" />
     <title>Smart-Bee Blog</title>
     <% moment.locale("hu") %>
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans"
-      rel="stylesheet"
-    />
-    <link
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans" rel="stylesheet" />
+    <!-- <link
       href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.css"
       rel="stylesheet"
-    />
+    /> -->
     <link rel="stylesheet" href="/css/main.css" />
   </head>
 
@@ -87,19 +78,14 @@
           <img src="/img/awesome/github.svg" alt="github ikon">
         </header> -->
           <p class="about-me">
-            „Szeme villám! haja libeg! Hármas kört reá elébb, s csukja szemünk
-            szent borzalom, mert mézen élt, mézharmaton, s itta a Mennyország
-            tejét!”
+            „Szeme villám! haja libeg! Hármas kört reá elébb, s csukja szemünk szent borzalom, mert mézen élt,
+            mézharmaton, s itta a Mennyország tejét!”
           </p>
           <figure class="profile-photo">
             <img src="/img/DSC_0201.jpg" alt="Maja profile photo" />
           </figure>
           <div class="social-follow">
-            <a
-              class="twitter-follow-button"
-              href="https://twitter.com/SmartBeeWeb"
-              data-size="large"
-            >
+            <a class="twitter-follow-button" href="https://twitter.com/SmartBeeWeb" data-size="large">
               Follow @SmartBeeWeb</a
             >
           </div>
@@ -113,61 +99,29 @@
         <% } %>
 
         <section class="categories">
-          <a href="/blogs/category/Vállalkozás" class="btn bg-Vállalkozás"
-            >Vállalkozás</a
-          >
-          <a href="/blogs/category/Webfejlesztés" class="btn bg-Webfejlesztés"
-            >Webfejlesztés</a
-          >
-          <a
-            href="/blogs/category/Gondolatébresztő"
-            class="btn bg-Gondolatébresztő"
-            >Gondolatébresztő</a
-          >
+          <a href="/blogs/category/Vállalkozás" class="btn bg-Vállalkozás">Vállalkozás</a>
+          <a href="/blogs/category/Webfejlesztés" class="btn bg-Webfejlesztés">Webfejlesztés</a>
+          <a href="/blogs/category/Gondolatébresztő" class="btn bg-Gondolatébresztő">Gondolatébresztő</a>
           <a href="/blogs/category/Egyéb" class="btn bg-Egyéb">Egyéb</a>
           <a href="/blogs/category/Súgó" class="btn bg-Súgó">Súgó</a>
         </section>
 
         <footer>
           <section class="social">
-            <a
-              href="https://twitter.com/SmartBeeWeb"
-              target="_blank"
-              rel="noreferrer"
-              >twitter</a
-            >
-            <a
-              href="https://www.facebook.com/smartbeeweb"
-              target="_blank"
-              rel="noreferrer"
-              >facebook</a
-            >
-            <a
-              href="https://www.linkedin.com/in/majoros-tamas/"
-              target="_blank"
-              rel="noreferrer"
-              >linkedin</a
-            >
-            <a
-              href="https://www.instagram.com/smartbeeweboldalak/"
-              target="_blank"
-              rel="noreferrer"
-              >instagram</a
-            >
+            <a href="https://twitter.com/SmartBeeWeb" target="_blank" rel="noreferrer">twitter</a>
+            <a href="https://www.facebook.com/smartbeeweb" target="_blank" rel="noreferrer">facebook</a>
+            <a href="https://www.linkedin.com/in/majoros-tamas/" target="_blank" rel="noreferrer">linkedin</a>
+            <a href="https://www.instagram.com/smartbeeweboldalak/" target="_blank" rel="noreferrer">instagram</a>
           </section>
           <section class="copyright">
             <p>
               ©️ 2019
-              <a href="https://smartbeeweb.hu" target="_blank" rel="noreferrer"
-                >Smart-Bee Web</a
-              >
+              <a href="https://smartbeeweb.hu" target="_blank" rel="noreferrer">Smart-Bee Web</a>
             </p>
             <br />
             <p>
               Inspired by
-              <a href="https://flaviocopes.com" target="_blank" rel="noreferrer"
-                >Flavio Copes</a
-              >.<span> 🙏</span>
+              <a href="https://flaviocopes.com" target="_blank" rel="noreferrer">Flavio Copes</a>.<span> 🙏</span>
             </p>
           </section>
         </footer>
@@ -176,12 +130,7 @@
 
       <!-- Maga a lényegi tartalom -->
       <section>
-        <form
-          action="/blogs"
-          method="POST"
-          enctype="multipart/form-data"
-          class="form-main"
-        >
+        <form action="/blogs" method="POST" enctype="multipart/form-data" class="form-main">
           <input
             class="form-control"
             type="text"
@@ -204,11 +153,7 @@
 
           <h6>Kategória:</h6>
 
-          <select
-            class="custom-select font-weight-bold"
-            name="blogs[category]"
-            required
-          >
+          <select class="custom-select font-weight-bold" name="blogs[category]" required>
             <option value="Vállalkozás" selected>Vállalkozás</option>
             <option value="Webfejlesztés">Webfejlesztés</option>
             <option value="Gondolatébresztő">Gondolatébresztő</option>
@@ -227,14 +172,7 @@
               accept="image/*"
           /></label>
 
-          <textarea
-            id="summernote"
-            rows="15"
-            class="form-control"
-            placeholder="blog"
-            name="blogs[description]"
-            required
-          ></textarea>
+          <textarea rows="15" class="form-control" placeholder="blog" name="blogs[description]" required></textarea>
 
           <button class="btn">Post feltöltése</button>
           <a class="btn" href="/blogs" role="button">Vissza</a>
@@ -258,7 +196,7 @@
         if (d.getElementById(id)) return t;
         js = d.createElement(s);
         js.id = id;
-        js.src = "https://platform.twitter.com/widgets.js";
+        js.src = 'https://platform.twitter.com/widgets.js';
         fjs.parentNode.insertBefore(js, fjs);
 
         t._e = [];
@@ -267,19 +205,19 @@
         };
 
         return t;
-      })(document, "script", "twitter-wjs");
+      })(document, 'script', 'twitter-wjs');
     </script>
 
     <!-- Floating scroll script -->
     <script>
-      var link = document.getElementById("back-to-top");
+      var link = document.getElementById('back-to-top');
       var amountScrolled = 250;
 
       function addClass(el, className) {
         if (el.classList) {
           el.classList.add(className);
         } else {
-          el.className += " " + className;
+          el.className += ' ' + className;
         }
       }
 
@@ -287,40 +225,37 @@
         if (el.classList) el.classList.remove(className);
         else
           el.className = el.className.replace(
-            new RegExp(
-              "(^|\\b)" + className.split(" ").join("|") + "(\\b|$)",
-              "gi"
-            ),
-            " "
+            new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'),
+            ' '
           );
       }
 
-      window.addEventListener("scroll", function(e) {
+      window.addEventListener('scroll', function(e) {
         if (window.scrollY > amountScrolled) {
-          addClass(link, "show");
+          addClass(link, 'show');
         } else {
-          removeClass(link, "show");
+          removeClass(link, 'show');
         }
       });
     </script>
 
     <!-- theme switch (light/dark) -->
     <script>
-      document.addEventListener("DOMContentLoaded", event => {
-        (localStorage.getItem("mode") || "dark") === "dark"
-          ? document.querySelector("body").classList.add("dark")
-          : document.querySelector("body").classList.remove("dark");
+      document.addEventListener('DOMContentLoaded', event => {
+        (localStorage.getItem('mode') || 'dark') === 'dark'
+          ? document.querySelector('body').classList.add('dark')
+          : document.querySelector('body').classList.remove('dark');
       });
     </script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.js"></script>
     <script src="/js/summernote-hu-HU.js"></script>
     <script>
       $("#summernote").summernote({
         height: 600,
         lang: "hu-HU"
       });
-    </script>
+    </script> -->
   </body>
 </html>
