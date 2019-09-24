@@ -185,6 +185,10 @@ section.main-title h1 {
   margin-bottom: 30px;
 }
 
+input:focus {
+  outline: none;
+}
+
 section.main-title .searchbar {
   margin-bottom: 50px;
 }
@@ -209,6 +213,9 @@ section.main-title .searchbar {
   padding: 12px;
   font-size: 18px;
   width: 550px;
+  border-radius: 2px;
+  border: 1px solid rgb(243, 213, 213);
+  color: #000;
 }
 
 /* .searchbar form button {
