@@ -19,451 +19,17 @@
     <% moment.locale("hu") %>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans" rel="stylesheet" />
     <link rel="stylesheet" href="/css/main.css" />
-
     <style>
-      /*
-Copyright (c) 2017 Chris Patuzzo
-https://twitter.com/chrispatuzzo
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-*/
-      .post-description a {
-        color: #4183c4 !important;
-        text-decoration: none;
-      }
-
-      .post-description a:hover {
-        text-decoration: underline;
-      }
-
-      .post-description a.absent {
-        color: #cc0000;
-      }
-
-      .post-description a.anchor {
-        display: block;
-        padding-left: 30px;
-        margin-left: -30px;
-        cursor: pointer;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-      }
-
-      .post-description h1,
-      .post-description h2,
-      .post-description h3,
-      .post-description h4,
-      .post-description h5,
-      .post-description h6 {
-        margin: 20px 0 10px;
-        padding: 0;
-        font-weight: bold;
-        -webkit-font-smoothing: antialiased;
-        cursor: text;
-        position: relative;
-      }
-
-      .post-description h2:first-child,
-      .post-description h1:first-child,
-      .post-description h1:first-child + h2,
-      .post-description h3:first-child,
-      .post-description h4:first-child,
-      .post-description h5:first-child,
-      .post-description h6:first-child {
-        margin-top: 0;
-        padding-top: 0;
-      }
-
-      .post-description h1:hover a.anchor,
-      .post-description h2:hover a.anchor,
-      .post-description h3:hover a.anchor,
-      .post-description h4:hover a.anchor,
-      .post-description h5:hover a.anchor,
-      .post-description h6:hover a.anchor {
-        text-decoration: none;
-      }
-
-      .post-description h1 tt,
-      .post-description h1 code {
-        font-size: inherit;
-      }
-
-      .post-description h2 tt,
-      .post-description h2 code {
-        font-size: inherit;
-      }
-      .post-description h3 tt,
-      .post-description h3 code {
-        font-size: inherit;
-      }
-
-      .post-description h4 tt,
-      .post-description h4 code {
-        font-size: inherit;
-      }
-
-      .post-description h5 tt,
-      .post-description h5 code {
-        font-size: inherit;
-      }
-
-      .post-description h6 tt,
-      .post-description h6 code {
-        font-size: inherit;
-      }
-
-      .post-description h1 {
-        font-size: 28px;
-        color: black;
-      }
-
-      .post-description h2 {
-        font-size: 24px;
-        border-bottom: 1px solid #cccccc;
-        color: black;
-      }
-
-      .post-description h3 {
-        font-size: 18px;
-      }
-
-      .post-description h4 {
-        font-size: 16px;
-      }
-
-      .post-description h5 {
-        font-size: 14px;
-      }
-
-      .post-description h6 {
-        color: #777777;
-        font-size: 14px;
-      }
-
-      .post-description p,
-      .post-description blockquote,
-      .post-description ul,
-      .post-description ol,
-      .post-description dl,
-      .post-description li,
-      .post-description table,
-      .post-description pre {
-        margin: 15px 0;
-      }
-
-      .post-description hr {
-        border: 0 none;
-        color: #cccccc;
-        height: 4px;
-        padding: 0;
-      }
-
-      .post-description body > h2:first-child {
-        margin-top: 0;
-        padding-top: 0;
-      }
-
-      .post-description body > h1:first-child {
-        margin-top: 0;
-        padding-top: 0;
-      }
-
-      .post-description body > h1:first-child + h2 {
-        margin-top: 0;
-        padding-top: 0;
-      }
-
-      .post-description body > h3:first-child,
-      .post-description body > h4:first-child,
-      .post-description body > h5:first-child,
-      .post-description body > h6:first-child {
-        margin-top: 0;
-        padding-top: 0;
-      }
-
-      .post-description a:first-child h1,
-      .post-description a:first-child h2,
-      .post-description a:first-child h3,
-      .post-description a:first-child h4,
-      .post-description a:first-child h5,
-      .post-description a:first-child h6 {
-        margin-top: 0;
-        padding-top: 0;
-      }
-
-      .post-description h1 p,
-      .post-description h2 p,
-      .post-description h3 p,
-      .post-description h4 p,
-      .post-description h5 p,
-      h6 p {
-        margin-top: 0;
-      }
-
-      .post-description li p.first {
-        display: inline-block;
-      }
-
-      .post-description ul,
-      .post-description ol {
-        padding-left: 30px;
-      }
-
-      .post-description ul :first-child,
-      .post-description ol :first-child {
-        margin-top: 0;
-      }
-
-      .post-description ul :last-child,
-      .post-description ol :last-child {
-        margin-bottom: 0;
-      }
-
-      .post-description dl {
-        padding: 0;
-      }
-
-      .post-description dl dt {
-        font-size: 14px;
-        font-weight: bold;
-        font-style: italic;
-        padding: 0;
-        margin: 15px 0 5px;
-      }
-
-      .post-description dl dt:first-child {
-        padding: 0;
-      }
-
-      .post-description dl dt > :first-child {
-        margin-top: 0;
-      }
-
-      .post-description dl dt > :last-child {
-        margin-bottom: 0;
-      }
-
-      .post-description dl dd {
-        margin: 0 0 15px;
-        padding: 0 15px;
-      }
-
-      .post-description dl dd > :first-child {
-        margin-top: 0;
-      }
-
-      .post-description dl dd > :last-child {
-        margin-bottom: 0;
-      }
-
-      .post-description blockquote {
-        border-left: 4px solid #dddddd;
-        padding: 0 15px;
-        color: #777777;
-      }
-
-      .post-description blockquote > :first-child {
-        margin-top: 0;
-      }
-
-      .post-description blockquote > :last-child {
-        margin-bottom: 0;
-      }
-
-      .post-description table {
-        padding: 0;
-      }
-      .post-description table tr {
-        border-top: 1px solid #cccccc;
-        background-color: white;
-        margin: 0;
-        padding: 0;
-      }
-
-      .post-description table tr:nth-child(2n) {
-        background-color: #f8f8f8;
-      }
-
-      .post-description table tr th {
-        font-weight: bold;
-        border: 1px solid #cccccc;
-        text-align: left;
-        margin: 0;
-        padding: 6px 13px;
-      }
-
-      .post-description table tr td {
-        border: 1px solid #cccccc;
-        text-align: left;
-        margin: 0;
-        padding: 6px 13px;
-      }
-
-      .post-description table tr th :first-child,
-      .post-description table tr td :first-child {
-        margin-top: 0;
-      }
-
-      .post-description table tr th :last-child,
-      .post-description table tr td :last-child {
-        margin-bottom: 0;
-      }
-
-      .post-description img {
-        max-width: 50%;
-      }
-
-      .post-description span.frame {
-        display: block;
-        overflow: hidden;
-      }
-
-      .post-description span.frame > span {
-        border: 1px solid #dddddd;
-        display: block;
-        float: left;
-        overflow: hidden;
-        margin: 13px 0 0;
-        padding: 7px;
-        width: auto;
-      }
-
-      .post-description span.frame span img {
-        display: block;
-        float: left;
-      }
-
-      .post-description span.frame span span {
-        clear: both;
-        color: #333333;
-        display: block;
-        padding: 5px 0 0;
-      }
-
-      .post-description span.align-center {
-        display: block;
-        overflow: hidden;
-        clear: both;
-      }
-
-      .post-description span.align-center > span {
-        display: block;
-        overflow: hidden;
-        margin: 13px auto 0;
-        text-align: center;
-      }
-
-      .post-description span.align-center span img {
-        margin: 0 auto;
-        text-align: center;
-      }
-
-      .post-description span.align-right {
-        display: block;
-        overflow: hidden;
-        clear: both;
-      }
-
-      .post-description span.align-right > span {
-        display: block;
-        overflow: hidden;
-        margin: 13px 0 0;
-        text-align: right;
-      }
-
-      .post-description span.align-right span img {
-        margin: 0;
-        text-align: right;
-      }
-
-      .post-description span.float-left {
-        display: block;
-        margin-right: 13px;
-        overflow: hidden;
-        float: left;
-      }
-
-      .post-description span.float-left span {
-        margin: 13px 0 0;
-      }
-
-      .post-description span.float-right {
-        display: block;
-        margin-left: 13px;
-        overflow: hidden;
-        float: right;
-      }
-
-      .post-description span.float-right > span {
-        display: block;
-        overflow: hidden;
-        margin: 13px auto 0;
-        text-align: right;
-      }
-
-      .post-description code,
-      .post-description tt {
-        margin: 0 2px;
-        padding: 0 5px;
-        white-space: nowrap;
-        border: 1px solid #eaeaea;
-        background-color: #f8f8f8;
-        border-radius: 3px;
-      }
-
-      .post-description pre code {
-        margin: 0;
-        padding: 0;
-        white-space: pre;
-        border: none;
-        background: transparent;
-      }
-
-      .post-description .highlight pre {
-        background-color: #f8f8f8;
-        border: 1px solid #cccccc;
-        font-size: 13px;
-        line-height: 19px;
-        overflow: auto;
-        padding: 6px 10px;
-        border-radius: 3px;
-      }
-
-      .post-description pre {
-        background-color: #f8f8f8;
-        border: 1px solid #cccccc;
-        font-size: 13px;
-        line-height: 19px;
-        overflow: auto;
-        padding: 6px 10px;
-        border-radius: 3px;
-      }
-
-      .post-description pre code,
-      .post-description pre tt {
-        background-color: transparent;
-        border: none;
-      }
-
-      @media (max-width: 500px) {
-        .post-description img {
-          max-width: 100%;
-        }
+      .LI-profile-badge {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .categories {
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
       }
     </style>
   </head>
@@ -506,7 +72,20 @@ SOFTWARE.
             „Szeme villám! haja libeg! Hármas kört reá elébb, s csukja szemünk szent borzalom, mert mézen élt,
             mézharmaton, s itta a Mennyország tejét!”
           </p>
-          <figure class="profile-photo">
+          <div
+            class="LI-profile-badge"
+            data-version="v1"
+            data-size="medium"
+            data-locale="en_US"
+            data-type="vertical"
+            data-theme="light"
+            data-vanity="majoros-tamas"
+          >
+            <a class="LI-simple-link" href="https://hu.linkedin.com/in/majoros-tamas?trk=profile-badge"
+              >Tamas Majoros</a
+            >
+          </div>
+          <!-- <figure class="profile-photo">
             <img src="/img/DSC_0201.jpg" alt="Maja profile photo" />
           </figure>
           <div class="social-follow">
@@ -518,7 +97,7 @@ SOFTWARE.
             >
               Follow @SmartBeeWeb</a
             >
-          </div>
+          </div> -->
         </section>
 
         <% if(currentUser && currentUser.isAdmin) { %>
@@ -581,7 +160,7 @@ SOFTWARE.
           <a href="/blogs/<%= blog._id %>/edit" class="btn" role="button">Szerkesztés</a>
           <% } %>
           <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
-            <button class="btn">Törlés!</button>
+            <button class="btn btn-delete">Törlés!</button>
           </form>
           <% } %>
           <a class="btn btn-back" href="/blogs" role="button">Vissza</a>
@@ -595,8 +174,10 @@ SOFTWARE.
       ><img src="/img/awesome/chevron-up.svg" alt="felfelé nyíl"
     /></a>
 
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+
     <!-- Twitter follower script -->
-    <script>
+    <!-- <script>
       window.twttr = (function(d, s, id) {
         var js,
           fjs = d.getElementsByTagName(s)[0],
@@ -614,7 +195,7 @@ SOFTWARE.
 
         return t;
       })(document, 'script', 'twitter-wjs');
-    </script>
+    </script> -->
 
     <!-- Floating scroll script -->
     <script>

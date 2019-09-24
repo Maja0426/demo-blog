@@ -32,11 +32,20 @@
     <title>Smart-Bee Blog</title>
     <% moment.locale("hu") %>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans" rel="stylesheet" />
-    <!-- <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.css"
-      rel="stylesheet"
-    /> -->
     <link rel="stylesheet" href="/css/main.css" />
+    <style>
+      .LI-profile-badge {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .categories {
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+      }
+    </style>
   </head>
 
   <body id="page-top" class="">
@@ -81,14 +90,27 @@
             „Szeme villám! haja libeg! Hármas kört reá elébb, s csukja szemünk szent borzalom, mert mézen élt,
             mézharmaton, s itta a Mennyország tejét!”
           </p>
-          <figure class="profile-photo">
+          <div
+            class="LI-profile-badge"
+            data-version="v1"
+            data-size="medium"
+            data-locale="en_US"
+            data-type="vertical"
+            data-theme="light"
+            data-vanity="majoros-tamas"
+          >
+            <a class="LI-simple-link" href="https://hu.linkedin.com/in/majoros-tamas?trk=profile-badge"
+              >Tamas Majoros</a
+            >
+          </div>
+          <!-- <figure class="profile-photo">
             <img src="/img/DSC_0201.jpg" alt="Maja profile photo" />
           </figure>
           <div class="social-follow">
             <a class="twitter-follow-button" href="https://twitter.com/SmartBeeWeb" data-size="large">
               Follow @SmartBeeWeb</a
             >
-          </div>
+          </div> -->
         </section>
 
         <% if(currentUser && currentUser.isAdmin) { %>
@@ -172,10 +194,20 @@
               accept="image/*"
           /></label>
 
-          <textarea rows="15" class="form-control" placeholder="blog" name="blogs[description]" required></textarea>
+          <textarea
+            id="md"
+            rows="30"
+            class="form-control"
+            placeholder="blog"
+            name="blogs[description]"
+            required
+          ></textarea>
 
           <button class="btn">Post feltöltése</button>
           <a class="btn" href="/blogs" role="button">Vissza</a>
+          <a class="btn btn-md" target="_blank" href="https://maja-md-editor.netlify.com" role="button"
+            >Markdown Editor</a
+          >
         </form>
       </section>
 
@@ -187,8 +219,9 @@
       ><img src="/img/awesome/chevron-up.svg" alt="felfelé nyíl"
     /></a>
 
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
     <!-- Twitter follower script -->
-    <script>
+    <!-- <script>
       window.twttr = (function(d, s, id) {
         var js,
           fjs = d.getElementsByTagName(s)[0],
@@ -206,7 +239,7 @@
 
         return t;
       })(document, 'script', 'twitter-wjs');
-    </script>
+    </script> -->
 
     <!-- Floating scroll script -->
     <script>
@@ -248,7 +281,7 @@
       });
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.js"></script>
     <script src="/js/summernote-hu-HU.js"></script>
     <script>

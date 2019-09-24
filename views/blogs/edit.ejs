@@ -33,6 +33,32 @@
     <% moment.locale("hu") %>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans" rel="stylesheet" />
     <link rel="stylesheet" href="/css/main.css" />
+
+    <style>
+      hr {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        height: 5px;
+      }
+
+      article {
+        display: block;
+        border: 1px dashed #000;
+        padding: 1rem;
+      }
+
+      .LI-profile-badge {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .categories {
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+      }
+    </style>
   </head>
 
   <body id="page-top">
@@ -66,14 +92,27 @@
             „Szeme villám! haja libeg! Hármas kört reá elébb, s csukja szemünk szent borzalom, mert mézen élt,
             mézharmaton, s itta a Mennyország tejét!”
           </p>
-          <figure class="profile-photo">
+          <div
+            class="LI-profile-badge"
+            data-version="v1"
+            data-size="medium"
+            data-locale="en_US"
+            data-type="vertical"
+            data-theme="light"
+            data-vanity="majoros-tamas"
+          >
+            <a class="LI-simple-link" href="https://hu.linkedin.com/in/majoros-tamas?trk=profile-badge"
+              >Tamas Majoros</a
+            >
+          </div>
+          <!-- <figure class="profile-photo">
             <img src="/img/DSC_0201.jpg" alt="Maja profile photo" />
           </figure>
           <div class="social-follow">
             <a class="twitter-follow-button" href="https://twitter.com/SmartBeeWeb" data-size="large">
               Follow @SmartBeeWeb</a
             >
-          </div>
+          </div> -->
         </section>
 
         <% if(currentUser && currentUser.isAdmin) { %>
@@ -164,9 +203,12 @@
               accept="image/*"
           /></label>
 
-          <textarea rows="15" class="form-control" placeholder="blog" name="blogs[description]" required>
+          <textarea rows="30" class="form-control" placeholder="blog" name="blogs[description]" required>
 <%- blog.description %></textarea
           >
+          <!-- <article class="post-description">
+            <%- marked(blog.description) %>
+          </article> -->
 
           <% if(currentUser && currentUser.isAdmin) { %>
           <section class="delete-form">
@@ -174,9 +216,12 @@
             <button class="btn">Post feltöltése</button>
             <% } %>
             <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
-              <button class="btn">Törlés!</button>
+              <button class="btn btn-delete">Törlés!</button>
             </form>
             <a class="btn" href="/blogs" role="button">Vissza</a>
+            <a class="btn btn-md" target="_blank" href="https://maja-md-editor.netlify.com" role="button"
+              >Markdown Editor</a
+            >
           </section>
           <% } %>
         </form>
@@ -190,8 +235,10 @@
       ><img src="/img/awesome/chevron-up.svg" alt="felfelé nyíl"
     /></a>
 
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+
     <!-- Twitter follower script -->
-    <script>
+    <!-- <script>
       window.twttr = (function(d, s, id) {
         var js,
           fjs = d.getElementsByTagName(s)[0],
@@ -209,7 +256,7 @@
 
         return t;
       })(document, 'script', 'twitter-wjs');
-    </script>
+    </script> -->
 
     <!-- Floating scroll script -->
     <script>
@@ -252,6 +299,6 @@
       });
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
   </body>
 </html>
