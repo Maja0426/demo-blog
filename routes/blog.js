@@ -181,7 +181,7 @@ router.get('/:id', function(req, res) {
 });
 
 // EDIT PAGE - EDIT THE SELECTED BLOG
-router.get('/:id/edit', middleware.checkAdmin, function(req, res) {
+router.get('/:id/edit', middleware.checkAdmin, middleware.checkGuest, function(req, res) {
   Blogs.findById(req.params.id, function(err, foundBlog) {
     res.render('blogs/edit', {
       blog: foundBlog
@@ -190,7 +190,7 @@ router.get('/:id/edit', middleware.checkAdmin, function(req, res) {
 });
 
 // UPDATE PAGE
-router.put('/:id', middleware.checkAdmin, upload.single('image'), function(req, res) {
+router.put('/:id', middleware.checkAdmin, middleware.checkGuest, upload.single('image'), function(req, res) {
   // req.body.blogs.description = req.sanitize(req.body.blogs.description);
   req.body.blogs.lastModifiedAt = Date.now();
   if (req.file) {

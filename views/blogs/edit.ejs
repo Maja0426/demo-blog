@@ -108,7 +108,7 @@
           </div>
         </section>
 
-        <% if(currentUser && currentUser.isAdmin) { %>
+        <% if((currentUser && currentUser.isAdmin) || (currentUser && currentUser.isGuest) { %>
         <section>
           <a class="btn new-btn" href="/blogs/new" role="button">Új post</a>
           <a class="btn new-btn" href="/logout" role="button">Logout</a>

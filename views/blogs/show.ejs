@@ -101,7 +101,7 @@
           </div> -->
         </section>
 
-        <% if(currentUser && currentUser.isAdmin) { %>
+        <% if ((currentUser && currentUser.isAdmin) || (currentUser && currentUser.isGuest)) { %>
         <section>
           <a class="btn new-btn" href="/blogs/new" role="button">Új post</a>
           <a class="btn new-btn" href="/logout" role="button">Logout</a>
@@ -156,7 +156,7 @@
           <span class="post-description"><%- marked(blog.description) %></span>
         </section>
         <section class="delete-form">
-          <% if(currentUser && currentUser.isAdmin) { %> <% if (blog.description) { %>
+          <% if (currentUser && currentUser.isAdmin) { %> <% if (blog.description) { %>
           <a href="/blogs/<%= blog._id %>/edit" class="btn" role="button">Szerkesztés</a>
           <% } %>
           <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">

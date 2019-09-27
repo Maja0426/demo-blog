@@ -40,6 +40,8 @@ router.post('/register', function(req, res) {
     });
     if (req.body.username === 'Admin') {
       newUser.isAdmin = true;
+    } else if (req.body.username === 'Guest') {
+      newUser.isGuest === true;
     }
     User.register(newUser, req.body.password, function(err, regUser) {
       if (err) {
