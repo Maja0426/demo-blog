@@ -111,7 +111,7 @@
         </section>
         <% } %>
 
-        <section class="categories">
+        <section id="category" class="categories">
           <a href="/blogs/category/Vállalkozás" class="btn bg-Vállalkozás">Vállalkozás</a>
           <a href="/blogs/category/Webfejlesztés" class="btn bg-Webfejlesztés">Webfejlesztés</a>
           <a href="/blogs/category/Gondolatébresztő" class="btn bg-Gondolatébresztő">Gondolatébresztő</a>
@@ -131,7 +131,6 @@
               ©️ 2019
               <a href="https://smartbeeweb.hu" target="_blank" rel="noreferrer">Smart-Bee Web</a>
             </p>
-            <br />
             <p>
               Inspired by
               <a href="https://flaviocopes.com" target="_blank" rel="noreferrer">Flavio Copes</a>.<span> 🙏</span>
@@ -151,7 +150,7 @@
               <p class="post-description"><%= blog.subTitle %></p>
             </a>
             <div class="post-controller">
-              <p>📅 <%= moment(blog.createdAt).format('YYYY. MM. D.') %></p>
+              <p>📅 <%= moment(blog.createdAt).format('YYYY.MM.DD.') %></p>
               <a href="/blogs/category/<%= blog.category %>" class="btn bg-<%= blog.category %>" role="button"
                 ><%= blog.category %></a
               >
@@ -169,26 +168,6 @@
     /></a>
 
     <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-    <!-- Twitter follower script -->
-    <!-- <script>
-      window.twttr = (function(d, s, id) {
-        var js,
-          fjs = d.getElementsByTagName(s)[0],
-          t = window.twttr || {};
-        if (d.getElementById(id)) return t;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = 'https://platform.twitter.com/widgets.js';
-        fjs.parentNode.insertBefore(js, fjs);
-
-        t._e = [];
-        t.ready = function(f) {
-          t._e.push(f);
-        };
-
-        return t;
-      })(document, 'script', 'twitter-wjs');
-    </script> -->
 
     <!-- Floating scroll script -->
     <script>
