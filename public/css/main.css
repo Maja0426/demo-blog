@@ -126,6 +126,10 @@ a.new-btn {
   color: #000;
 }
 
+.dark code {
+  color: #1e2227;
+}
+
 /* body.dark img {
   border: 1px dotted #524d4d
 } */
