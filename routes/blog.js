@@ -181,7 +181,7 @@ router.get('/:id', function(req, res) {
 });
 
 // EDIT PAGE - EDIT THE SELECTED BLOG
-router.get('/:id/edit', middleware.checkAdmin, function(req, res) {
+router.get('/:id/edit', middleware.checkUser, function(req, res) {
   Blogs.findById(req.params.id, function(err, foundBlog) {
     res.render('blogs/edit', {
       blog: foundBlog
@@ -190,7 +190,7 @@ router.get('/:id/edit', middleware.checkAdmin, function(req, res) {
 });
 
 // UPDATE PAGE
-router.put('/:id', middleware.checkAdmin, upload.single('image'), function(req, res) {
+router.put('/:id', middleware.checkUser, upload.single('image'), function(req, res) {
   // req.body.blogs.description = req.sanitize(req.body.blogs.description);
   req.body.blogs.lastModifiedAt = Date.now();
   if (req.file) {
@@ -222,7 +222,7 @@ router.put('/:id', middleware.checkAdmin, upload.single('image'), function(req, 
 });
 
 // DELETE PAGE
-router.delete('/:id', middleware.checkAdmin, function(req, res) {
+router.delete('/:id', middleware.checkUser, function(req, res) {
   Blogs.findByIdAndRemove(req.params.id, function(err) {
     if (err) {
       req.flash('error', 'Valami hiba történt. Próbálja újra.');

@@ -201,12 +201,12 @@
           <!-- <article class="post-description">
             <%- marked(blog.description) %>
           </article> -->
-
-          <% if(currentUser && currentUser.isAdmin) { %>
+          <% if (blog.author.id !== undefined) {%> <% if(currentUser && blog.author.id.equals(currentUser._id) ||
+          currentUser && currentUser.isAdmin) { %>
           <section class="delete-form">
             <% if (blog.description) { %>
             <button class="btn">Post feltöltése</button>
-            <% } %>
+            <% } %> <% } %>
             <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
               <button class="btn btn-delete">Törlés!</button>
             </form>

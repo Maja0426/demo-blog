@@ -18,12 +18,25 @@ middlewareObj.checkAdmin = function(req, res, next) {
   res.redirect('/blogs');
 };
 
-middlewareObj.checkGuest = function(req, res, next) {
-  if (req.isAuthenticated() && req.user.username === 'Guest') {
-    return next();
+middlewareObj.checkUser = function(req, res, next) {
+  if (req.isAuthenticated()) {
+    Blogs.findById(req.params.id, function(err, foundBlog) {
+      if (err || !foundBlog) {
+        req.flash('error', 'Hiba történt. Nem található a bejegyzés.');
+        res.redirect('/blogs');
+      } else {
+        if (foundBlog.author.id.equals(req.user._id) || req.user.isAdmin) {
+          next();
+        } else {
+          req.flash('error', 'Ehhez a művelethez Önnek nincs jogosultsága.');
+          res.redirect('/blogs');
+        }
+      }
+    });
+  } else {
+    req.flash('error', 'Ehhez a művelethez előbb be kell jelentkezni.');
+    res.redirect('/blogs');
   }
-  req.flash('error', 'Ehhez a művelethez nincs jogosultságod!');
-  res.redirect('/blogs');
 };
 
 middlewareObj.checkAllBlogPosts = function(req, res, next) {

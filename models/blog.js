@@ -11,8 +11,14 @@ var blogsSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
+  author: {
+    id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
+    },
+    username: String
+  },
   lastModifiedAt: Date
 });
-
 
 module.exports = mongoose.model('Blogs', blogsSchema);
