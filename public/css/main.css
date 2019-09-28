@@ -301,15 +301,15 @@ section a.btn.btn-profile {
 /* color switcher */
 section.color-switcher a,
 section.social a:before {
-  content: '🔲 ';
+  content: '🌐 ';
   border: none;
   border-bottom: 1px solid transparent;
-  font-size: 20px;
+  /* font-size: 20px; */
 }
 
-section.social a:before {
+/* section.social a:before {
   font-size: 16px;
-}
+} */
 
 section.color-switcher a:hover,
 section.home-back a:hover {
@@ -323,7 +323,7 @@ section.social a:hover {
 }
 
 section.social a:hover:before {
-  content: '🔳 ';
+  content: '🌐 ';
   border-bottom: none;
   cursor: pointer;
 }
