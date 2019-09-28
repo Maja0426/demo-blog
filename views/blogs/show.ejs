@@ -150,7 +150,10 @@
             <% } %>
             <h3 class="post-title"><%= blog.title %></h3>
             <p>
-              <small class="date">Közzétéve: <%= moment(blog.createdAt).format('YYYY. MM. D. dddd') %> </small>
+              <small class="date"
+                >🖋️ Közzétéve: <%= moment(blog.createdAt).format('YYYY.MM.DD. dddd') %> | Szerző: <%=
+                blog.author.username === 'Guest' ? 'Vendég' : 'Majoros Tamás'%></small
+              >
             </p>
           </header>
           <span class="post-description"><%- marked(blog.description) %></span>
