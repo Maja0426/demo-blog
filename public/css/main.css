@@ -71,12 +71,6 @@ header.icons img {
   border-color: #ffc107;
 } */
 
-/* body.dark section a.btn,
-body.dark button.btn,
-a.new-btn {
-  box-shadow: 0 3px 0 #fff;
-} */
-
 .dark a.btn.btn-back {
   background-color: #ffc107;
   color: #000;
@@ -307,10 +301,14 @@ section a.btn.btn-profile {
 /* color switcher */
 section.color-switcher a,
 section.social a:before {
-  content: '➡️';
+  content: '🔲 ';
   border: none;
   border-bottom: 1px solid transparent;
-  font-size: 18px;
+  font-size: 20px;
+}
+
+section.social a:before {
+  font-size: 16px;
 }
 
 section.color-switcher a:hover,
@@ -325,7 +323,7 @@ section.social a:hover {
 }
 
 section.social a:hover:before {
-  content: '✔️';
+  content: '🔳 ';
   border-bottom: none;
   cursor: pointer;
 }
@@ -511,8 +509,8 @@ article li .post-controller a.btn {
   text-decoration: none;
   border-radius: 4px;
   background-color: #ffc107;
-  padding: 10px 12px;
-  font-size: 14px;
+  padding: 10px !important;
+  font-size: 12px;
   font-weight: bold;
   padding: 14px;
 }
