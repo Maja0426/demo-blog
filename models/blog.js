@@ -7,6 +7,7 @@ var blogsSchema = new mongoose.Schema({
   imageId: String,
   category: String,
   description: String,
+  writer: String,
   createdAt: {
     type: Date,
     default: Date.now

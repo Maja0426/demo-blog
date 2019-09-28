@@ -152,7 +152,7 @@
             <p>
               <small class="date"
                 >Közzétéve: <%= moment(blog.createdAt).format('YYYY.MM.DD. dddd') %> | Szerző: <%= blog.author.username
-                === 'Guest' ? 'Vendég' : 'Majoros Tamás'%></small
+                === 'Guest' ? blog.writer : 'Majoros Tamás'%></small
               >
             </p>
           </header>

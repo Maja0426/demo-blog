@@ -156,7 +156,7 @@
             class="form-control"
             type="text"
             name="blogs[title]"
-            placeholder="post címe, max. 170 karakter"
+            placeholder="A cikk címe, max. 170 karakter"
             maxlength="170"
             required
             autofocus
@@ -167,11 +167,23 @@
             class="form-control"
             type="text"
             name="blogs[subTitle]"
-            placeholder="alcím"
+            placeholder="Alcím"
             maxlength="170"
             required
             value="<%=blog.subTitle%>"
           />
+
+          <% if (currentUser.isGuest) { %>
+          <input
+            class="form-control"
+            type="text"
+            name="blogs[writer]"
+            placeholder="A cikk szerzője, max 20 karakter"
+            maxlength="20"
+            required
+            value="<%= blog.writer %>"
+          />
+          <% } %>
 
           <h6>Kategória:</h6>
 
