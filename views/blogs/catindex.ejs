@@ -54,16 +54,8 @@
     <!-- Fejléc és kereső szekció, az oldal főcíme és a fixen az oldal tetején maradó keresőmező -->
     <section class="main-title">
       <header>
-        <h1>SMARTBEE BLOG</h1>
+        <h1>Kategória cikkei</h1>
       </header>
-
-      <div class="searchbar">
-        <form action="/blogs" method="GET">
-          <label for="searchbar" aria-hidden="false">Keresés</label><br />
-          <input type="search" name="search" id="searchbar" placeholder="Keresés" />
-          <!-- <button type="submit">Na nézzük...</button> -->
-        </form>
-      </div>
     </section>
     <!-- Fejléc és kereső szekció lezárása -->
 
@@ -98,9 +90,10 @@
             data-theme="light"
             data-vanity="majoros-tamas"
           >
-            <a class="LI-simple-link btn btn-profile" href="https://hu.linkedin.com/in/majoros-tamas?trk=profile-badge"
-              >About Tamas Majoros</a
-            >
+            <a class="LI-simple-link" href="https://hu.linkedin.com/in/majoros-tamas?trk=profile-badge"
+              ><figure class="profile-photo">
+                <img src="/img/maja.jpg" alt="Maja profile photo" /></figure
+            ></a>
           </div>
           <!-- <figure class="profile-photo">
             <img src="/img/DSC_0201.jpg" alt="Maja profile photo" />
@@ -131,6 +124,12 @@
           <a href="/blogs/category/Egyéb" class="btn bg-Egyéb">Egyéb</a>
           <a href="/blogs/category/Súgó" class="btn bg-Súgó">Súgó</a>
         </section>
+
+        <div class="side-searchbar">
+          <form action="/blogs" method="GET">
+            <input type="search" name="search" id="searchbar" placeholder="Keresés" />
+          </form>
+        </div>
 
         <footer>
           <section class="social">

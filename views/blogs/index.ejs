@@ -41,6 +41,7 @@
         display: flex;
         justify-content: center;
         align-content: center;
+        max-width: 100%;
       }
 
       .categories {
@@ -62,7 +63,6 @@
         <form action="/blogs" method="GET">
           <label for="searchbar" aria-hidden="false">Keresés</label><br />
           <input type="search" name="search" id="searchbar" placeholder="Keresés" />
-          <!-- <button type="submit">Na nézzük...</button> -->
         </form>
       </div>
     </section>
@@ -99,9 +99,10 @@
             data-theme="light"
             data-vanity="majoros-tamas"
           >
-            <a class="LI-simple-link btn btn-profile" href="https://hu.linkedin.com/in/majoros-tamas?trk=profile-badge"
-              >About Tamas Majoros</a
-            >
+            <a class="LI-simple-link" href="https://hu.linkedin.com/in/majoros-tamas?trk=profile-badge"
+              ><figure class="profile-photo">
+                <img src="/img/maja.jpg" alt="Maja profile photo" /></figure
+            ></a>
           </div>
         </section>
 

@@ -215,6 +215,15 @@ section.main-title .searchbar {
   color: #000;
 }
 
+.side-searchbar form input {
+  padding: 12px;
+  font-size: 14px;
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid rgb(243, 213, 213);
+  color: #000;
+}
+
 /* .searchbar form button {
   padding: 14px;
   font-size: 18px;
@@ -260,6 +269,11 @@ img {
   margin-bottom: 15px;
   /* filter: grayscale(100%); */
 }
+
+/* .profile-photo img {
+  border-radius: 100%;
+  border: 8px solid #03436e;
+} */
 
 /* categories */
 section a {

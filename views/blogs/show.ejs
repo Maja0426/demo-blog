@@ -35,26 +35,26 @@
     </style>
   </head>
 
-  <body id="page-top">
+  <body id="page-top" style="margin-top: 1.2rem;">
     <!-- Fejléc és kereső szekció, az oldal főcíme és a fixen az oldal tetején maradó keresőmező -->
-    <section class="main-title">
+    <!-- <section class="main-title">
       <header>
         <h1>SMARTBEE BLOG</h1>
-      </header>
+      </header> -->
 
-      <div class="searchbar">
+    <!-- <div class="searchbar">
         <form action="/blogs" method="GET">
           <label for="searchbar" aria-hidden="false">Keresés</label><br />
           <input type="search" name="search" id="searchbar" placeholder="Keresés" />
         </form>
-      </div>
-    </section>
+      </div> -->
+    <!-- </section> -->
     <!-- Fejléc és kereső szekció lezárása -->
 
     <!-- A "Main" szekció, maga az oldal a bal oldali sávval és a tartalom konténerrel -->
     <main>
       <!-- A bal oldali "vezérlő, segítő" panel. Bio, social buttons, kategóriák, copyright -->
-      <aside>
+      <aside class="show-page">
         <section class="home-back">🐝 <a href="/">Kezdőlap</a></section>
 
         <section class="color-switcher">
@@ -82,9 +82,10 @@
             data-theme="light"
             data-vanity="majoros-tamas"
           >
-            <a class="LI-simple-link btn btn-profile" href="https://hu.linkedin.com/in/majoros-tamas?trk=profile-badge"
-              >About Tamas Majoros</a
-            >
+            <a class="LI-simple-link" href="https://hu.linkedin.com/in/majoros-tamas?trk=profile-badge"
+              ><figure class="profile-photo">
+                <img src="/img/maja.jpg" alt="Maja profile photo" /></figure
+            ></a>
           </div>
           <!-- <figure class="profile-photo">
             <img src="/img/DSC_0201.jpg" alt="Maja profile photo" />
@@ -116,6 +117,12 @@
           <a href="/blogs/category/Súgó" class="btn bg-Súgó">Súgó</a>
         </section>
 
+        <div class="side-searchbar">
+          <form action="/blogs" method="GET">
+            <input type="search" name="search" id="searchbar" placeholder="Keresendő kifejezés" />
+          </form>
+        </div>
+
         <footer>
           <section class="social">
             <a href="https://twitter.com/SmartBeeWeb" target="_blank" rel="noreferrer">twitter</a>
@@ -123,6 +130,7 @@
             <a href="https://www.linkedin.com/in/majoros-tamas/" target="_blank" rel="noreferrer">linkedin</a>
             <a href="https://www.instagram.com/smartbeeweboldalak/" target="_blank" rel="noreferrer">instagram</a>
           </section>
+
           <section class="copyright">
             <p>
               ©️ 2019
