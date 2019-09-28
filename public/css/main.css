@@ -301,6 +301,10 @@ button.btn:hover {
   cursor: pointer;
 }
 
+section a.btn.btn-profile {
+  font-size: 16px !important;
+}
+
 /* color switcher */
 section.color-switcher a,
 section.social a {
