@@ -71,75 +71,7 @@
     <!-- A "Main" szekció, maga az oldal a bal oldali sávval és a tartalom konténerrel -->
     <main>
       <!-- A bal oldali "vezérlő, segítő" panel. Bio, social buttons, kategóriák, copyright -->
-      <aside>
-        <section class="home-back">🐝 <a href="/">Kezdőlap</a></section>
-
-        <section class="color-switcher">
-          🔆
-          <a
-            href="#!"
-            onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
-            title="Világos/sötét mód"
-            id="switch"
-            >Világos/Sötét</a
-          >
-        </section>
-
-        <section>
-          <p class="about-me">
-            „Szeme villám! haja libeg! Hármas kört reá elébb, s csukja szemünk szent borzalom, mert mézen élt,
-            mézharmaton, s itta a Mennyország tejét!”
-          </p>
-          <div
-            class="LI-profile-badge"
-            data-version="v1"
-            data-size="medium"
-            data-locale="en_US"
-            data-type="vertical"
-            data-theme="light"
-            data-vanity="majoros-tamas"
-          >
-            <a class="LI-simple-link" href="https://hu.linkedin.com/in/majoros-tamas?trk=profile-badge"
-              ><figure class="profile-photo">
-                <img src="/img/maja.jpg" alt="Maja profile photo" /></figure
-            ></a>
-          </div>
-        </section>
-
-        <% if((currentUser && currentUser.isAdmin) || (currentUser)) { %>
-        <section>
-          <a class="btn new-btn" href="/blogs/new" role="button">Új post</a>
-          <a class="btn new-btn" href="/logout" role="button">Logout</a>
-        </section>
-        <% } %>
-
-        <section id="category" class="categories">
-          <a href="/blogs/category/Vállalkozás" class="btn bg-Vállalkozás">Vállalkozás</a>
-          <a href="/blogs/category/Webfejlesztés" class="btn bg-Webfejlesztés">Webfejlesztés</a>
-          <a href="/blogs/category/Gondolatébresztő" class="btn bg-Gondolatébresztő">Gondolatébresztő</a>
-          <a href="/blogs/category/Egyéb" class="btn bg-Egyéb">Egyéb</a>
-          <a href="/blogs/category/Súgó" class="btn bg-Súgó">Súgó</a>
-        </section>
-
-        <footer>
-          <section class="social">
-            <a href="https://twitter.com/SmartBeeWeb" target="_blank" rel="noreferrer">twitter</a>
-            <a href="https://www.facebook.com/smartbeeweb" target="_blank" rel="noreferrer">facebook</a>
-            <a href="https://www.linkedin.com/in/majoros-tamas/" target="_blank" rel="noreferrer">linkedin</a>
-            <a href="https://www.instagram.com/smartbeeweboldalak/" target="_blank" rel="noreferrer">instagram</a>
-          </section>
-          <section class="copyright">
-            <p>
-              ©️ 2019
-              <a href="https://smartbeeweb.hu" target="_blank" rel="noreferrer">Smart-Bee Web</a>
-            </p>
-            <p>
-              Inspired by
-              <a href="https://flaviocopes.com" target="_blank" rel="noreferrer">Flavio Copes</a>.<span> 🙏</span>
-            </p>
-          </section>
-        </footer>
-      </aside>
+      <% include ../partials/controller %>
       <!-- A bal oldali "vezérlő" lezárása -->
 
       <!-- Maga a lényegi tartalom -->
