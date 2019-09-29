@@ -27,39 +27,39 @@ router.post(
 );
 
 // Register
-router.get('/register', function(req, res) {
-  res.render('register');
-});
+// router.get('/register', function(req, res) {
+//   res.render('register');
+// });
 
 // handling sign up form
-router.post('/register', function(req, res) {
-  if (req.body.password === req.body.samePassword) {
-    var newUser = new User({
-      username: req.body.username,
-      email: req.body.email
-    });
-    if (req.body.username === 'Admin') {
-      newUser.isAdmin = true;
-    } else if (req.body.username === 'Guest') {
-      newUser.isGuest = true;
-    }
-    User.register(newUser, req.body.password, function(err, regUser) {
-      if (err) {
-        req.flash('error', err.message);
-        console.log(err.message);
-        res.redirect('/register');
-      } else {
-        passport.authenticate('local')(req, res, function() {
-          req.flash('success', 'Üdvözlet a Smart Bee Blogon ' + regUser.username + '.');
-          res.redirect('/blogs');
-        });
-      }
-    });
-  } else {
-    req.flash('error', 'A két jelszó nem egyezik!');
-    res.redirect('/register');
-  }
-});
+// router.post('/register', function(req, res) {
+//   if (req.body.password === req.body.samePassword) {
+//     var newUser = new User({
+//       username: req.body.username,
+//       email: req.body.email
+//     });
+//     if (req.body.username === 'Admin') {
+//       newUser.isAdmin = true;
+//     } else if (req.body.username === 'Guest') {
+//       newUser.isGuest = true;
+//     }
+//     User.register(newUser, req.body.password, function(err, regUser) {
+//       if (err) {
+//         req.flash('error', err.message);
+//         console.log(err.message);
+//         res.redirect('/register');
+//       } else {
+//         passport.authenticate('local')(req, res, function() {
+//           req.flash('success', 'Üdvözlet a Smart Bee Blogon ' + regUser.username + '.');
+//           res.redirect('/blogs');
+//         });
+//       }
+//     });
+//   } else {
+//     req.flash('error', 'A két jelszó nem egyezik!');
+//     res.redirect('/register');
+//   }
+// });
 
 router.get('/logout', function(req, res) {
   req.logout();
