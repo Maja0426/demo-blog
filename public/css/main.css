@@ -80,6 +80,23 @@ header.icons img {
   border-color: #ffc107;
 }
 
+.dark a.btn.new-btn,
+.dark a.btn.exit-btn {
+  border: 1px solid #fff;
+  border-radius: 0;
+  color: #fff;
+  background-color: transparent;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.dark a.btn.new-btn:hover,
+.dark a.btn.exit-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
 .dark a.btn.btn-back {
   background-color: #e9e9e9;
   color: #000;
@@ -266,8 +283,7 @@ section.categories {
 }
 
 section a.btn,
-button.btn,
-a.new-btn {
+button.btn {
   border: none;
   border-radius: 4px;
   background-color: #524d4d;
@@ -276,6 +292,26 @@ a.new-btn {
   margin: 6px 2px;
   font-size: 12px;
   font-weight: bold;
+}
+
+a.btn.new-btn,
+a.btn.exit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid #000;
+  background-color: transparent;
+  color: #000;
+  border-radius: 0;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+a.btn.new-btn:hover,
+a.btn.exit-btn:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 button.btn:hover {
