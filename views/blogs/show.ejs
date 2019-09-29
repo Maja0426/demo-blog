@@ -32,25 +32,14 @@
         justify-content: flex-start;
         align-content: center;
       }
+
+      body {
+        margin-top: 1.2rem;
+      }
     </style>
   </head>
 
-  <body id="page-top" style="margin-top: 1.2rem;">
-    <!-- Fejléc és kereső szekció, az oldal főcíme és a fixen az oldal tetején maradó keresőmező -->
-    <!-- <section class="main-title">
-      <header>
-        <h1>SMARTBEE BLOG</h1>
-      </header> -->
-
-    <!-- <div class="searchbar">
-        <form action="/blogs" method="GET">
-          <label for="searchbar" aria-hidden="false">Keresés</label><br />
-          <input type="search" name="search" id="searchbar" placeholder="Keresés" />
-        </form>
-      </div> -->
-    <!-- </section> -->
-    <!-- Fejléc és kereső szekció lezárása -->
-
+  <body id="page-top">
     <!-- A "Main" szekció, maga az oldal a bal oldali sávval és a tartalom konténerrel -->
     <main>
       <!-- A bal oldali "vezérlő, segítő" panel. Bio, social buttons, kategóriák, copyright -->
@@ -58,13 +47,13 @@
         <section class="home-back">🐝 <a href="/">Kezdőlap</a></section>
 
         <section class="color-switcher">
-          🌓
+          🔆
           <a
             href="#!"
             onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
             title="Világos/sötét mód"
             id="switch"
-            >Világos|Sötét téma</a
+            >Világos/Sötét</a
           >
         </section>
 
@@ -164,7 +153,7 @@
               >
             </p>
           </header>
-          <span class="post-description"><%- marked(blog.description) %></span>
+          <div class="post-description"><%- marked(blog.description) %></div>
         </section>
         <section class="delete-form">
           <% if (blog.author.id !== undefined) {%> <% if(currentUser && blog.author.id.equals(currentUser._id) ||
