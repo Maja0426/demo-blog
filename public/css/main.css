@@ -41,6 +41,10 @@ header.icons img {
   margin: 0;
 }
 
+.copyright a {
+  color: #5c74fd;
+}
+
 /* Dark theme */
 .dark {
   background-color: #1e2227;
@@ -236,10 +240,11 @@ img {
   margin-bottom: 15px;
 }
 
-/* .profile-photo img {
-  border-radius: 100%;
-  border: 8px solid #03436e;
-} */
+.profile-photo img {
+  /* border-radius: 100%;
+  border: 6px solid rgb(243, 213, 213); */
+  margin-bottom: -10px;
+}
 
 /* categories */
 section a {
