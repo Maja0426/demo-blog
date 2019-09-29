@@ -71,6 +71,10 @@ header.icons img {
   border-left-color: #777777 !important;
 }
 
+.dark .copyright a {
+  color: #5c74fd;
+}
+
 .dark section a:hover {
   color: #fff;
   border-color: #ffc107;
