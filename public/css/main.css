@@ -88,7 +88,6 @@ header.icons img {
   background-color: transparent;
   padding: 10px 20px;
   font-size: 20px;
-  font-weight: bold;
 }
 
 .dark a.btn.new-btn:hover,
@@ -305,7 +304,6 @@ a.btn.exit-btn {
   border-radius: 0;
   padding: 10px 20px;
   font-size: 20px;
-  font-weight: bold;
 }
 
 a.btn.new-btn:hover,
