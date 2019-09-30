@@ -7,6 +7,7 @@
 }
 
 html {
+  width: 100%;
   font: normal 20px 'Open Sans', sans-serif;
   scroll-behavior: smooth;
 }
@@ -22,6 +23,7 @@ a {
 }
 
 body {
+  /* width: calc(100vw - 10px)  */
   padding: 20px 0 40px;
 }
 
@@ -148,6 +150,12 @@ header.icons img {
   color: #1e2227;
 }
 
+.dark .post-description table tr th,
+.dark .post-description table td,
+.dark pre {
+  color: #1e2227;
+}
+
 body.dark .back-to-top {
   background: #fff;
 }
@@ -168,6 +176,7 @@ main {
   flex-direction: row;
   justify-content: center;
   align-content: center;
+  flex-basis: 1000px;
 }
 
 @media (max-width: 800px) {
@@ -383,8 +392,12 @@ article {
   display: flex;
   margin-right: 20px;
   margin-left: 20px;
-  flex-basis: 950px;
+  flex-basis: 750px;
   margin-bottom: 15px;
+}
+
+article div.post-description {
+  max-width: 730px;
 }
 
 article li,
@@ -409,10 +422,16 @@ article.show-post li {
     flex-basis: 20px;
     order: -1;
   }
+
   article header h3,
   article.index h3 {
     font-size: 35px;
     font-weight: bold;
+  }
+
+  article div.post-description {
+    font-size: 16px !important;
+    width: 90vw;
   }
 }
 
@@ -437,7 +456,7 @@ article h3 {
 }
 
 article .post-preview p,
-article span.post-description {
+article div.post-description {
   font-size: 20px;
   padding-bottom: 10px;
   line-height: 1.2;
@@ -1090,6 +1109,6 @@ h6 p {
   }
 
   .post-description {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
