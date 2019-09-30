@@ -23,6 +23,7 @@ a {
 }
 
 body {
+  width: 100%;
   padding: 20px 0 40px;
 }
 
@@ -493,6 +494,10 @@ article.show-post {
   margin: 0 10px;
 }
 
+article ul {
+  width: 100%;
+}
+
 article ul li .post-controller p {
   align-self: flex-end;
   font-size: 16px;
@@ -658,9 +663,9 @@ body .back-to-top img {
   color: #000 !important;
 }
 
-.bg-Súgó {
+.bg-Game {
   background-color: #870058 !important;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 /*

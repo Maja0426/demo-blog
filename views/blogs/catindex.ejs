@@ -75,7 +75,7 @@
               <p class="post-description"><%= blog.subTitle %></p>
             </a>
             <div class="post-controller">
-              <p>📅 <%= moment(blog.createdAt).format('YYYY. MM. D.') %></p>
+              <p>📅 <%= moment(blog.createdAt).format('YYYY.MM.DD.') %></p>
               <a href="/blogs/category/<%= blog.category %>" class="btn bg-<%= blog.category %>" role="button"
                 ><%= blog.category %></a
               >
@@ -84,6 +84,7 @@
           <% }) %>
         </ul>
       </article>
+
       <!-- Maga a lényegi tartalom lezárása -->
     </main>
     <!-- A "Main" szekció lezárása -->
