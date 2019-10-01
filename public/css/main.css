@@ -66,11 +66,11 @@ header.icons img {
 }
 
 .dark .post-description blockquote p {
-  color: #777777 !important;
+  color: #adacac !important;
 }
 
 .dark .post-description blockquote {
-  border-left-color: #777777 !important;
+  border-left-color: #adacac !important;
 }
 
 .dark .copyright a {
@@ -83,19 +83,22 @@ header.icons img {
 }
 
 .dark a.btn.new-btn,
-.dark a.btn.exit-btn {
+.dark a.btn.exit-btn,
+.dark a.btn.main-btn {
   border: 1px solid #fff;
   border-radius: 0;
   color: #fff;
   background-color: transparent;
-  padding: 10px 20px;
-  font-size: 20px;
+  padding: 8px 16px;
+  font-size: 16px;
 }
 
 .dark a.btn.new-btn:hover,
-.dark a.btn.exit-btn:hover {
+.dark a.btn.exit-btn:hover,
+.dark a.btn.main-btn:hover {
   background-color: #fff;
   color: #000;
+  text-decoration: none;
 }
 
 .dark a.btn.btn-back {
@@ -187,7 +190,7 @@ main {
 }
 
 section {
-  margin: 15px 5px;
+  margin: 5px 5px;
 }
 
 /* MAIN HEADER SECTION */
@@ -240,6 +243,7 @@ section.main-title .searchbar {
   border-radius: 2px;
   border: 1px solid rgb(243, 213, 213);
   color: #000;
+  margin: 10px auto;
 }
 
 /* ASIDE SECTION */
@@ -315,10 +319,25 @@ a.btn.exit-btn {
   font-size: 20px;
 }
 
+a.btn.main-btn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid #000;
+  background-color: transparent;
+  color: #000;
+  border-radius: 0;
+  padding: 8px 16px;
+  font-size: 16px;
+  text-decoration: none !important;
+}
+
 a.btn.new-btn:hover,
-a.btn.exit-btn:hover {
+a.btn.exit-btn:hover,
+a.btn.main-btn:hover {
   background-color: #000;
   color: #fff;
+  border: 1px solid #000;
 }
 
 button.btn:hover {
@@ -328,6 +347,13 @@ button.btn:hover {
 section a.btn.btn-profile {
   font-size: 16px !important;
 }
+
+/* section.home-back,
+section.color-switcher {
+  border: 1px solid #fff;
+  padding: 10px;
+  text-align: center;
+} */
 
 /* color switcher */
 section.color-switcher a,
@@ -380,11 +406,12 @@ footer section.social {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+  margin-top: 15px;
 }
 
 footer section.social a {
   margin-right: 15px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 /* ARTICLE SECTION */
@@ -437,7 +464,7 @@ article.show-post li {
 
 article h3 {
   font-weight: bold;
-  font-size: 32px;
+  font-size: 34px;
   padding: 0 0 30px;
 }
 
@@ -544,8 +571,8 @@ article li .post-controller a:hover {
 article li .post-controller a.btn {
   text-decoration: none;
   border-radius: 4px;
-  background-color: #ffc107;
-  padding: 10px !important;
+  /* background-color: #ffc107; */
+  padding: 8px 10px !important;
   font-size: 12px;
   font-weight: bold;
   padding: 14px;
