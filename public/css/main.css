@@ -671,27 +671,32 @@ body .back-to-top img {
 
 /* CATEGORY COLORS */
 .bg-Gondolatébresztő {
-  background-color: #004777 !important;
+  background-color: #c04abc !important;
   color: #fff !important;
 }
 
 .bg-Egyéb {
-  background-color: #ff7700 !important;
+  background-color: #deb841 !important;
   color: #000 !important;
 }
 
 .bg-Vállalkozás {
-  background-color: #00afb5 !important;
+  background-color: #17bebb !important;
   color: #000 !important;
 }
 
 .bg-Webfejlesztés {
-  background-color: #efd28d !important;
+  background-color: #05f140 !important;
   color: #000 !important;
 }
 
+.bg-Svelte {
+  background-color: #ff3e00 !important;
+  color: #fff !important;
+}
+
 .bg-Game {
-  background-color: #870058 !important;
+  background-color: #bb0a21 !important;
   color: #ffffff !important;
 }
 
