@@ -68,7 +68,8 @@
       <!-- Maga a lényegi tartalom -->
       <article class="index">
         <ul>
-          <% blogs.forEach(function(blog) { %>
+          <% blogs.forEach(function(blog) { %> <% if (moment().format('YYYY.MM.DD.') >=
+          moment(blog.createdAt).format('YYYY.MM.DD.')) { %>
           <li class="post-preview">
             <a href="/blogs/<%= blog.id %>">
               <h3 class="post-title"><%= blog.title %></h3>
@@ -81,7 +82,7 @@
               >
             </div>
           </li>
-          <% }) %>
+          <% } %> <% }) %>
         </ul>
       </article>
 

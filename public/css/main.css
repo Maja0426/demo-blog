@@ -669,6 +669,10 @@ body .back-to-top img {
   }
 }
 
+.form-control-date {
+  width: 250px !important;
+}
+
 /* CATEGORY COLORS */
 .bg-Gondolatébresztő {
   background-color: #c04abc !important;

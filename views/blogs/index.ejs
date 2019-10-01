@@ -77,20 +77,23 @@
       <!-- Maga a lényegi tartalom -->
       <article class="index">
         <ul>
-          <% blogs.forEach(function(blog) { %>
+          <% blogs.forEach(function(blog) { %> <% if (moment().format('YYYY.MM.DD.') >=
+          moment(blog.createdAt).format('YYYY.MM.DD.')) { %>
           <li class="post-preview">
             <a href="/blogs/<%= blog.id %>">
               <h3 class="post-title"><%= blog.title %></h3>
               <p class="post-description"><%= blog.subTitle %></p>
             </a>
             <div class="post-controller">
-              <p>📅 <%= moment(blog.createdAt).format('YYYY.MM.DD.') %></p>
+              <p>
+                📅 <%= moment(blog.createdAt).format('YYYY.MM.DD.') %>
+              </p>
               <a href="/blogs/category/<%= blog.category %>" class="btn bg-<%= blog.category %>" role="button"
                 ><%= blog.category %></a
               >
             </div>
           </li>
-          <% }) %>
+          <% } %> <% }) %>
         </ul>
       </article>
       <!-- Maga a lényegi tartalom lezárása -->

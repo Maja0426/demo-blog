@@ -144,6 +144,11 @@
           <textarea rows="30" class="form-control" placeholder="blog" name="blogs[description]" required>
 <%- blog.description %></textarea
           >
+
+          <label for="postTime"
+            >Közzététel dátuma
+            <input class="form-control" type="date" id="postTime" name="blogs[createdAt]" required />
+          </label>
           <!-- <article class="post-description">
             <%- marked(blog.description) %>
           </article> -->
@@ -154,12 +159,10 @@
             <button class="btn">Post feltöltése</button>
             <% } %> <% } %>
             <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
-              <button class="btn btn-delete">Törlés!</button>
+              <button type="submit" class="btn btn-delete">Törlés!</button>
             </form>
             <a class="btn" href="/blogs" role="button">Vissza</a>
-            <a class="btn btn-md" target="_blank" href="https://maja-md-editor.netlify.com" role="button"
-              >Markdown Editor</a
-            >
+            <a class="btn btn-md" target="_blank" href="https://maja-md-editor.netlify.com" role="button">Markdown</a>
           </section>
           <% } %>
         </form>

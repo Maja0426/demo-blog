@@ -131,11 +131,14 @@
             required
           ></textarea>
 
-          <button class="btn">Post feltöltése</button>
+          <label for="postTime" title="Kötelező elem, időzíthető a közzététel dátuma. Azonnali post-hoz mai dátum."
+            >Közzététel dátuma
+            <input class="form-control" type="date" id="postTime" name="blogs[createdAt]" required />
+          </label>
+
+          <button type="submit" class="btn">Post feltöltése</button>
           <a class="btn" href="/blogs" role="button">Vissza</a>
-          <a class="btn btn-md" target="_blank" href="https://maja-md-editor.netlify.com" role="button"
-            >Markdown Editor</a
-          >
+          <a class="btn btn-md" target="_blank" href="https://maja-md-editor.netlify.com" role="button">Markdown</a>
         </form>
       </section>
 
