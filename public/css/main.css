@@ -414,6 +414,12 @@ footer section.social a {
   margin-bottom: 10px;
 }
 
+/* big emojis */
+
+.emoji-lg {
+  font-size: 2.5rem;
+}
+
 /* ARTICLE SECTION */
 article {
   display: flex;
@@ -571,7 +577,6 @@ article li .post-controller a:hover {
 article li .post-controller a.btn {
   text-decoration: none;
   border-radius: 4px;
-  /* background-color: #ffc107; */
   padding: 8px 10px !important;
   font-size: 12px;
   font-weight: bold;
