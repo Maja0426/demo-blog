@@ -370,6 +370,18 @@ section.home-back a:hover {
   cursor: pointer;
 }
 
+.LI-profile-badge {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.categories {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+}
+
 section.social a:hover {
   color: #5c74fd;
 }
