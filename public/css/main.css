@@ -370,7 +370,7 @@ section.home-back a:hover {
   cursor: pointer;
 }
 
-.LI-profile-badge {
+.profile-badge {
   display: flex;
   justify-content: center;
   align-content: center;
