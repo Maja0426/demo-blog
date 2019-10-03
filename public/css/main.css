@@ -374,6 +374,8 @@ section.home-back a:hover {
   display: flex;
   justify-content: center;
   align-content: center;
+  width: 100%;
+  border-radius: none;
 }
 
 .categories {
