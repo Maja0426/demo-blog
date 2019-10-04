@@ -652,7 +652,7 @@ section.delete-form form button {
   bottom: 25px;
   width: 45px;
   height: 45px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 body .back-to-top img {
