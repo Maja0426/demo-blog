@@ -170,9 +170,9 @@ body section a {
   color: #000;
 }
 
-ul li {
+/* ul li {
   list-style: none;
-}
+} */
 
 main {
   display: flex;
@@ -482,6 +482,7 @@ article.show-post li {
   }
 }
 
+article h1,
 article h3 {
   font-weight: bold;
   font-size: 34px;
@@ -866,6 +867,11 @@ SOFTWARE.
 .post-description table,
 .post-description pre {
   margin: 15px 0;
+}
+
+.post-description ul li {
+  display: list-item;
+  /* list-style: disc; */
 }
 
 .post-description hr {

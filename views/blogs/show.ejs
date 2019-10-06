@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="robots" content="index,follow" />
-    <meta name="description" content="A Smart-Bee Web: <%= blog.title %>" />
-    <meta name="author" content="Majoros Tamás" />
-    <meta property="og:type" content="website" />
+    <meta name="description" content="<%= blog.title %>" />
+    <meta name="author" content="Smart-Bee Web" />
+    <meta property="og:type" content="blog" />
     <meta property="og:title" content="<%= blog.title %>" />
     <meta property="og:description" content="<%= blog.subTitle %>" />
     <meta property="og:image" content="<%= blog.image %>" />
@@ -15,7 +15,7 @@
     <meta name="twitter:title" content="<%= blog.title %>" />
     <meta name="twitter:description" content="<%= blog.subTitle %>" />
     <meta name="twitter:image" content="<%= blog.image %>" />
-    <title>Smart-Bee Blog</title>
+    <title><%= blog.title %></title>
     <% moment.locale("hu") %>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans" rel="stylesheet" />
     <link rel="icon" href="/img/icons/smart-bee.png" />
@@ -57,7 +57,7 @@
               <img src="<%= blog.image %>" alt="<%= blog.title %> borítókép" />
             </figure>
             <% } %>
-            <h3 class="post-title"><%= blog.title %></h3>
+            <h1 class="post-title"><%= blog.title %></h1>
             <p>
               <small class="date"
                 >Közzétéve: <%= moment(blog.createdAt).format('YYYY.MM.DD. dddd') %> | Szerző: <%= blog.author.username
