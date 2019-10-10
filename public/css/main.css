@@ -24,7 +24,7 @@ a {
 
 body {
   width: 100%;
-  padding: 20px 0 40px;
+  padding: 0 0 40px;
 }
 
 p.icons {
@@ -52,6 +52,10 @@ header.icons img {
   background-color: #1e2227;
   color: #ecf0f1;
 }
+
+/* .dark .main-title h1 {
+  color: #000;
+} */
 
 .dark section a,
 .dark section h1,
@@ -180,6 +184,7 @@ main {
   justify-content: center;
   align-content: center;
   flex-basis: 1000px;
+  padding: 0 3%;
 }
 
 @media (max-width: 800px) {
@@ -190,7 +195,7 @@ main {
 }
 
 section {
-  margin: 5px 5px;
+  margin: 0;
 }
 
 /* MAIN HEADER SECTION */
@@ -203,8 +208,10 @@ section.main-title {
 }
 
 section.main-title h1 {
-  font-size: 80px;
-  margin-bottom: 30px;
+  font-size: 60px;
+  /* background: #1ef253; */
+  padding: 10px;
+  /* margin-bottom: 15px; */
 }
 
 input:focus {
@@ -212,28 +219,34 @@ input:focus {
 }
 
 section.main-title .searchbar {
-  margin-bottom: 50px;
-}
-
-@media (max-width: 800px) {
-  section.main-title h1 {
-    font-size: 50px;
-  }
-
-  .searchbar form input {
-    padding: 8px;
-    font-size: 16px;
-    max-width: 300px;
-  }
+  margin-bottom: 10px;
 }
 
 .searchbar form input {
+  display: none;
   padding: 12px;
-  font-size: 18px;
+  font-size: 16px;
   width: 550px;
   border-radius: 2px;
   border: 1px solid rgb(243, 213, 213);
   color: #000;
+}
+
+.searchbar label {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  section.main-title h1 {
+    font-size: 30px;
+  }
+
+  .searchbar form input {
+    display: inline-block;
+    padding: 8px;
+    font-size: 16px;
+    max-width: 300px;
+  }
 }
 
 .side-searchbar form input {
@@ -252,6 +265,12 @@ aside {
   flex-direction: column;
   margin: 0 20px 40px;
   flex-basis: 250px;
+}
+
+.smartbee-p {
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 1rem;
 }
 
 /* about me */
@@ -441,6 +460,7 @@ article {
   margin-left: 20px;
   flex-basis: 750px;
   margin-bottom: 15px;
+  /* padding: 0 8px; */
 }
 
 article div.post-description {
@@ -470,6 +490,10 @@ article.show-post li {
     order: -1;
   }
 
+  article.index {
+    margin: 0 0 15px;
+  }
+
   article header h3,
   article.index h3 {
     font-size: 35px;
@@ -491,7 +515,7 @@ article h3 {
 
 .show-post .post-preview header p {
   margin-top: -30px;
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
 .show-post .post-preview header p small.date {
