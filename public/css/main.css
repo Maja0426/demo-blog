@@ -90,11 +90,7 @@ header.icons img {
 .dark a.btn.exit-btn,
 .dark a.btn.main-btn {
   border: 1px solid #fff;
-  border-radius: 0;
   color: #fff;
-  background-color: transparent;
-  padding: 8px 16px;
-  font-size: 16px;
 }
 
 .dark a.btn.new-btn:hover,
@@ -338,15 +334,23 @@ a.btn.exit-btn {
   font-size: 20px;
 }
 
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 a.btn.main-btn {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  /* justify-content: center;
+  flex-direction: row;
+  align-items: flex-start; */
   border: 1px solid #000;
   background-color: transparent;
   color: #000;
   border-radius: 0;
-  padding: 8px 16px;
+  padding: 8px 14px;
+  margin: 25px 5px;
   font-size: 16px;
   text-decoration: none !important;
 }

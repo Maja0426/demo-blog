@@ -1,17 +1,18 @@
 <aside>
-  <!-- <h1 class="smartbee-p">SMARTBEE BLOG</h1> -->
-  <section class="home-back"><a class="btn main-btn" href="/">🐝 Kezdőlap</a></section>
+  <div class="btn-group">
+    <section class="home-back"><a class="btn main-btn" href="/">🐝 Home</a></section>
 
-  <section class="color-switcher">
-    <a
-      class="btn main-btn"
-      href="#!"
-      onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
-      title="Világos/sötét mód"
-      id="switch"
-      >🔆 Világos/Sötét téma</a
-    >
-  </section>
+    <section class="color-switcher">
+      <a
+        class="btn main-btn"
+        href="#!"
+        onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
+        title="Világos/sötét mód"
+        id="switch"
+        >🔆 Light/Dark</a
+      >
+    </section>
+  </div>
 
   <section>
     <!-- <p class="about-me">
