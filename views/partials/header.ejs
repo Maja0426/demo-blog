@@ -1,0 +1,26 @@
+<nav class="navi">
+  <ul>
+    <li><a class="btn main-btn" href="/">SMART-BEE</a></section></li>
+  </ul>
+      <div class="side-searchbar">
+          <form action="/blogs" method="GET">
+            <input type="search" name="search" id="searchbar" placeholder="Keresés cikkek címeiben" />
+          </form>
+        </div>
+        <% if((currentUser && currentUser.isAdmin) || (currentUser)) { %>
+          <ul>
+            <li><a class="btn new-btn" href="/blogs/new" role="button">Új cikk</a></li>
+            <li><a class="btn exit-btn" href="/logout" role="button">Kilépés</a></li>
+          </ul>
+          <% } %>
+          <ul>
+          <li><a
+            class="color-switch"
+            href="#!"
+            onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
+            title="Világos/sötét mód"
+            id="switch"
+            >Light/Dark</a
+          ></li>
+          </ul>
+</nav>

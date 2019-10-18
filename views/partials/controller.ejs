@@ -1,24 +1,6 @@
 <aside>
-  <div class="btn-group">
-    <section class="home-back"><a class="btn main-btn" href="/">🐝 Home</a></section>
-
-    <section class="color-switcher">
-      <a
-        class="btn main-btn"
-        href="#!"
-        onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
-        title="Világos/sötét mód"
-        id="switch"
-        >🔆 Light/Dark</a
-      >
-    </section>
-  </div>
-
+  <h1>SMARTBEE BLOG</h1>
   <section>
-    <!-- <p class="about-me">
-      „Szeme villám! haja libeg! Hármas kört reá elébb, s csukja szemünk szent borzalom, mert mézen élt, mézharmaton, s
-      itta a Mennyország tejét!”
-    </p> -->
     <div class="profile-badge">
       <a href="https://www.linkedin.com/in/majoros-tamas/">
         <figure>
@@ -27,13 +9,6 @@
       </a>
     </div>
   </section>
-
-  <% if((currentUser && currentUser.isAdmin) || (currentUser)) { %>
-  <section>
-    <a class="btn new-btn" href="/blogs/new" role="button">Új cikk írása</a>
-    <a class="btn exit-btn" href="/logout" role="button">Kilépés</a>
-  </section>
-  <% } %>
 
   <section id="category" class="categories">
     <a href="/blogs/category/Vállalkozás" class="btn bg-Vállalkozás">Vállalkozás</a>
@@ -44,12 +19,6 @@
     <a href="/blogs/category/Game" class="btn bg-Game">Game</a>
   </section>
 
-  <div class="side-searchbar">
-    <form action="/blogs" method="GET">
-      <input type="search" name="search" id="searchbar" placeholder="Keresés cikkek címeiben" />
-    </form>
-  </div>
-
   <footer>
     <section class="social">
       <a href="https://twitter.com/SmartBeeWeb" target="_blank" rel="noreferrer">twitter</a>
@@ -59,18 +28,13 @@
     </section>
     <section class="copyright">
       <div style="text-align:center">
-        <p>
-          Inspired by
-          <a href="https://flaviocopes.com" target="_blank" rel="noreferrer">Flavio Copes</a>.<span> 🙏</span>
-        </p>
         <br />
         <hr />
         <br />
         <a href="mailto:develop.tmsmajoros@gmail.com" title="develop.tmsmajoros@gmail.com"
           ><p class="emoji-lg">📬</p></a
         >
-        <!-- <p class="emoji-lg">🐝</p>
-        <p>Be(e) or not to be(e)...</p> -->
+
         <p>
           ©️ 2019
           <a href="https://smartbeeweb.hu" target="_blank" rel="noreferrer">Smart-Bee Web</a>
