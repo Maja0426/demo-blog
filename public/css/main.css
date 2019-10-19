@@ -203,11 +203,11 @@ nav {
   color: #1e2227;
 }
 
-.dark svg {
+.dark .social svg {
   fill: #fdf9f3;
 }
 
-.dark svg:hover {
+.dark .social svg:hover {
   fill: #c3bfb9;
 }
 
@@ -356,14 +356,23 @@ section a.btn.btn-profile {
   font-size: 16px !important;
 }
 
-svg {
-  fill: #00657d;
+.social svg {
+  fill: #333;
   width: 40px;
 }
 
-svg:hover {
-  fill: #005160;
+.social svg:hover {
+  fill: #c3bfb9;
 }
+
+.main-title {
+  padding: 18px 0 25px;
+  width: 100%;
+}
+
+/* .main-title path {
+  fill: #fff;
+} */
 
 /* section.color-switcher a:hover, */
 section.home-back a:hover {
