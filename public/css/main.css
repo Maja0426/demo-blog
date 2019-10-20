@@ -517,6 +517,10 @@ article li.post-preview:hover {
 
 /* under 800px width content the first */
 @media (max-width: 800px) {
+  h3.post-title {
+    font-size: 24px;
+  }
+
   article {
     order: -1;
   }
@@ -546,7 +550,7 @@ article.show-post {
   flex-direction: column;
   justify-content: space-between;
   padding: 10px 0;
-  align-content: flex-end;
+  align-items;: flex-start;
   min-width: 150px;
 }
 
@@ -575,6 +579,7 @@ article ul li .post-controller a {
 }
 
 @media (max-width: 800px) {
+
   article ul li.post-preview {
     flex-direction: column;
   }
