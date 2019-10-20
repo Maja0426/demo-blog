@@ -570,6 +570,10 @@ article ul li .post-controller a {
   align-self: flex-end;
 }
 
+.writer-area {
+  margin-top: 7vh;
+}
+
 @media (max-width: 800px) {
   article ul li.post-preview {
     flex-direction: column;
