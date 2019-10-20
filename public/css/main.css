@@ -715,7 +715,7 @@ section.delete-form form button {
   }
 
   .menubar {
-    margin: 7.5px 10px;
+    margin: 7.5px 5%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
