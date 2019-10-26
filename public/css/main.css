@@ -431,6 +431,12 @@ footer .copyright a:hover {
   border-bottom: 1px dashed #5c74fd;
 }
 
+footer .copyright h1 {
+  /* display: inline; */
+  font-size: 18px;
+  background: inherit;
+}
+
 /* social buttons */
 
 footer section.social {
@@ -530,9 +536,9 @@ article li.post-preview:hover {
     width: 100%;
   }
 
-  aside h1 {
+  /* aside h1 {
     display: none;
-  }
+  } */
 
   article h1,
   article h3 {
@@ -550,7 +556,7 @@ article.show-post {
   flex-direction: column;
   justify-content: space-between;
   padding: 10px 0;
-  align-items;: flex-start;
+  align-items: flex-start;
   min-width: 150px;
 }
 
@@ -579,7 +585,6 @@ article ul li .post-controller a {
 }
 
 @media (max-width: 800px) {
-
   article ul li.post-preview {
     flex-direction: column;
   }
@@ -719,10 +724,6 @@ section.delete-form form button {
     transition: 0.2s ease-in-out;
   }
 
-  .bottom-wrapper section.categories {
-    /* margin-top: -10px; */
-  }
-
   .menubar {
     margin: 7.5px 5%;
     display: flex;
@@ -805,7 +806,7 @@ section.delete-form form button {
 
 /* CATEGORY COLORS */
 .bg-Gondolatébresztő {
-  background-color: #c04abc !important;
+  background-color: #281497 !important;
   color: #fff !important;
 }
 
