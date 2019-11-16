@@ -30,7 +30,7 @@ cloudinary.config({
 
 // INDEX PAGE, LIST ALL Blogs
 router.get('/', function(req, res) {
-  var perPage = 16;
+  var perPage = 12;
   var pageQuery = parseInt(req.query.page);
   var pageNumber = pageQuery ? pageQuery : 1;
   var noMatch = null;
@@ -92,7 +92,7 @@ router.get('/', function(req, res) {
 
 // CATEGORIES - CATEGORY (TYPE)
 router.get('/category/:id', function(req, res) {
-  var perPage = 16;
+  var perPage = 12;
   var pageQuery = parseInt(req.query.page);
   var pageNumber = pageQuery ? pageQuery : 1;
   var noMatch = null;

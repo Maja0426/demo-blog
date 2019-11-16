@@ -216,5 +216,47 @@
         <hr />
       </div>
     </section>
+    <section class="pagination">
+      <% if (pages && pages > 0) { %> <% if (current == 1) { %>
+      <a class="page-link">Első</a>
+      <% } else { %>
+
+      <a class="page-link" href="/blogs<%if(search){%>?search=<%=search%><%}%>">Első</a>
+
+      <% } %> <% if (current == 1) { %>
+      <a class="page-link">«</a>
+      <% } else { %>
+      <a
+        class="page-link"
+        href="/blogs?page= <%=Number(current) - 1 %>
+            <%if(search){%>&search=
+            <%=search%>
+            <%}%>"
+        >«</a
+      >
+      <% } %> <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %> <% if (i !== 1) { %>
+      <a class="page-link">...</a>
+      <% } %> <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %> <% if (i == current) { %>
+      <a class="active"> <%= i %></a>
+      <% } else { %>
+
+      <a class="page-link" href="/blogs?page=<%= i %><%if(search){%>&search=<%=search%><%}%>"> <%= i %></a>
+
+      <% } %> <% if (i == Number(current) + 4 && i < pages) { %>
+      <a>...</a>
+      <% } %> <% } %> <% if (current == pages) { %>
+      <a class="page-link">»</a>
+      <% } else { %>
+
+      <a class="page-link" href="/blogs?page=<%= Number(current) + 1 %><%if(search){%>&search=<%=search%><%}%>">»</a>
+
+      <% } %> <% if (current == pages) { %>
+      <a class="page-link">Utolsó</a>
+      <% } else { %>
+
+      <a class="page-link" href="/blogs?page=<%= pages %><%if(search){%>&search=<%=search%><%}%>">Utolsó</a>
+
+      <% } %> <% } %>
+    </section>
   </footer>
 </aside>
