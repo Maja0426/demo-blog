@@ -696,8 +696,8 @@ section.delete-form form button {
 }
 
 .pagination a.active {
-  background-color: #ff511a;
-  color: white;
+  background-color: #000;
+  color: #fff;
 }
 
 .pagination a:hover:not(.active) {
