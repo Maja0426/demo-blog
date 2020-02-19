@@ -50,7 +50,7 @@ router.post(
 //         res.redirect('/register');
 //       } else {
 //         passport.authenticate('local')(req, res, function() {
-//           req.flash('success', 'Üdvözlet a Smart Bee Blogon ' + regUser.username + '.');
+//           req.flash('success', 'Üdvözlet a BLOG-DEMO-N ' + regUser.username + '.');
 //           res.redirect('/blogs');
 //         });
 //       }

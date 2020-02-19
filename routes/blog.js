@@ -23,9 +23,9 @@ var upload = multer({
 
 var cloudinary = require('cloudinary');
 cloudinary.config({
-  cloud_name: 'maja0426',
-  api_key: '831789779817282',
-  api_secret: 'A8gM9XzEuhRuLSds9Fru_l7lTz0'
+  cloud_name: 'cloud_name',
+  api_key: 'api_key',
+  api_secret: 'api_secret'
 });
 
 // INDEX PAGE, LIST ALL Blogs
@@ -208,7 +208,6 @@ router.put('/:id', middleware.checkUser, upload.single('image'), function(req, r
       });
     });
   } else {
-    // req.body.Blogs.image = 'https://res.cloudinary.com/maja0426/image/upload/v1550587836/Aprohirdetes/NoImageFound.png';
     Blogs.findByIdAndUpdate(req.params.id, req.body.blogs, function(err, updateBlog) {
       if (err) {
         req.flash('error', 'Valami hiba történt. Próbálja újra.');

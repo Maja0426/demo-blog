@@ -773,7 +773,6 @@ section.delete-form form button {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* padding: 5px; */
   }
 
   .bottom-searchbar {
@@ -793,7 +792,6 @@ section.delete-form form button {
   }
 
   .back-to-top img {
-    /* margin-top: 5px; */
     padding: 0;
     width: 30px;
     height: 30px;
@@ -803,7 +801,6 @@ section.delete-form form button {
   }
 
   .bottom-wrapper img {
-    /* margin-top: 5px; */
     padding: 0;
     width: 30px;
     height: 30px;

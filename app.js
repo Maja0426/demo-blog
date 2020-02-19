@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const flash = require('connect-flash');
-const sm = require('sitemap');
+/* const sm = require('sitemap'); */
 const dotenv = require('dotenv');
 const sslRedirect = require('heroku-ssl-redirect'); // SSL Redirect, must have heroku
 
@@ -15,7 +15,6 @@ const app = express();
 dotenv.config({ path: './.env' });
 const blogsRoutes = require('./routes/blog');
 const indexRoutes = require('./routes/index');
-// const adminRoutes = require('./routes/admin');
 const User = require('./models/user');
 
 app.locals.moment = require('moment');
@@ -36,9 +35,9 @@ app.set('view engine', 'ejs');
 app.use(flash());
 
 //SITEMAP GENERATOR (ADD sitemap.xml to google console)
-const sitemap = sm.createSitemap({
+/* const sitemap = sm.createSitemap({
   hostname: 'https://smartbee.info',
-  cacheTime: 600000, // 600 sec - cache purge period
+  cacheTime: 600000, 
   urls: [
     {
       url: '/blogs/',
@@ -46,9 +45,9 @@ const sitemap = sm.createSitemap({
       priority: 0.3
     }
   ]
-});
+}); */
 
-app.get('/sitemap.xml', function(req, res) {
+/* app.get('/sitemap.xml', function(req, res) {
   sitemap.toXML(function(err, xml) {
     if (err) {
       return res.status(500).end();
@@ -56,7 +55,7 @@ app.get('/sitemap.xml', function(req, res) {
     res.header('Content-Type', 'application/xml');
     res.send(xml);
   });
-});
+}); */
 
 // PASSPORT CONFIG
 app.use(
@@ -93,11 +92,6 @@ app.use(function(req, res, next) {
 // ROUTES CONFIG
 app.use('/', indexRoutes);
 app.use('/blogs', blogsRoutes);
-// app.use('/admin', adminRoutes);
-
-// app.get('blogs/', (req, res) => {
-//   res.render('/blogs/index');
-// })
 
 // 404 ERROR PAGE
 app.get('*', function(req, res) {
@@ -108,6 +102,6 @@ app.get('*', function(req, res) {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log('========================================================');
-  console.log(`Maja SMPL BLOG. SERVER STARTED ON PORT ${PORT}`);
+  console.log(`Maja BLOG-DEMO. SERVER STARTED ON PORT ${PORT}`);
   console.log('========================================================');
 });
